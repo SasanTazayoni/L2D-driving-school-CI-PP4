@@ -16,7 +16,7 @@ This epic focuses on the foundational aspects of user management and authenticat
 
 The Content Interaction epic revolves around user engagement with platform content. It allows users to create new posts with a rating and also includes features like editing, viewing and deleting posts, as well as liking and commenting on posts. Users can also manage their own comments and view comments from others on their posts.
 
-* Create new post - As a registered user I can create a new post to provide a rating with a description so that I can share my experience and contribute valuable feedback to the community.
+* Create a new post - As a registered user I can create a new post which provides a rating and a description so that I can share my experience and contribute valuable feedback to the community.
 * Edit my post - As a registered user I can edit my posts so that I can refine and update my thoughts and feedback as needed.
 * Delete my post - As a registered user I can delete my own posts so that I have control over the content I contribute to the community.
 * Read existing posts - As a registered user I can access and read the full content of individual posts so that I can review and stay informed about the discussions and experiences shared within the community.
