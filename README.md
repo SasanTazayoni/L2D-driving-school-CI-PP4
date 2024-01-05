@@ -1,110 +1,60 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# User Experience
 
-Welcome USER_NAME,
+## User Stories
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+**User Account Management and Authentication:**
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This epic focuses on the foundational aspects of user management and authentication, ensuring users can securely access the platform. It includes functionalities such as logging in, logging out, password reset and user registration.
 
-## Gitpod Reminders
+* Log in - As a registered user I can log in to my account to actively participate in the site's community, engaging with reviews and managing my appointments so that I can enhance my user experience and stay organised with scheduled appointments.
+* Log out - As a registered user I can log out of my account so that I can end my session on my current device.
+* Sign up - As a new site user I can register and establish an account on the site so that I can create a personalised profile.
+* Password reset - As a registered user I can reset my password if I forget it so that I can regain access to my account.
+* Profile customisation - As a registered user I can customise my profile settings so that I can tailor my online experience to reflect my personality.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+**Interactive Reviews:**
 
-`python3 -m http.server`
+The Content Interaction epic revolves around user engagement with platform content. It allows users to create new posts with a rating and also includes features like editing, viewing and deleting posts, as well as liking and commenting on posts. Users can also manage their own comments and view comments from others on their posts.
 
-A blue button should appear to click: _Make Public_,
+* Create new post - As a registered user I can create a new post to provide a rating with a description so that I can share my experience and contribute valuable feedback to the community.
+* Edit my post - As a registered user I can edit my posts so that I can refine and update my thoughts and feedback as needed.
+* Delete my post - As a registered user I can delete my own posts so that I have control over the content I contribute to the community.
+* Read existing posts - As a registered user I can access and read the full content of individual posts so that I can review and stay informed about the discussions and experiences shared within the community.
+* Like posts - As a registered user I can like other people's posts so that I can let them know I appreciate their post.
+* Unlike posts - As a registered user I can unlike posts so that I can adjust my preferences and ensure the accuracy of my endorsements.
+* View comments on posts - As a registered user I can access comments on posts by simply clicking on the respective post so that I can engage with and further explore the insights and discussions within the community.
+* Comment on posts - As a registered user I can comment on existing posts so that actively engage with other members who have shared their experience.
+* Delete own comments on posts - As a registered user I can delete my own comments on other people's posts so that I can manage and control the content associated with my profile, removing comments as needed for relevance or appropriateness.
+* Update comments on posts - As a registered user I can edit my comments on posts I've previously made so that I can keep my contributions up-to-date and relevant.
+* Post timestamp visibility - As a registered user I can view the timestamp of a post so that I can understand the context and relevance of the content based on its creation time and date.
+* Share user experience - As a registered user I can provide a star rating to share my experience so that I can contribute valuable feedback and help others gauge the quality of my experience.
+* Notification alerts for interaction - As a registered user I can receive notifications for likes, comments, and mentions on my posts so that I can stay informed and promptly engage with the community's responses to my content.
 
-Another blue button should appear to click: _Open Browser_.
+**Appointment Management:**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+This epic encompasses the management of appointments. Users can view and interact with the appointments panel in order to view, book, edit and delete their appointments.
 
-A blue button should appear to click: _Make Public_,
+* Book appointments - As a registered user I can schedule a new driving lesson by selecting a preferred time and date so that I can efficiently plan and manage my appointments with the driving instructor.
+* View my appointments - As a registered user I can view a list of my scheduled appointments so that I can keep track of my upcoming driving lessons and manage my time effectively.
+* Delete my appointment - As a registered user I can delete a scheduled appointment so that I can remove appointments that are no longer needed, ensuring an accurate and up-to-date schedule.
+* Edit my booking - As a registered user I can edit the details of my booked appointment so that I can make necessary adjustments to the time or date, ensuring my driving lessons align with my schedule.
 
-Another blue button should appear to click: _Open Browser_.
+**Content Moderation and Review**
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Content Moderation and Review involve features for administrators to monitor and manage the content on the platform. This includes reviewing flagged posts, moderating inappropriate content, and ensuring a safe and respectful community environment.
 
-To log into the Heroku toolbelt CLI:
+* Content integrity - As a site administrator I can delete/update posts or comments from any user so that I can remove inappropriate content, thus maintaining the integrity of the platform.
+* Content review and approval - As a site administrator I can review and approve/disapprove user-generated content so that I ensure the site is free of irrelevant information or spam.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+**User Experience and Design**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+This epic is dedicated to creating an intuitive and visually appealing user experience. It covers the design aspects of the website, ensuring clarity, ease of use, and a positive overall user experience.
 
-------
+* Intuitive design - As a new site user I can navigate through the interface effortlessly so that I can quickly and easily find the information I need.
+* Website clarity - As a new site user I can comprehend the website's purpose at a glance so that I can determine if the platform aligns with my needs and interests.
+* Teacher ratings overview - As a new site user I can view the driving teacher's experience and ratings so that I can make an informed decision about choosing a qualified and well-rated instructor for my driving lessons.
+* View paginated list of posts - As a site user I can view a paginated list of posts so that I can select which post I want to view.
+* Theme customisation - As a registered user I can customise the theme and appearance of the website so that it suits my preferences.
+* Contact information - As a new site user I can easily find and access the driving instructor's contact information so that I can get in touch for inquiries or assistance.
 
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+These epics collectively represent the core functionalities and user experiences that your platform offers. They provide a high-level overview of the different aspects users and administrators can interact with on the platform.
