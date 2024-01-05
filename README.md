@@ -23,7 +23,7 @@ The Content Interaction epic revolves around user engagement with platform conte
 * Like posts - As a registered user I can like other people's posts so that I can let them know I appreciate their post.
 * Unlike posts - As a registered user I can unlike posts so that I can adjust my preferences and ensure the accuracy of my endorsements.
 * View comments on posts - As a registered user I can access comments on posts by simply clicking on the respective post so that I can engage with and further explore the insights and discussions within the community.
-* Comment on posts - As a registered user I can comment on existing posts so that actively engage with other members who have shared their experience.
+* Comment on posts - As a registered user I can comment on existing posts so that I can actively engage with other members who have shared their experience.
 * Delete own comments on posts - As a registered user I can delete my own comments on other people's posts so that I can manage and control the content associated with my profile, removing comments as needed for relevance or appropriateness.
 * Update comments on posts - As a registered user I can edit my comments on posts I've previously made so that I can keep my contributions up-to-date and relevant.
 * Post timestamp visibility - As a registered user I can view the timestamp of a post so that I can understand the context and relevance of the content based on its creation time and date.
