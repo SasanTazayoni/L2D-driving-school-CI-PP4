@@ -54,7 +54,7 @@ This epic is dedicated to creating an intuitive and visually appealing user expe
 * Intuitive design - As a new site user I can navigate through the interface effortlessly so that I can quickly and easily find the information I need.
 * Website clarity - As a new site user I can comprehend the website's purpose at a glance so that I can determine if the platform aligns with my needs and interests.
 * Instructor ratings overview - As a new site user I can view the driving instructor's experience and ratings so that I can make an informed decision about choosing a qualified and well-rated instructor for my driving lessons.
-* View paginated list of posts - As a site user I can view a paginated list of posts so that I can select which post I want to view.
+* View paginated list of posts - As a site user I can view a paginated list of posts so that I can select which post I want to view in more detail.
 * Theme customisation - As a registered user I can customise the theme and appearance of the website so that it suits my preferences.
 * Contact information - As a new site user I can easily find and access the driving instructor's contact information so that I can get in touch for inquiries or assistance.
 
