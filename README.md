@@ -30,7 +30,7 @@ The Content Interaction epic revolves around user engagement with platform conte
 * Share user experience - As a registered user I can provide a star rating to share my experience so that I can contribute valuable feedback and help others gauge the quality of my experience.
 * Notification alerts for interaction - As a registered user I can receive notifications for likes, comments, and mentions on my posts so that I can stay informed and promptly engage with the community's responses to my content.
 
-**Appointment Management:**
+**Appointments:**
 
 This epic encompasses the management of appointments. Users can view and interact with the appointments panel in order to view, book, edit and delete their appointments.
 
@@ -45,6 +45,7 @@ Content Moderation and Review involve features for administrators to monitor and
 
 * Content integrity - As a site administrator I can delete/update posts or comments from any user so that I can remove inappropriate content, thus maintaining the integrity of the platform.
 * Content review and approval - As a site administrator I can review and approve/disapprove user-generated content so that I ensure the site is free of irrelevant information or spam.
+* Appointment management - As a site administrator I can edit/remove appointments so that I can efficiently manage the schedule and ensure accurate and up-to-date information.
 
 **User Experience and Design**
 
