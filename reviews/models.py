@@ -14,10 +14,23 @@ class Review(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     updated_on = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"Written by {self.author} on {self.created_on}"
+
+
 class Comment(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter",  null=False, blank=False)
     content = models.TextField(null=False, blank=False)
     approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)
+    replied_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-replied_on"]
+
+    def __str__(self):
+        return f"Written by {self.author} on {self.replied_on}"
