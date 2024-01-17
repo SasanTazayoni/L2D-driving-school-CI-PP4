@@ -4,5 +4,5 @@ from .models import Review
 
 # Create your views here.
 class ReviewList(generic.ListView):
-    queryset = Review.objects.all()
+    queryset = Review.objects.filter(status=1).order_by("-created_on")
     template_name = "review_list.html"
