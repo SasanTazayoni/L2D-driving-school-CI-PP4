@@ -12,8 +12,8 @@
     <h1>Reviews</h1>
     {% for review in object_list %}
     <h2>{{ review.author }} on {{ review.created_on }}</h2>
-        <p>Stars rated: {{ review.get_rating_display }}</p>
-        <p>Review content: {{ review.content }}</p>
+        <p>Rating: {{ review.get_rating_display }}</p>
+        <p>Review: {{ review.content }}</p>
     {% endfor %}
 </body>
 
