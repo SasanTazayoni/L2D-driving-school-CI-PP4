@@ -23,7 +23,7 @@ def review_detail(request, review_id):
     :template:`reviews/review_detail.html`
     """
 
-    queryset = Post.objects.filter(status=1)
+    queryset = Review.objects.filter(status=1)
     review = get_object_or_404(Review, id=review_id)
 
     return render(
