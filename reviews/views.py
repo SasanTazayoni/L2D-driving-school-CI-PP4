@@ -25,9 +25,15 @@ def review_detail(request, review_id):
 
     queryset = Review.objects.filter(status=1)
     review = get_object_or_404(Review, id=review_id)
+    comments = review.comments.all().order_by("-replied_on")
+    comment_count = review.comments.filter(approved=True).count()
 
     return render(
         request,
         "reviews/review_detail.html",
-        {'review': review},
+        {
+            'review': review,
+            "comments": comments,
+            "comment_count": comment_count,
+        },
     )
