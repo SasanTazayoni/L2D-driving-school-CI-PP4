@@ -8,11 +8,11 @@
       <h2>{{ profile.username }}</h2>
 
       <!-- Display user-uploaded image or default image -->
-      <!-- {% if profile.profile_picture %}
+      {% if profile.profile_picture %}
         <img src="{{ profile.profile_picture.url }}" width="25%" />
-      {% else %} -->
+      {% else %}
         <img src="{% static 'images/defaultpicture.png' %}" width="25%" />
-      <!-- {% endif %} -->
+      {% endif %}
 
       <!-- Display "About Me" with the about_me content -->
       <div class="mt-3">
