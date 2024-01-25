@@ -31,8 +31,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-sasantazayo-l2ddrivings-6rvcvzias25.ws-eu107.gitpod.io',
-    '.herokuapp.com',
-    'l2d-driving-school-6f23811ec0fb.herokuapp.com'
+    '.herokuapp.com'
 ]
 
 
@@ -152,11 +151,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
