@@ -8,7 +8,7 @@
       <h2>{{ profile.username }}</h2>
 
       <!-- Display user-uploaded image or default image -->
-      {% if profile.profile_picture %}
+      {% if profile.profile_picture.url %}
         <img src="{{ profile.profile_picture.url }}" width="25%" />
       {% else %}
         <img src="{% static 'images/defaultpicture.png' %}" width="25%" />
