@@ -5,4 +5,4 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(UserProfile)
 class UserProfileAdmin(SummernoteModelAdmin):
-    summernote_fields = ('about',)
+    summernote_fields = ('about_me',)
