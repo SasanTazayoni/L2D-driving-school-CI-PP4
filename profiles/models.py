@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=False, blank=False)
     username = models.CharField(max_length=200, blank=False, null=False)
     email = models.EmailField(blank=False, null=False)
-    profile_picture = CloudinaryField('image', null=True)
+    profile_picture = CloudinaryField('image', null=True, blank=True)
     about_me = models.TextField(max_length=200, blank=False, null=True)
     has_reviewed = models.BooleanField(default=False)
 
