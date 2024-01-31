@@ -3,6 +3,11 @@
 
 {% block head_title %}{% trans "L2D - Edit profile" %}{% endblock head_title %}
 
+{% block head_scripts %}
+    {% load static %}
+    <script src="{% static 'js/profile.js' %}" defer></script>
+{% endblock head_scripts %}
+
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
