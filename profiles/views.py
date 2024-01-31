@@ -1,7 +1,39 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
+
+
+def userLogin(request):
+
+    if request.user.is_authenticated:
+        return redirect('profile_page')
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        try:
+            user = User.objects.get(username=username)
+        except:
+            print('Username does not exist')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('reviews')
+        else:
+            print('Username OR password is incorrect')
+
+    return render(request, 'profiles/login_register.html')
+
+
+def userLogout(request):
+    logout(request)
+    return redirect('login')
 
 
 def profile_page(request):

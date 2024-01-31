@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head_title %}{% trans "L2D - Authentication" %}{% endblock head_title %}
+
+{% block content %}
+
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Enter password">
+    <input type="submit" value="Login">
+</form>
+
+{% endblock content %}
