@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import UserProfile
@@ -36,6 +37,7 @@ def userLogout(request):
     return redirect('login')
 
 
+@login_required(login_url="login")
 def profile_page(request):
     """
     Renders the profile page
@@ -50,6 +52,7 @@ def profile_page(request):
     )
 
 
+@login_required(login_url="login")
 def edit_profile(request):
     """
     Renders the edit profile page and handles form submission
