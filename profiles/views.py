@@ -1,13 +1,38 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 
 
+def registerUser(request):
+    page = 'register'
+    form = UserCreationForm()
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = user.username.lower()
+            user.save()
+
+            messages.success(request, 'User account was created')
+
+            login(request, user)
+            return redirect('reviews')
+
+        else:
+            messages.success(request, 'An error occurred during registration')
+
+    context = {'page': page, 'form': form}
+    return render(request, 'profiles/login_register.html', context)
+
+
 def userLogin(request):
+    page = 'login'
 
     if request.user.is_authenticated:
         return redirect('profile_page')
