@@ -22,7 +22,7 @@ def registerUser(request):
             messages.success(request, 'User account was created')
 
             login(request, user)
-            return redirect('reviews')
+            return redirect('home')
 
         else:
             messages.success(request, 'An error occurred during registration')
@@ -51,7 +51,7 @@ def userLogin(request):
 
         if user is not None:
             login(request, user)
-            return redirect('reviews')
+            return redirect('home')
         else:
             messages.error(request, 'Username OR password is incorrect')
 
