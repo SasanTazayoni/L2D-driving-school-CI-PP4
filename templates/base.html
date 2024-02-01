@@ -55,10 +55,12 @@
                         <a class="nav-link {% if request.path == reviews_url %}active{% endif %}" aria-current="page"
                             href="{% url 'reviews' %}">Reviews</a>
                     </li>
+                    {% if request.user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == appointments_url %}active{% endif %}" aria-current="page"
                             href="{% url 'appointments' %}">Appointments</a>
                     </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == contact_url %}active{% endif %}" aria-current="page"
                             href="{% url 'contact' %}">Contact</a>
