@@ -21,7 +21,6 @@ from core.views import home, appointments, contact
 
 urlpatterns = [
     path("", home, name="home"),
-    path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("appointments/", appointments, name="appointments"),
     path("contact/", contact, name="contact"),
