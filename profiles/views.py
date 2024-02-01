@@ -62,7 +62,7 @@ def userLogin(request):
 def userLogout(request):
     logout(request)
     messages.error(request, 'You have logged out')
-    return redirect('login')
+    return redirect('home')
 
 
 @login_required(login_url="login")
