@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% load i18n %}
+
+{% block head_title %}{% trans "L2D - Reviews" %}{% endblock head_title %}
 
 {% block content %}
 
@@ -15,30 +18,28 @@
                         <div class="card-body">
                             <div class="image-container">
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ review.author }}</p>
+                                    <p class="author-date">
+                                        Review by {{ review.author }} on {{ review.created_on }}
+                                    </p>
                                 </div>
                             </div>
-                            <p>{{ review.rating }}</p>
+                            <p>Rating: {{ review.rating }}</p>
                             <br>
-                            <a href="{% url 'review_detail' review.id %}">
-                                <p>{{ review.content | safe }}</p>
-                            </a>
+                            <a href="{% url 'review_detail' review.id %}" class="btn btn-primary">View</a>
 
-                            <hr />
-                            <p class="card-text text-muted h6">{{ review.created_on }}
-                            </p>
+                            <!-- Additional information if needed -->
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:2 %}
+                {% if forloop.counter|divisibleby:3 %}
             </div>
+        </div>
+        <div class="col-12 mt-3 left">
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
-    </div>
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
