@@ -22,7 +22,7 @@ def registerUser(request):
             messages.success(request, 'User account was created')
 
             login(request, user)
-            return redirect('home')
+            return redirect('edit_profile')
 
         else:
             messages.success(request, 'An error occurred during registration')
