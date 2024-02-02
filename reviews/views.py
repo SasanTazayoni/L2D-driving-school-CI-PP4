@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from .models import Review
 from .forms import ReviewForm
 from .forms import CommentForm
+from profiles.models import UserProfile
+from django.contrib.auth.decorators import login_required
 
 
 class ReviewList(generic.ListView):
@@ -35,7 +37,8 @@ def review_detail(request, review_id):
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            comment.author = request.user
+            user_profile = UserProfile.objects.get(user=request.user)
+            comment.author = user_profile
             comment.review = review
             comment.save()
             messages.add_message(
@@ -57,7 +60,26 @@ def review_detail(request, review_id):
     )
 
 
+@login_required(login_url="login")
 def createReview(request):
+    user_profile = UserProfile.objects.get(user=request.user)
+    existing_review = Review.objects.filter(author=user_profile).first()
+
+    if existing_review:
+        messages.warning(request, 'You have already made a review.')
+        return redirect('reviews')
+
     form = ReviewForm()
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.author = user_profile
+            form.save()
+            return redirect('reviews')
+
     context = {'form': form}
     return render(request, "reviews/review_form.html", context)
+
+
