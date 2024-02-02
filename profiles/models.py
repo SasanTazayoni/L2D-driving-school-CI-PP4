@@ -10,7 +10,7 @@ class UserProfile(models.Model):
     username = models.CharField(max_length=200, blank=False, null=False)
     email = models.EmailField(blank=False, null=False)
     profile_picture = CloudinaryField('image', null=True, blank=True)
-    about_me = models.TextField(max_length=200, blank=False, null=True)
+    about_me = models.TextField(max_length=200, blank=True, null=True)
     has_reviewed = models.BooleanField(default=False)
 
     def __str__(self):
