@@ -2,13 +2,14 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from .models import Review
+from .forms import ReviewForm
 from .forms import CommentForm
 
-# Create your views here.
+
 class ReviewList(generic.ListView):
     queryset = Review.objects.filter(approved=True).order_by("-created_on")
     template_name = "reviews/reviews.html"
-    paginate_by = 10
+    paginate_by = 9
 
 
 def review_detail(request, review_id):
@@ -54,3 +55,9 @@ def review_detail(request, review_id):
             "comment_form": comment_form,
         },
     )
+
+
+def createReview(request):
+    form = ReviewForm()
+    context = {'form': form}
+    return render(request, "reviews/review_form.html", context)
