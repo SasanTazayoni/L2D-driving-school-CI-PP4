@@ -94,11 +94,17 @@ html {
     background: var(--color-secondary);
     border-radius: var(--border-radius);
     box-shadow: 0 0 5px #acacac;
+    color: var(--block-light);
     overflow: hidden;
     padding: 10px 20px;
     position: relative;
     text-align: center;
     width: 160px;
+    height: 45px;
+}
+
+.button:hover {
+    color: var(--block-light);
 }
 
 .button::before {
