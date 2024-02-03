@@ -26,8 +26,8 @@ html {
 /* Navbar */
 
 .navbar {
-    border-bottom: 1px solid var(--block-grey);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgb(197, 197, 197);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -69,18 +69,69 @@ html {
     opacity: 0.6;
 }
 
+#navbarText .navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
 #navbarText .navbar-nav .nav-item .active {
-    border: 2px solid var(--color-primary);
+    border: 2px solid rgba(125, 174, 248, 0.5);
     border-radius: 5px;
-    padding: 5px 10px;
-    opacity: 0.5;
+    color: var(--color-primary);
 }
 
 #navbarText .navbar-nav .nav-link {
     color: var(--color-secondary);
     transition: 0.3s;
+    padding: 5px 10px;
 }
 
 #navbarText .navbar-nav .nav-link:hover {
     color: var(--color-primary);
+}
+
+.button {
+    background: var(--color-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 5px #acacac;
+    overflow: hidden;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    width: 160px;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(var(--block-light), transparent, transparent);
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    transition: 0.3s, top 0s, left 0s;
+}
+
+.button:hover::before {
+    opacity: 0.7;
+}
+
+#navbarText #logoutLink {
+    color: var(--block-light);
+}
+
+#navbarText #loginLink {
+    color: var(--block-light);
+}
+
+@media screen and (max-width: 992px) {
+    #navbarText .navbar-nav {
+        align-items: flex-start;
+    }
+
+    #navbarText .navbar-nav .nav-item .active {
+        border: none;
+    }
 }
