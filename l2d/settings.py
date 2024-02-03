@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-sasantazayo-l2ddrivings-6rvcvzias25.ws-eu107.gitpod.io',
+    '8000-sasantazayo-l2ddrivings-6rvcvzias25.ws-eu108.gitpod.io',
     '.herokuapp.com'
 ]
 
@@ -120,7 +120,7 @@ DATABASES = {
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeanyapp.com",
     "https://*.herokuapp.com",
-    "https://8000-sasantazayo-l2ddrivings-6rvcvzias25.ws-eu107.gitpod.io",
+    "https://8000-sasantazayo-l2ddrivings-6rvcvzias25.ws-eu108.gitpod.io",
 ]
 
 # Password validation
