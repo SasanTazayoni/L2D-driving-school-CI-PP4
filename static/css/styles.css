@@ -141,3 +141,13 @@ html {
         border: none;
     }
 }
+
+/* Main */
+
+.login-status-container {
+    background-color: rgba(125, 174, 248, 0.3);
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+    padding: 10px 0;
+    width: max-content;
+}

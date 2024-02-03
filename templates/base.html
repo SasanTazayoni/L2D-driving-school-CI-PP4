@@ -91,17 +91,15 @@
     </div>
 
     <main class="flex-shrink-0 main-bg">
-        <div class="container-fluid">
+        <div class="container-fluid login-status-container">
             <div class="text-center">            
                 {% if user.is_authenticated %}
-                    <!-- Move the logout button to here -->
-                    <p class="m-3">You are logged in as {{ user }}</p>
+                    <p class="p-3 m-0">You are logged in as {{ user }}</p>
                     <button id="logoutLink" class="btn button" aria-current="page" onclick="$('#logoutConfirmationModal').modal('show');">
                         Log out
                     </button>
                 {% else %}
-                    <!-- Move the login button to here -->
-                    <p class="m-3">You are not logged in</p>
+                    <p class="p-3 m-0">You are not logged in</p>
                     <a id="loginLink" class="btn button" aria-current="page" href="{% url 'login' %}">
                         Log in/Sign up
                     </a>
