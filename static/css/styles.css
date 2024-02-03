@@ -90,42 +90,6 @@ html {
     color: var(--color-primary);
 }
 
-.button {
-    background: var(--color-secondary);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 5px #acacac;
-    overflow: hidden;
-    padding: 10px 20px;
-    position: relative;
-    text-align: center;
-    width: 160px;
-}
-
-.button::before {
-    content: '';
-    position: absolute;
-    top: var(--y);
-    left: var(--x);
-    transform: translate(-50%, -50%);
-    background: radial-gradient(var(--block-light), transparent, transparent);
-    width: 200px;
-    height: 200px;
-    opacity: 0;
-    transition: 0.3s, top 0s, left 0s;
-}
-
-.button:hover::before {
-    opacity: 0.7;
-}
-
-#navbarText #logoutLink {
-    color: var(--block-light);
-}
-
-#navbarText #loginLink {
-    color: var(--block-light);
-}
-
 @media screen and (max-width: 992px) {
     #navbarText .navbar-nav {
         align-items: flex-start;
