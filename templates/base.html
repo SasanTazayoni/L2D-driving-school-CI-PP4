@@ -15,11 +15,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
-
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -41,50 +36,53 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'reviews' %}"><span class="brand">some logo</a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Brand Logo" class="brand logo">
+                <div class="brand-text">
+                    <p>L2D <br> Driving <br> School</p>
+                </div>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-2" id="navbarText">
+                    <li class="nav-item mx-2">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link {% if request.path == reviews_url %}active{% endif %}" aria-current="page"
                             href="{% url 'reviews' %}">Reviews</a>
                     </li>
                     {% if request.user.is_authenticated %}
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link {% if request.path == appointments_url %}active{% endif %}" aria-current="page"
                             href="{% url 'appointments' %}">Appointments</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == profile_url %}active{% endif %}" aria-current="page" href="{% url 'profile_page' %}">Profile</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link {% if request.path == profile_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'profile_page' %}">Profile</a>
                     </li>
                     {% endif %}
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link {% if request.path == contact_url %}active{% endif %}" aria-current="page"
                             href="{% url 'contact' %}">Contact</a>
                     </li>
                     {% if request.user.is_authenticated %}
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <button id="logoutLink" class="nav-link {% if request.path == login_url %}active{% endif %} btn" aria-current="page" href="{% url 'logout' %}">
                             Log out
                         </button>
                     </li>
                     {% else %}
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link {% if request.path == login_url %}active{% endif %} btn" aria-current="page" href="{% url 'login' %}">
                             Log in/Sign up
                         </a>
                     </li>
                     {% endif %}
                 </ul>
-                <span class="navbar-text text-muted">
-                    some generic information
-                </span>
             </div>
         </div>
     </nav>
