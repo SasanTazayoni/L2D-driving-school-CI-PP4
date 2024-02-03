@@ -137,6 +137,20 @@ html {
         align-items: flex-start;
     }
 
+    #navbarText .navbar-nav .nav-item {
+        border-bottom: 1px solid rgba(125, 174, 248, 0.3);
+        width: 100%;
+    }
+
+    #navbarText .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    #navbarText .navbar-nav .nav-link {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+
     #navbarText .navbar-nav .nav-item .active {
         border: none;
     }
