@@ -28,6 +28,7 @@
 
     <!-- Javascript link -->
     {% block head_scripts %}{% endblock head_scripts %}
+    <script src="{% static 'js/button.js' %}" defer></script>
     <script src="{% static 'js/modal.js' %}" defer></script>
 </head>
 
@@ -71,13 +72,13 @@
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item mx-2">
-                        <button id="logoutLink" class="nav-link {% if request.path == login_url %}active{% endif %} btn" aria-current="page" href="{% url 'logout' %}">
+                        <button id="logoutLink" class="nav-link {% if request.path == login_url %}active{% endif %} btn button" aria-current="page" href="{% url 'logout' %}">
                             Log out
                         </button>
                     </li>
                     {% else %}
                     <li class="nav-item mx-2">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %} btn" aria-current="page" href="{% url 'login' %}">
+                        <a id="loginLink" class="nav-link {% if request.path == login_url %}active{% endif %} btn button" aria-current="page" href="{% url 'login' %}">
                             Log in/Sign up
                         </a>
                     </li>
