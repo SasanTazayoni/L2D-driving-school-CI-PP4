@@ -195,3 +195,81 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px 0;
     width: max-content;
 }
+
+/* Footer */
+
+footer {
+    background-color: var(--color-secondary);
+}
+
+footer i {
+    color: var(--block-light);
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.github-link i:hover {
+    animation: spin 0.3s forwards;
+}
+
+.github-link i:not(:hover) {
+    animation: spin-backward 0.3s forwards;
+}
+
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg);
+        color: var(--block-light)
+    }
+    100% { 
+        transform: rotate(360deg);
+        color: var(--color-primary);
+    }
+}
+
+@keyframes spin-backward {
+    0% {
+        transform: rotate(360deg);
+        color: var(--color-primary);
+    }
+    100% {
+        transform: rotate(0deg);
+        color: var(--block-light);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-text {
+        font-size: 14px;
+    }
+
+    footer i {
+        padding-left: 5px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .footer-text {
+        font-size: 12px;
+    }
+
+    footer i {
+        padding-left: 5px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-text {
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+        box-sizing: content-box;
+    }
+}
