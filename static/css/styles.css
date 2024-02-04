@@ -21,6 +21,14 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
 /* Base template */
 
 /* Navbar */
@@ -37,8 +45,6 @@ html {
 }
 
 .logo:hover {
-    filter: 
-        drop-shadow(0 0 2px var(--color-primary));
     opacity: 0.6;
 }
 
@@ -153,6 +159,30 @@ html {
 
     #navbarText .navbar-nav .nav-item .active {
         border: none;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    body {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 14px;
+        height: 45px;
+        width: 140px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+    body {
+        font-size: 12px;
+    }
+
+    .button {
+        font-size: 12px;
+        height: 40px;
+        width: 130px;
     }
 }
 
