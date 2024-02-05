@@ -9,7 +9,7 @@ from reviews.models import Review
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ('email', 'profile_picture', 'about_me')
+        fields = ('profile_picture', 'about_me')
 
 
 class ReviewForm(ModelForm):
