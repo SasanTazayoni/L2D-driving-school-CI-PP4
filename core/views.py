@@ -23,3 +23,7 @@ def contact(request):
     Renders the contact page
     """
     return render(request, 'core/contact.html')
+
+
+def userProfiles(request):
+    return render(request, 'core/user_profiles.html')
