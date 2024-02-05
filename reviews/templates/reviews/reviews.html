@@ -24,7 +24,7 @@
                                         <img src="{% static 'images/defaultpicture.png' %}" alt="{{ review.author.username }}" class="profile-picture">
                                     {% endif %}
                                     <p class="author-date">
-                                        Review by {{ review.author.username }} on {{ review.created_on }}
+                                        Review by {{ review.author }} on {{ review.created_on }}
                                     </p>
                                 </div>
                             </div>
