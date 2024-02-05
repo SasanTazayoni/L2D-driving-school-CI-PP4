@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 
 class ReviewList(generic.ListView):
-    queryset = Review.objects.filter(approved=True).order_by("-created_on")
+    queryset = Review.objects.filter(approved=True).order_by("-created_on").select_related('author')
     template_name = "reviews/reviews.html"
     paginate_by = 9
 
@@ -81,5 +81,4 @@ def createReview(request):
 
     context = {'form': form}
     return render(request, "reviews/review_form.html", context)
-
-
+    

@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 
 {% block head_title %}{% trans "L2D - Reviews" %}{% endblock head_title %}
 
 {% block content %}
 
-<!-- index.html content starts here -->
+
 <div class="container-fluid">
     <div class="row">
-
-        <!-- Blog Entries Column -->
+        <!-- Review Entries -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for review in review_list %}
@@ -17,9 +17,14 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                <div class="image-flash">
+                                <div class="image-flash d-flex align-items-center">
+                                    {% if review.author.profile_picture %}
+                                        <img src="{{ review.author.profile_picture.url }}" alt="{{ review.author.username }}" class="profile-picture">
+                                    {% else %}
+                                        <img src="{% static 'images/defaultpicture.png' %}" alt="{{ review.author.username }}" class="profile-picture">
+                                    {% endif %}
                                     <p class="author-date">
-                                        Review by {{ review.author }} on {{ review.created_on }}
+                                        Review by {{ review.author.username }} on {{ review.created_on }}
                                     </p>
                                 </div>
                             </div>
@@ -57,5 +62,4 @@
     {% endif %}
 </div>
 
-<!-- index.html content ends here -->
 {% endblock %}
