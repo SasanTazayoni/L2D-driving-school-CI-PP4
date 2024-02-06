@@ -75,7 +75,7 @@ def profile_page(request):
 
     return render(
         request,
-        'profiles/user_profile.html',
+        'profiles/profile.html',
         {'profile': profile}
     )
 

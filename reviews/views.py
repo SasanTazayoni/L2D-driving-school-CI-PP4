@@ -37,8 +37,8 @@ def review_detail(request, review_id):
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            user_profile = UserProfile.objects.get(user=request.user)
-            comment.author = user_profile
+            profile = UserProfile.objects.get(user=request.user)
+            comment.author = profile
             comment.review = review
             comment.save()
             messages.add_message(
@@ -62,8 +62,8 @@ def review_detail(request, review_id):
 
 @login_required(login_url="login")
 def createReview(request):
-    user_profile = UserProfile.objects.get(user=request.user)
-    existing_review = Review.objects.filter(author=user_profile).first()
+    profile = UserProfile.objects.get(user=request.user)
+    existing_review = Review.objects.filter(author=profile).first()
 
     if existing_review:
         messages.warning(request, 'You have already made a review.')
@@ -75,10 +75,9 @@ def createReview(request):
         form = ReviewForm(request.POST)
         if form.is_valid():
             review = form.save(commit=False)
-            review.author = user_profile
+            review.author = profile
             form.save()
             return redirect('reviews')
 
     context = {'form': form}
     return render(request, "reviews/review_form.html", context)
-    

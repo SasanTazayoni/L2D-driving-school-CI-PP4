@@ -32,4 +32,5 @@ def userProfiles(request):
     Renders the user profiles page
     """
     user_profiles = UserProfile.objects.all()
-    return render(request, 'core/user_profiles.html', {'user_profiles': user_profiles})
+    context = {'user_profiles': user_profiles}
+    return render(request, 'core/user_profiles.html', context)
