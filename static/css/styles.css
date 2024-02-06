@@ -96,6 +96,14 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
 }
 
+.login-status-container {
+    background-color: rgba(125, 174, 248, 0.2);
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+    padding: 10px 0;
+    width: max-content;
+}
+
 .button {
     background: var(--color-secondary);
     border-radius: var(--border-radius);
@@ -130,11 +138,11 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.7;
 }
 
-#navbarText #logoutLink {
+#logoutLink {
     color: var(--block-light);
 }
 
-#navbarText #loginLink {
+#loginLink {
     color: var(--block-light);
 }
 
@@ -222,16 +230,6 @@ h1, h2, h3, h4, h5, h6 {
         height: 40px;
         width: 130px;
     }
-}
-
-/* Main */
-
-.login-status-container {
-    background-color: rgba(125, 174, 248, 0.2);
-    border-radius: var(--border-radius);
-    margin-top: 10px;
-    padding: 10px 0;
-    width: max-content;
 }
 
 /* Footer */
@@ -325,4 +323,17 @@ footer i {
 .author-date {
     margin: 0;
     padding-left: 1rem;
+}
+
+/* User profiles template */
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
 }
