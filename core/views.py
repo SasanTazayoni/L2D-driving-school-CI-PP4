@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from profiles.models import UserProfile
 
 
 def home(request):
@@ -25,5 +26,10 @@ def contact(request):
     return render(request, 'core/contact.html')
 
 
+@login_required(login_url='login')
 def userProfiles(request):
-    return render(request, 'core/user_profiles.html')
+    """
+    Renders the user profiles page
+    """
+    user_profiles = UserProfile.objects.all()
+    return render(request, 'core/user_profiles.html', {'user_profiles': user_profiles})

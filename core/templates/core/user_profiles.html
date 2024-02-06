@@ -6,6 +6,47 @@
 
 {% block content %}
 
-<h1>User Profiles</h1>
+<section class="hero-section text-center">
+    <div class="container">
+        <div>
+            <h2>Search users</h2>
+        </div>
+    </div>
+
+    <div>
+        <form action="#" method="GET">
+            <div class="form-field">
+
+            </div>
+                <label for="formInput#search">Search users</label>
+                <input type="text" id="formInput#search" placeholder="Search by username">
+                <input type="submit" class="btn" value="Search">
+        </form>
+    </div>
+</section>
+
+<h1 class="text-center">User Profiles</h1>
+
+<div class="container">
+    <div class="row">
+        {% for user_profile in user_profiles %}
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div class="image-container mb-3">
+                            {% if user_profile.profile_picture %}
+                                <img src="{{ user_profile.profile_picture.url }}" alt="{{ user_profile.user.username }}" class="profile-picture img-fluid rounded-circle">
+                            {% else %}
+                                <img src="{% static 'images/defaultpicture.png' %}" alt="{{ user_profile.user.username }}" class="profile-picture img-fluid rounded-circle">
+                            {% endif %}
+                        </div>
+                        <h5 class="card-title text-center">{{ user_profile.user.username }}</h5>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock content %}
