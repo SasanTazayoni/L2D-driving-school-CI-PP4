@@ -96,6 +96,14 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
 }
 
+.login-status-container {
+    background-color: rgba(125, 174, 248, 0.2);
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+    padding: 10px;
+    width: max-content;
+}
+
 .button {
     background: var(--color-secondary);
     border-radius: var(--border-radius);
@@ -217,16 +225,6 @@ h1, h2, h3, h4, h5, h6 {
         height: 40px;
         width: 130px;
     }
-}
-
-/* Main */
-
-.login-status-container {
-    background-color: rgba(125, 174, 248, 0.2);
-    border-radius: var(--border-radius);
-    margin-top: 10px;
-    padding: 10px 0;
-    width: max-content;
 }
 
 /* Footer */

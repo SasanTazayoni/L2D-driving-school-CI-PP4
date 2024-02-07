@@ -92,29 +92,29 @@
     <!-- displaying Django messages -->
     <div class="container">
         <div class="row">
-        <div class="col-md-8 offset-md-2">
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible
-            fade show" id="msg" role="alert">
-            {{ message | safe }}
-            <button type="button" class="btn-close"
-                data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible
+                fade show" id="msg" role="alert">
+                {{ message | safe }}
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
         </div>
     </div>
 
-    <main class="flex-shrink-0 main-bg">
-        <div class="container-fluid login-status-container">
-            <div class="text-center">            
+    <main class="flex-shrink-0">
+        <div class="d-flex justify-content-md-end justify-content-center px-3">
+            <div class="text-center login-status-container">            
                 {% if user.is_authenticated %}
-                    <p class="p-3 m-0">You are logged in as {{ user }}</p>
+                    <p class="px-2 py-1">You are logged in as {{ user }}</p>
                     <button id="logoutLink" class="btn button" aria-current="page" onclick="$('#logoutConfirmationModal').modal('show');">
                         Log out
                     </button>
                 {% else %}
-                    <p class="p-3 m-0">You are not logged in</p>
+                    <p class="px-2 py-1">You are not logged in</p>
                     <a id="loginLink" class="btn button" aria-current="page" href="{% url 'login' %}">
                         Log in/Sign up
                     </a>
