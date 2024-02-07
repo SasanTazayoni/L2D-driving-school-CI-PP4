@@ -28,5 +28,5 @@ urlpatterns = [
     path("profile/", include("profiles.urls"), name="profile-urls"),
     path("reviews/", include("reviews.urls"), name="reviews-urls"),
     path("summernote/", include("django_summernote.urls")),
-    path('user-profiles/', views.userProfiles, name='user_profiles'),
+    path("user-profiles/", include("core.urls"), name="core-urls"),
 ]
