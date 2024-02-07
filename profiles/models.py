@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django.db.models.signals import post_save, post_delete
-from django.dispatch import receiver
 
 
 class UserProfile(models.Model):
@@ -17,25 +15,3 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.username
-
-
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        UserProfile.objects.create(
-            user=instance,
-            username=instance.username,
-            email=instance.email,
-            first_name=instance.first_name,
-        )
-
-
-@receiver(post_delete, sender=UserProfile)
-def delete_user(sender, instance, **kwargs):
-    user = instance.user
-    user.delete()
-
-
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
