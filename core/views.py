@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from profiles.models import UserProfile
 
@@ -26,11 +26,16 @@ def contact(request):
     return render(request, 'core/contact.html')
 
 
-@login_required(login_url='login')
-def userProfiles(request):
+def user_profiles(request):
     """
     Renders the user profiles page
     """
     user_profiles = UserProfile.objects.all()
     context = {'user_profiles': user_profiles}
     return render(request, 'core/user_profiles.html', context)
+
+
+def profile_detail(request, user_id):
+    user_profile = get_object_or_404(UserProfile, user_id=user_id)
+    context = {'user_profile': user_profile}
+    return render(request, 'core/profile_detail.html', context)

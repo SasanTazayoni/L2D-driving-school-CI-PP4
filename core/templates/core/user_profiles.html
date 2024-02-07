@@ -41,7 +41,7 @@
                             {% endif %}
                         </div>
                         <h5 class="card-title text-center">{{ user_profile.user.username }}</h5>
-                        <a href="#" class="btn btn-primary">View</a>
+                        <a href="{% url 'profile_detail' user_profile.user.id %}" class="btn btn-primary">View</a>
                     </div>
                 </div>
             </div>
