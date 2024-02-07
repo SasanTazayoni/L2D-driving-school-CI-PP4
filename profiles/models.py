@@ -1,26 +1,39 @@
-from django.db.models.signals import post_save
-from django.dispatch import receiver
+from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django.db import models
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', null=False, blank=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', blank=False, null=False)
+    first_name = models.CharField(max_length=200, null=True, blank=True)
     username = models.CharField(max_length=200, blank=False, null=False)
     email = models.EmailField(blank=False, null=False)
     profile_picture = CloudinaryField('image', null=True, blank=True)
+    age = models.PositiveIntegerField(blank=True, null=True)
+    occupation = models.CharField(max_length=100, blank=True, null=True)
     about_me = models.TextField(max_length=200, blank=True, null=True, help_text="Write a short description about yourself or just say hello...")
-    has_reviewed = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.username
+        return self.username
 
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
-        UserProfile.objects.create(user=instance)
+        UserProfile.objects.create(
+            user=instance,
+            username=instance.username,
+            email=instance.email,
+            first_name=instance.first_name,
+        )
+
+
+@receiver(post_delete, sender=UserProfile)
+def delete_user(sender, instance, **kwargs):
+    user = instance.user
+    user.delete()
 
 
 @receiver(post_save, sender=User)
