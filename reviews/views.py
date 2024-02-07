@@ -61,7 +61,7 @@ def review_detail(request, review_id):
 
 
 @login_required(login_url="login")
-def createReview(request):
+def create_review(request):
     profile = UserProfile.objects.get(user=request.user)
     existing_review = Review.objects.filter(author=profile).first()
 

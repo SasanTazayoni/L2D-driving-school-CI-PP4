@@ -8,7 +8,7 @@ from .forms import UserProfileForm
 from .forms import CustomUserCreationForm
 
 
-def registerUser(request):
+def register_user(request):
     page = 'register'
     form = CustomUserCreationForm()
 
@@ -31,7 +31,7 @@ def registerUser(request):
     return render(request, 'profiles/login_register.html', context)
 
 
-def userLogin(request):
+def user_login(request):
     page = 'login'
 
     if request.user.is_authenticated:
@@ -59,7 +59,7 @@ def userLogin(request):
 
 
 @login_required
-def userLogout(request):
+def user_logout(request):
     logout(request)
     messages.error(request, 'You have logged out')
     return redirect('home')
