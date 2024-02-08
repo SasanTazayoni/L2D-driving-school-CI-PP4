@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
     width: max-content;
 }
 
-.button {
+.auth-button {
     background: var(--color-secondary);
     border-radius: var(--border-radius);
     box-shadow: 0 0 5px #acacac;
@@ -117,11 +117,11 @@ h1, h2, h3, h4, h5, h6 {
     height: 45px;
 }
 
-.button:hover {
+.auth-button:hover {
     color: var(--block-light);
 }
 
-.button::before {
+.auth-button::before {
     content: '';
     position: absolute;
     top: var(--y);
@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: 0.3s, top 0s, left 0s;
 }
 
-.button:hover::before {
+.auth-button:hover::before {
     opacity: 0.7;
 }
 
@@ -199,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 14px;
     }
 
-    .button {
+    .auth-button {
         font-size: 14px;
         height: 45px;
         width: 140px;
@@ -224,8 +224,10 @@ h1, h2, h3, h4, h5, h6 {
     body {
         font-size: 12px;
     }
+}
 
-    .button {
+@media screen and (max-width: 324px) {
+    .auth-button {
         font-size: 12px;
         height: 40px;
         width: 130px;

@@ -1,6 +1,6 @@
-const btns = document.querySelectorAll('.button')
+const authBtns = document.querySelectorAll('.auth-button')
 
-btns.forEach(btn => {
+authBtns.forEach(btn => {
     btn.onmousemove = function(e) {
         let x = e.pageX - btn.offsetLeft
         let y = e.pageY - btn.offsetTop
