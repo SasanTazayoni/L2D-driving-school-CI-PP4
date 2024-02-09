@@ -4,26 +4,53 @@
 
 {% block head_title %}{% trans "L2D - Authentication" %}{% endblock head_title %}
 
+{% block head_scripts %}
+    <script src="{% static 'js/viewportManipulation.js' %}" defer></script>
+{% endblock head_scripts %}
+
 {% block content %}
 
-{% if page == 'register' %}
-<h1>Register User</h1>
-<form method="POST" action="{% url 'register' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Register User">
-</form>
-<p>Already have an account? <a href="{% url 'login' %}">Log in here</a></p>
+<section class="block block--light d-flex align-items-center" data-block>
+    <div class="container-fluid d-flex justify-content-center">
+        {% if page == 'register' %}
+        <div class="card form__container">
+            <header class="page__header">
+                <h1>Register New User</h1>
+            </header>
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Register User">
+            </form>
+            <p>Already have an account? Log in <a href="{% url 'login' %}">here</a></p>
+        </div>
 
-{% else %}
-<form action="{% url 'login' %}" method="POST">
-    {% csrf_token %}
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Enter password">
-    <input type="submit" value="Login">
-
-    <p>Don't have an account? <a href="{% url 'register' %}">Sign up here</a></p>
-</form>
+        {% else %}
+        <div class="card form__container">
+            <header class="page__header">
+                <h1>Account Login</h1>
+                <img src="{% static 'images/car.png' %}" class="form__image" alt="An image of a car">
+            </header>
+            <form action="{% url 'login' %}" method="POST" class="d-flex justify-content-center align-items-center flex-column form">
+                {% csrf_token %}
+                <div class="form__field">
+                    <label for="username">Username:</label>
+                    <input id="username" type="text" name="username" placeholder="Enter username">
+                </div>
+                <div class="form__field">
+                    <label for="loginpw">Password:</label>
+                    <input id="loginpw" type="password" name="password" placeholder="Enter password">
+                </div>
+                <a href="#" class="pw-reset">Forgot your password?</a>
+                <div class="btn-container">
+                    <button class="blue-button" type="submit">Log in</button>
+                    <button class="red-button" type="reset">Reset</button>
+                </div>
+                <p class="signup-link">Don't have an account? Sign up <a href="{% url 'register' %}">here</a></p>
+            </form>
+        </div>
+    </div>
+</section>
 {% endif %}
 
 {% endblock content %}
