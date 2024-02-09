@@ -39,7 +39,7 @@
 
     <!-- Javascript link -->
     {% block head_scripts %}{% endblock head_scripts %}
-    <script src="{% static 'js/button.js' %}" defer></script>
+    <script src="{% static 'js/buttons.js' %}" defer></script>
     <script src="{% static 'js/modal.js' %}" defer></script>
 </head>
 
@@ -87,7 +87,7 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item mx-2">
-                        <a id="logoutLink" class="btn nav-link auth-link" aria-current="page" onclick="$('#logoutConfirmationModal').modal('show');">
+                        <a id="logoutLink" class="btn nav-link auth-link" aria-current="page">
                             Log out
                         </a>
                     </li>
@@ -101,7 +101,7 @@
                 </ul>
             <div class="px-1">
                 {% if user.is_authenticated %}
-                    <button id="logoutBtn" class="btn auth-button" aria-current="page" onclick="$('#logoutConfirmationModal').modal('show');">
+                    <button id="logoutBtn" class="btn auth-button" aria-current="page">
                         Log out
                     </button>
                 {% else %}
