@@ -460,7 +460,8 @@ textarea {
 /* Footer */
 
 footer {
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
+    color: #000;
 }
 
 footer i {
@@ -480,22 +481,22 @@ footer i {
 @keyframes spin {
     0% { 
         transform: rotateY(0deg);
-        color: var(--block-light)
+        color: #000;
     }
     100% { 
         transform: rotateY(360deg);
-        color: var(--color-primary);
+        color: var(--block-light);
     }
 }
 
 @keyframes spin-backward {
     0% {
         transform: rotateY(360deg);
-        color: var(--color-primary);
+        color: var(--block-light);
     }
     100% {
         transform: rotateY(0deg);
-        color: var(--block-light);
+        color: #000;
     }
 }
 
