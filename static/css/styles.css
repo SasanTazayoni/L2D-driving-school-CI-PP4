@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&display=swap');
 
 :root {
-    --color-primary: #bcd3f5;
-    --color-secondary: #7DAEF8;
-    --color-tertiary: #1146F5;
+    --color-primary: #7DAEF8;
+    --color-secondary: #1146F5;
+    --color-accent: #ff5656;
     --block-light: #fff;
     --block-grey: #e6e6e9;
     --border-radius: 20px;
@@ -34,12 +34,12 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     text-decoration: none;
-    color: var(--color-secondary);
+    color: var(--color-primary);
     transition: 0.3s;
 }
 
 a:hover {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .page__header {
@@ -72,6 +72,12 @@ a:hover {
 
 .block--grey {
     background: var(--block-grey);
+}
+
+.block--background {
+    background-image: url('/static/images/road.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -121,7 +127,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
-    border: 2px solid var(--color-secondary);
+    border: 2px solid var(--color-primary);
     border-radius: 5px;
     padding: 5px 8px;
     transition: all 0.3s;
@@ -139,7 +145,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 textarea:focus {
-    border-color: var(--color-tertiary);
+    border-color: var(--color-secondary);
     outline: 0;
 }
 
@@ -150,12 +156,13 @@ textarea {
 .form__container {
     padding: 20px;
     margin-top: 20px;
-    width: 600px;
+    width: 400px;
+    opacity: 0.9;
 }
 
 .form {
     margin-top: 10px;
-    padding: 0 50px;
+    padding: 0;
 }
 
 .form__image {
@@ -204,7 +211,7 @@ textarea {
 /* Buttons */
 
 .auth-button {
-    background: var(--color-tertiary);
+    background: var(--color-secondary);
     border-radius: var(--border-radius);
     box-shadow: 0 0 5px #acacac;
     color: var(--block-light);
@@ -247,17 +254,55 @@ textarea {
 }
 
 .blue-button {
+    background-color: var(--color-primary);
     border-radius: 10px;
     margin: 0 7px;
     padding: 10px 20px;
     width: 120px;
+    box-shadow: 0 0 10px #acacac;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.blue-button:hover {
+    background-color: var(--color-secondary);
+    color: var(--block-light);
+}
+
+.blue-button > span {
+    position: absolute;
+    background: #000;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: ripple 0.6s linear infinite;
+}
+
+@keyframes ripple {
+    0% {
+        height: 0;
+        width: 0;
+        opacity: 0.7;
+    }
+
+    100% {
+        height: 400px;
+        width: 400px;
+        opacity: 0;
+    }
 }
 
 .red-button {
+    background-color: var(--color-accent);
     border-radius: 10px;
     margin: 0 7px;
     padding: 10px 20px;
     width: 120px;
+    box-shadow: 0 0 6px #acacac;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
 }
 
 @media screen and (max-width: 992px) {
@@ -300,7 +345,7 @@ textarea {
 .brand-text p {
     margin: 0;
     font-size: 20px;
-    color: var(--color-secondary);
+    color: var(--color-primary);
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-weight: bold;
     line-height: 1.3;
@@ -319,21 +364,21 @@ textarea {
 #navbarText .navbar-nav .nav-item .active {
     border: 2px solid rgba(125, 174, 248, 0.5);
     border-radius: 5px;
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 #navbarText .navbar-nav .nav-link {
-    color: var(--color-tertiary);
+    color: var(--color-secondary);
     transition: 0.3s;
     padding: 5px;
 }
 
 #navbarText .navbar-nav .nav-link:hover {
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 #navbarText .nav-item .auth-link {
-    color: var(--color-tertiary);
+    color: var(--color-secondary);
     text-align: left;
     display: none;
 }
@@ -415,7 +460,7 @@ textarea {
 /* Footer */
 
 footer {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-secondary);
 }
 
 footer i {
@@ -439,14 +484,14 @@ footer i {
     }
     100% { 
         transform: rotateY(360deg);
-        color: var(--color-secondary);
+        color: var(--color-primary);
     }
 }
 
 @keyframes spin-backward {
     0% {
         transform: rotateY(360deg);
-        color: var(--color-secondary);
+        color: var(--color-primary);
     }
     100% {
         transform: rotateY(0deg);
