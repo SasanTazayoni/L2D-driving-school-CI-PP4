@@ -85,7 +85,30 @@
                         <a class="nav-link {% if request.path == contact_url %}active{% endif %}" aria-current="page"
                             href="{% url 'contact' %}">Contact</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item mx-2">
+                        <a id="logoutLink" class="btn nav-link auth-link" aria-current="page" onclick="$('#logoutConfirmationModal').modal('show');">
+                            Log out
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item mx-2">
+                        <a class="btn nav-link auth-link" aria-current="page" href="{% url 'login' %}">
+                            Log in/Sign up
+                        </a>
+                    </li>
+                    {% endif %}
                 </ul>
+            <div class="px-1">
+                {% if user.is_authenticated %}
+                    <button id="logoutBtn" class="btn auth-button" aria-current="page" onclick="$('#logoutConfirmationModal').modal('show');">
+                        Log out
+                    </button>
+                {% else %}
+                    <a id="loginBtn" class="btn auth-button" aria-current="page" href="{% url 'login' %}">
+                        Log in/Sign up
+                    </a>
+                {% endif %}
             </div>
         </div>
     </nav>
@@ -106,21 +129,6 @@
     </div>
 
     <main class="flex-shrink-0">
-        <div class="d-flex justify-content-center px-3">
-            <div class="text-center login-status-container">            
-                {% if user.is_authenticated %}
-                    <p class="px-2 py-1">You are logged in as {{ user }}</p>
-                    <button id="logoutLink" class="btn auth-button" aria-current="page" onclick="$('#logoutConfirmationModal').modal('show');">
-                        Log out
-                    </button>
-                {% else %}
-                    <p class="px-2 py-1">You are not logged in</p>
-                    <a id="loginLink" class="btn auth-button" aria-current="page" href="{% url 'login' %}">
-                        Log in/Sign up
-                    </a>
-                {% endif %}
-            </div>
-        </div>
 
         {% block content %}
         <!-- Content Goes here -->
