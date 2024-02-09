@@ -1,5 +1,6 @@
 const authBtns = document.querySelectorAll('.auth-button')
 const blueBtns = document.querySelectorAll('.blue-button')
+const redBtns = document.querySelectorAll('.red-button')
 
 authBtns.forEach(btn => {
     btn.onmousemove = function(e) {
@@ -13,17 +14,23 @@ authBtns.forEach(btn => {
 
 console.log(blueBtns)
 
-blueBtns.forEach(btn => {
-    btn.addEventListener('mouseover', function (e) {
-        let x = e.clientX - e.target.getBoundingClientRect().left
-        let y = e.clientY - e.target.getBoundingClientRect().top
-        let ripples = document.createElement('span')
-        ripples.style.left = x + 'px'
-        ripples.style.top = y + 'px'
-        this.appendChild(ripples)
+function createRipple(e) {
+    let x = e.clientX - e.target.getBoundingClientRect().left
+    let y = e.clientY - e.target.getBoundingClientRect().top
+    let ripples = document.createElement('span')
+    ripples.style.left = x + 'px'
+    ripples.style.top = y + 'px'
+    this.appendChild(ripples)
 
-        setTimeout(() => {
-            ripples.remove()
-        }, 600)
-    })
+    setTimeout(() => {
+        ripples.remove()
+    }, 600)
+}
+
+blueBtns.forEach(btn => {
+    btn.addEventListener('mouseover', createRipple)
+})
+
+redBtns.forEach(btn => {
+    btn.addEventListener('mouseover', createRipple)
 })

@@ -3,7 +3,7 @@
 :root {
     --color-primary: #7DAEF8;
     --color-secondary: #1146F5;
-    --color-accent: #ff5656;
+    --color-accent: #ff8f8f;
     --block-light: #fff;
     --block-grey: #e6e6e9;
     --border-radius: 20px;
@@ -259,7 +259,7 @@ textarea {
     margin: 0 7px;
     padding: 10px 20px;
     width: 120px;
-    box-shadow: 0 0 10px #acacac;
+    box-shadow: 0 0 6px #acacac;
     overflow: hidden;
     transition: all 0.3s;
     position: relative;
@@ -270,7 +270,25 @@ textarea {
     color: var(--block-light);
 }
 
-.blue-button > span {
+.red-button {
+    background-color: var(--color-accent);
+    border-radius: 10px;
+    margin: 0 7px;
+    padding: 10px 20px;
+    width: 120px;
+    box-shadow: 0 0 6px #acacac;
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.red-button:hover {
+    background-color: #c50000;
+    color: var(--block-light);
+}
+
+.blue-button > span,
+.red-button > span {
     position: absolute;
     background: #000;
     transform: translateX(-50%) translateY(-50%);
@@ -291,18 +309,6 @@ textarea {
         width: 400px;
         opacity: 0;
     }
-}
-
-.red-button {
-    background-color: var(--color-accent);
-    border-radius: 10px;
-    margin: 0 7px;
-    padding: 10px 20px;
-    width: 120px;
-    box-shadow: 0 0 6px #acacac;
-    overflow: hidden;
-    transition: all 0.3s;
-    position: relative;
 }
 
 @media screen and (max-width: 992px) {
