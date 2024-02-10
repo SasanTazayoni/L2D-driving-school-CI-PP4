@@ -4,13 +4,9 @@
 
 {% block head_title %}{% trans "L2D - Authentication" %}{% endblock head_title %}
 
-{% block head_scripts %}
-    <script src="{% static 'js/viewportManipulation.js' %}" defer></script>
-{% endblock head_scripts %}
-
 {% block content %}
 
-<section class="block block--background d-flex align-items-center" data-block>
+<section class="block--background d-flex align-items-center" data-block>
     <div class="container-fluid d-flex justify-content-center">
         {% if page == 'register' %}
         <div class="card form__container">
