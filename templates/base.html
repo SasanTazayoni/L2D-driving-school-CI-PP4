@@ -40,6 +40,7 @@
     <!-- Javascript link -->
     {% block head_scripts %}{% endblock head_scripts %}
     <script src="{% static 'js/buttons.js' %}" defer></script>
+    <script src="{% static 'js/alertPositioning.js' %}" defer></script>
     <script src="{% static 'js/modal.js' %}" defer></script>
 </head>
 
@@ -112,20 +113,13 @@
             </div>
         </div>
     </nav>
-    <!-- displaying Django messages -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible
-                fade show" id="msg" role="alert">
-                {{ message | safe }}
-                <button type="button" class="btn-close"
-                    data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endfor %}
-            </div>
+    <!-- Displaying messages -->
+    <div data-alert>
+        {% for message in messages %}
+        <div class="alert alert-dismissible fade show text-center {% if message.tags == 'error' %}alert-danger{% elif message.tags == 'success' %}alert-success{% elif message.tags == 'info' %}alert-info{% elif message.tags == 'warning' %}alert-warning{% endif %}" role="alert">
+            {{ message | safe }}
         </div>
+        {% endfor %}
     </div>
 
     <main class="flex-shrink-0">
