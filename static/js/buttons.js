@@ -12,8 +12,6 @@ authBtns.forEach(btn => {
     }
 })
 
-console.log(blueBtns)
-
 function createRipple(e) {
     let x = e.clientX - e.target.getBoundingClientRect().left
     let y = e.clientY - e.target.getBoundingClientRect().top
