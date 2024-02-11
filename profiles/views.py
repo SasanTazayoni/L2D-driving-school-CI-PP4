@@ -44,13 +44,14 @@ def user_login(request):
         try:
             user = User.objects.get(username=username)
         except:
-            messages.error(request, 'Username does not exist')
+            messages.error(request, 'Username OR password is incorrect')
             return render(request, 'profiles/login_register.html')
 
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
+            messages.success(request, f'You have logged in as {user.username}')
             return redirect('home')
         else:
             messages.error(request, 'Username OR password is incorrect')
@@ -61,7 +62,7 @@ def user_login(request):
 @login_required
 def user_logout(request):
     logout(request)
-    messages.error(request, 'You have logged out')
+    messages.success(request, 'You have logged out')
     return redirect('home')
 
 
