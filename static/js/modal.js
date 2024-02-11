@@ -24,5 +24,25 @@ function initialiseLogoutFunctionality() {
     }
 }
 
-// Call the function when the DOM content is loaded
-document.addEventListener('DOMContentLoaded', initialiseLogoutFunctionality)
+function showDeleteProfileModal() {
+    const deleteButton = document.getElementById('deleteButton')
+    const deleteProfileModal = new bootstrap.Modal(document.getElementById('deleteProfileModal'))
+    const closeModalButton = document.getElementById('closeDeleteProfileModal')
+
+    const openDeleteModal = () => {
+        deleteProfileModal.show()
+    }
+
+    deleteButton.addEventListener('click', openDeleteModal)
+
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', () => {
+            deleteProfileModal.hide()
+        })
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    initialiseLogoutFunctionality()
+    showDeleteProfileModal()
+})

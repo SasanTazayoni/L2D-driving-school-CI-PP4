@@ -103,3 +103,13 @@ def edit_profile(request):
         'profiles/edit_profile.html',
         {'form': form}
     )
+
+@login_required(login_url="login")
+def delete_profile(request):
+    if request.method == 'POST':
+        request.user.delete()
+        logout(request)
+        messages.success(request, 'Your account has been deleted')
+        return redirect('home')
+    else:
+        return redirect('profile_page')
