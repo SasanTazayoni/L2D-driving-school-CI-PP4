@@ -78,13 +78,7 @@ a:hover {
     background-image: url('/static/images/road.jpg');
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
-}
-
-@media screen and (max-width: 1024px) {
-    .block--background {
-        padding: 80px 0;
-    }
+    height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -94,7 +88,7 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 372px) {
+@media screen and (max-width: 376px) {
     .block,
     .block--grey {
         padding: 12px;
@@ -193,6 +187,14 @@ textarea {
     .form {
         margin-top: 15px;
     }
+
+    .form__image {
+        height: 70px;
+    }
+
+    .form__field {
+        padding: 0 40px;
+    }
 }
 
 @media screen and (max-width: 428px) {
@@ -200,10 +202,13 @@ textarea {
     input[type="email"] {
         width: 100%;
     }
+
+    .form__field {
+        padding: 0 30px;
+    }
 }
 
-@media screen and (max-width: 372px) {
-
+@media screen and (max-width: 376px) {
     input[type="text"],
     input[type="email"],
     textarea {
@@ -212,6 +217,16 @@ textarea {
 
     .form {
         margin-top: 10px;
+    }
+
+    .form__field {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+    .form__field {
+        padding: 0 10px;
     }
 }
 
@@ -260,8 +275,8 @@ textarea {
     margin: 10px 0;
 }
 
-.blue-button {
-    background-color: var(--color-primary);
+.blue-button,
+.red-button {
     border-radius: 10px;
     margin: 0 7px;
     padding: 10px 20px;
@@ -272,26 +287,25 @@ textarea {
     position: relative;
 }
 
-.blue-button:hover {
-    background-color: var(--color-secondary);
-    color: var(--block-light);
+.blue-button {
+    background-color: var(--color-primary);
 }
 
 .red-button {
     background-color: var(--color-accent);
-    border-radius: 10px;
-    margin: 0 7px;
-    padding: 10px 20px;
-    width: 120px;
-    box-shadow: 0 0 6px #acacac;
-    overflow: hidden;
-    transition: all 0.3s;
-    position: relative;
+}
+
+.blue-button:hover,
+.red-button:hover {
+    color: var(--block-light);
+}
+
+.blue-button:hover {
+    background-color: var(--color-secondary);
 }
 
 .red-button:hover {
     background-color: #c50000;
-    color: var(--block-light);
 }
 
 .blue-button > span,
@@ -321,6 +335,22 @@ textarea {
 @media screen and (max-width: 992px) {
     .auth-button {
         display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blue-button,
+    .red-button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .blue-button,
+    .red-button {
+        width: 80px;
     }
 }
 
