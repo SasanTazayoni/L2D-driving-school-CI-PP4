@@ -2,13 +2,12 @@ function initialiseLogoutFunctionality() {
     const logoutLink = document.getElementById('logoutLink')
     const logoutBtn = document.getElementById('logoutBtn')
     const logoutModal = new bootstrap.Modal(document.getElementById('logoutConfirmationModal'))
+    const closeLogoutModal = document.getElementById('closeLogoutModal')
 
-    // Function to open the logout modal
     const openLogoutModal = () => {
         logoutModal.show()
     }
 
-    // Event listeners for both logout link and logout button
     if (logoutLink) {
         logoutLink.addEventListener('click', (e) => {
             e.preventDefault()
@@ -20,6 +19,12 @@ function initialiseLogoutFunctionality() {
         logoutBtn.addEventListener('click', (e) => {
             e.preventDefault()
             openLogoutModal()
+        })
+    }
+
+    if (closeLogoutModal) {
+        closeLogoutModal.addEventListener('click', () => {
+            logoutModal.hide()
         })
     }
 }
