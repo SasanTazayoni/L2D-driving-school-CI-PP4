@@ -75,7 +75,7 @@ a:hover {
 }
 
 .block--background {
-    background-image: url('/static/images/road.jpg');
+    background-image: url('../images/road.jpg');
     background-size: cover;
     background-position: center;
     min-height: 90vh;
@@ -156,11 +156,12 @@ textarea {
 }
 
 .form__container {
+    max-width: 500px;
     padding: 20px;
-    margin-top: 20px;
-    width: 400px;
+    margin-top: 60px;
     opacity: 0.9;
 }
+
 
 .form {
     margin-top: 10px;
@@ -180,11 +181,20 @@ textarea {
     margin-bottom: 10px;
 }
 
-.signup-link {
+.signup-link, .login-link {
     margin-top: 40px;
+    text-align: center;
+}
+
+.error-text {
+    color: #c50000;
 }
 
 @media screen and (max-width: 768px) {
+    .form__container {
+        max-width: 360px;
+    }
+
     .form {
         margin-top: 15px;
     }
@@ -196,24 +206,46 @@ textarea {
     .form__field {
         padding: 0 40px;
     }
+
+    .signup-link, .login-link {
+        margin-top: 30px;
+    }
 }
 
 @media screen and (max-width: 428px) {
-    input[type="text"],
-    input[type="email"] {
-        width: 100%;
+    .form__container {
+        max-width: 300px;
+    }
+
+    .form__image {
+        height: 60px;
     }
 
     .form__field {
         padding: 0 30px;
     }
+
+    .signup-link, .login-link {
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 376px) {
+    .form__container {
+        max-width: 260px;
+    }
+
     input[type="text"],
     input[type="email"],
     textarea {
         font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        margin-bottom: 10px;
     }
 
     .form {
@@ -221,13 +253,13 @@ textarea {
     }
 
     .form__field {
-        padding: 0 20px;
+        padding: 0 10px;
     }
 }
 
 @media screen and (max-width: 324px) {
-    .form__field {
-        padding: 0 10px;
+    .form__container {
+        max-width: 240px;
     }
 }
 
@@ -349,6 +381,10 @@ textarea {
 }
 
 @media screen and (max-width: 428px) {
+    .btn-container {
+        margin: 20px 0;
+    }
+
     .blue-button,
     .red-button {
         width: 80px;
