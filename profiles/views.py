@@ -9,6 +9,9 @@ from .forms import CustomUserCreationForm
 
 
 def register_user(request):
+    if request.user.is_authenticated:
+        return redirect('profile_page')
+
     page = 'register'
     form = CustomUserCreationForm()
 
@@ -25,7 +28,7 @@ def register_user(request):
             return redirect('edit_profile')
 
         else:
-            messages.success(request, 'An error occurred during registration')
+            messages.error(request, 'An error occurred during registration')
 
     context = {'page': page, 'form': form}
     return render(request, 'profiles/login_register.html', context)
