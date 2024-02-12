@@ -17,15 +17,19 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from core import views
+from core import views as core_views
+from profiles.views import user_login, register_user, user_logout
 
 
 urlpatterns = [
-    path("", views.home, name="home"),
+    path("", core_views.home, name="home"),
     path("admin/", admin.site.urls),
-    path("appointments/", views.appointments, name="appointments"),
-    path("contact/", views.contact, name="contact"),
+    path("appointments/", core_views.appointments, name="appointments"),
+    path("contact/", core_views.contact, name="contact"),
+    path("login/", user_login, name="login"),
+    path("logout/", user_logout, name="logout"),
     path("profile/", include("profiles.urls"), name="profile-urls"),
+    path("register/", register_user, name="register"),
     path("reviews/", include("reviews.urls"), name="reviews-urls"),
     path("summernote/", include("django_summernote.urls")),
     path("user-profiles/", include("core.urls"), name="core-urls"),
