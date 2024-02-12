@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django import forms
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
@@ -23,6 +24,12 @@ class CustomUserCreationForm(UserCreationForm):
         super().__init__(*args, **kwargs)
         self.fields['first_name'].required = True
         self.fields['email'].required = True
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise ValidationError("This email address is already in use.")
+        return email
 
     class Meta:
         model = User
