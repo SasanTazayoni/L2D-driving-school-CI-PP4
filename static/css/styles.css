@@ -351,6 +351,11 @@ textarea {
     animation: ripple 0.6s linear infinite;
 }
 
+.logout-btn {
+    text-align: center;
+    color: #000;
+}
+
 @keyframes ripple {
     0% {
         height: 0;
@@ -583,6 +588,34 @@ textarea {
     .alert {
         font-size: 12px;
     }
+}
+
+/* Modals */
+
+.modal-content {
+    border: solid 3px #000;
+    border-radius: var(--border-radius);
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-header {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.modal-header,
+.modal-body {
+    background-color: var(--block-grey);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-footer {
+    background-color: var(--block-grey);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 /* Footer */

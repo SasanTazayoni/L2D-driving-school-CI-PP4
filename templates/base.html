@@ -132,15 +132,15 @@
         <div class="modal fade" id="logoutConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="logoutConfirmationModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header d-flex justify-content-center">
                         <h5 class="modal-title" id="logoutConfirmationModalLabel">Confirm Logout</h5>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body d-flex justify-content-center">
                         Are you sure you want to log out?
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                        <a href="{% url 'logout' %}" class="btn btn-danger">Yes</a>
-                        <button type="button" id="closeLogoutModal" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
+                        <a href="{% url 'logout' %}" class="blue-button logout-btn">Yes</a>
+                        <button type="button" id="closeLogoutModal" class="red-button data-dismiss="modal" aria-label="Close">
                             No
                         </button>
                     </div>
