@@ -24,6 +24,7 @@ class CustomUserCreationForm(UserCreationForm):
         super().__init__(*args, **kwargs)
         self.fields['first_name'].required = True
         self.fields['email'].required = True
+        self.fields['first_name'].widget.attrs['autofocus'] = True
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
