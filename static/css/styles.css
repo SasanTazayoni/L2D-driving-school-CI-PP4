@@ -110,6 +110,7 @@ a:hover {
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px #acacac;
     background: var(--block-light);
+    padding: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -157,7 +158,6 @@ textarea {
 
 .form__container {
     max-width: 500px;
-    padding: 20px;
     margin-top: 60px;
     opacity: 0.9;
 }
@@ -593,7 +593,7 @@ textarea {
 /* Modals */
 
 .modal-content {
-    border: solid 3px #000;
+    border: solid 2px #000;
     border-radius: var(--border-radius);
 }
 
