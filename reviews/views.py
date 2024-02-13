@@ -82,3 +82,25 @@ def create_review(request):
 
     context = {'form': form}
     return render(request, "reviews/review_form.html", context)
+
+
+@login_required(login_url="login")
+def update_review(request, review_id):
+    profile = UserProfile.objects.get(user=request.user)
+    existing_review = Review.objects.filter(author=profile, id=review_id).first()
+
+    if not existing_review:
+        messages.info(request, 'You must create a review before editing.')
+        return redirect('profile_page')
+
+    form = ReviewForm(instance=existing_review)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=existing_review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your review has been updated')
+            return redirect('reviews')
+
+    context = {'form': form}
+    return render(request, "reviews/review_form.html", context)

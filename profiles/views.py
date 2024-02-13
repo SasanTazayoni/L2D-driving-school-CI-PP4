@@ -3,6 +3,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.core.exceptions import ObjectDoesNotExist
 from .models import UserProfile
 from .forms import UserProfileForm
 from .forms import CustomUserCreationForm
@@ -76,11 +77,18 @@ def profile_page(request):
     """
 
     profile = get_object_or_404(UserProfile, user=request.user)
+    try:
+        review_id = profile.review.id
+    except ObjectDoesNotExist:
+        review_id = None
 
     return render(
         request,
         'profiles/profile.html',
-        {'profile': profile}
+        {
+            'profile': profile,
+            'review_id': review_id
+        }
     )
 
 
