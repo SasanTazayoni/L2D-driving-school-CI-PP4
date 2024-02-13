@@ -110,6 +110,7 @@ a {
 
 .card--profile {
     padding: 40px;
+    background: linear-gradient(to bottom right, rgba(125, 174, 248, 0.1), white 30%, white 70%, rgba(125, 174, 248, 0.1));
 }
 
 @media screen and (max-width: 768px) {
@@ -726,7 +727,22 @@ footer i {
     padding-left: 1rem;
 }
 
-/* User profiles template */
+/* User profile */
+
+.profile-info {
+    font-size: 120%;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.profile-image {
+    width: 300px;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+  }
+
+/* User profiles template for all users */
 
 .profile-picture {
     width: 150px;
