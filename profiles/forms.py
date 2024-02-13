@@ -13,12 +13,6 @@ class UserProfileForm(forms.ModelForm):
         fields = ('profile_picture', 'about_me')
 
 
-class ReviewForm(ModelForm):
-    class Meta:
-        model = Review
-        fields = ['rating', 'content']
-
-
 class CustomUserCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
