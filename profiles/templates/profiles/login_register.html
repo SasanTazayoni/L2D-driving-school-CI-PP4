@@ -9,6 +9,7 @@
 <section class="block--background d-flex align-items-center" data-block>
     <div class="container-fluid d-flex justify-content-center">
         {% if page == 'register' %}
+        <!-- Registration form -->
         <div class="card form__container">
             <header class="page__header">
                 <h1>Register New User</h1>
@@ -21,6 +22,7 @@
                     <label for="form-input">{{ field.label }}:</label>
                     {{ field }}
 
+                    <!-- Display field errors -->
                     {% for error in field.errors %}
                     <p class="error-text">{{ error }}</p>
                     {% endfor %}
@@ -32,11 +34,12 @@
                     <button class="red-button" type="reset">Reset</button>
                 </div>
             </form>
-
+            <!-- Link to login page -->
             <p class="login-link">Already have an account? Log in <a href="{% url 'login' %}">here</a></p>
         </div>
 
         {% else %}
+        <!-- Login form -->
         <div class="card form__container">
             <header class="page__header">
                 <h1>Account Login</h1>
@@ -52,11 +55,13 @@
                     <label for="loginpw">Password:</label>
                     <input id="loginpw" type="password" name="password" placeholder="Enter password">
                 </div>
+                <!-- Forgot password link -->
                 <a href="#" class="pw-reset">Forgot your password?</a>
                 <div class="btn-container">
                     <button class="blue-button" type="submit">Log in</button>
                     <button class="red-button" type="reset">Reset</button>
                 </div>
+                <!-- Link to registration page -->
                 <p class="signup-link">Don't have an account? Sign up <a href="{% url 'register' %}">here</a></p>
             </form>
         </div>
