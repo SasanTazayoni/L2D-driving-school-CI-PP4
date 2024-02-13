@@ -108,6 +108,10 @@ a {
     padding: 20px;
 }
 
+.card--profile {
+    padding: 40px;
+}
+
 @media screen and (max-width: 768px) {
     .card {
         box-shadow: 0 0 5px #acacac;
