@@ -67,7 +67,7 @@ def create_review(request):
 
     if existing_review:
         messages.info(request, 'You have already made a review')
-        return redirect('reviews')
+        return redirect('profile_page')
 
     form = ReviewForm()
 
@@ -78,7 +78,7 @@ def create_review(request):
             review.author = profile
             form.save()
             messages.success(request, 'Your review was submitted and is now pending admin approval')
-            return redirect('reviews')
+            return redirect('profile_page')
 
     context = {'form': form}
     return render(request, "reviews/review_form.html", context)
