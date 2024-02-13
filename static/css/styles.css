@@ -546,6 +546,7 @@ textarea {
 
 [data-alert] {
     animation: fadeOut 5s linear forwards;
+    animation-delay: 2s;
     position: absolute;
     left: 0;
     right: 0;
