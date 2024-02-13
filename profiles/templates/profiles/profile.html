@@ -5,58 +5,106 @@
 {% block head_title %}{% trans "L2D - Your profile" %}{% endblock head_title %}
 
 {% block content %}
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-12 text-center">
-      <!-- Display username above the image -->
-      <h2>{{ profile.user.username }}</h2>
-
-      <!-- Display user-uploaded image or default image -->
-      {% if profile.profile_picture.url %}
-        <img src="{{ profile.profile_picture.url }}" width="25%" />
-      {% else %}
-        <img src="{% static 'images/defaultpicture.png' %}" width="25%" />
-      {% endif %}
-
-      <!-- Display "About Me" with the about_me content -->
-      {% if profile.about_me %}
-        <div class="mt-3">
-          <h3>About Me</h3>
-          {{ profile.about_me | safe }}
+<section class="block--grey">
+  <div class="container mt-5">
+    <div class="card card--profile">
+      <header class="page__header">
+        <h1>Your Profile</h1>
+      </header>
+      <div class="row">
+        <!-- Left column -->
+        <div class="col-md-4">
+          <div class="col-12 text-center">
+            <h2>{{ profile.first_name }}</h2>
+            {% if profile.profile_picture.url %}
+              <img src="{{ profile.profile_picture.url }}" class="profile-image" />
+            {% else %}
+              <img src="{% static 'images/defaultpicture.png' %}" class="profile-image" />
+            {% endif %}
+            {% if profile.age %}
+              <p class="profile-info py-1">Age: {{ profile.age }}</p>
+            {% endif %}
+            {% if profile.occupation %}
+              <p class="profile-info py-1">Occupation: {{ profile.occupation }}</p>
+            {% endif %}
+            <div class="row mt-3">
+              <div class="btn-container d-flex justify-content-center m-0">
+                <a href="{% url 'edit_profile' %}" class="blue-button">Edit Profile</a>
+                <button type="button" id="deleteButton" class="red-button">Delete Account</button>
+              </div>
+            </div>
+          </div>
         </div>
-      {% endif %}
-      <button type="button" id="deleteButton" class="red-button">Delete Account</button>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-12 text-center">
-        <a href="{% url 'edit_profile' %}" class="btn btn-primary mt-3 mx-1">Edit Profile</a>
-        <a href="{% url 'create-review' %}" class="btn btn-secondary mt-3 mx-1">Add review</a>
+        <!-- Right column -->
+        <div class="col-md-8">
+          <div class="col-12 text-center mt-3">
+            <h3>About me</h3>
+            {% if profile.about_me %}
+            <div class="border">
+              <p>{{ profile.about_me | safe }}</p>
+            </div>
+            {% else %}
+            <div class="border">
+              <p class="italic">You have not filled out your about me</p>
+            </div>
+            {% endif %}
+          </div>
+          <div class="col-12 text-center mt-3">
+            <h3>Review</h3>
+            {% if profile.review %}
+            <div class="border">
+              <p>{{ profile.review.content | safe }}</p>
+            </div>
+            {% else %}
+            <div class="border">
+              <p class="italic">User has not made a review</p>
+            </div>
+            {% endif %}
+            <div class="btn-container">
+              {% if not profile.review %}
+                <a href="{% url 'create-review' %}" class="blue-button">Add Review</a>
+              {% endif %}
+              {% if profile.review %}
+                <a href="{% url 'update-review' review_id %}" class="blue-button">Edit Review</a>
+                <a href="#" class="red-button">Delete Review</a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-12 text-center mt-3">
+              <!-- Iterate over comments if they exist -->
+              {% for comment in profile.commenter.all %}
+              <h3>Comments</h3>
+              <div class="border">
+                <p>{{ comment.content | safe }}</p>
+              </div>
+              {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- Delete Profile Modal -->
-<div class="modal fade" id="deleteProfileModal" tabindex="-1" role="dialog" aria-labelledby="deleteProfileModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-          <div class="modal-header d-flex justify-content-center">
-              <h5 class="modal-title" id="deleteProfileModalLabel">Confirm Account Deletion</h5>
-          </div>
-          <div class="modal-body d-flex justify-content-center">
-              Are you sure you want to delete your account? All your information including posts will be permanently removed!
-          </div>
-          <div class="modal-footer d-flex justify-content-center">
-            <form method="POST" action="{% url 'delete_profile' %}">
-              {% csrf_token %}
-              <button type="submit" class="blue-button">Yes</button>
-            </form>
-            <button type="button" id="closeDeleteProfileModal" class="red-button" data-dismiss="modal" aria-label="Close">
-                No
-            </button>
-          </div>
-      </div>
+  <!-- Delete Profile Modal -->
+  <div class="modal fade" id="deleteProfileModal" tabindex="-1" role="dialog" aria-labelledby="deleteProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center">
+                <h5 class="modal-title" id="deleteProfileModalLabel">Confirm Account Deletion</h5>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                Are you sure you want to delete your account? All your information including posts will be permanently removed!
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <form method="POST" action="{% url 'delete_profile' %}">
+                {% csrf_token %}
+                <button type="submit" class="blue-button">Yes</button>
+              </form>
+              <button type="button" id="closeDeleteProfileModal" class="red-button" data-dismiss="modal" aria-label="Close">
+                  No
+              </button>
+            </div>
+        </div>
+    </div>
   </div>
-</div>
+</section>
 {% endblock content %}
