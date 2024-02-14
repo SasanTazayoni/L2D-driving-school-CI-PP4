@@ -1,13 +1,28 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
-    if (window.location.pathname.endsWith('/profile/edit/')) {
-        // select the image div containers, and get the image href/url
-        const imageDiv = document.querySelector('#div_id_profile_picture')
-        const imageSrcDiv = imageDiv.querySelector('.input-group')
-        const imageSrc = imageDiv.querySelector('a')
+    if (window.location.pathname.endsWith('/profile/edit/')) {  
+        const imageDiv = document.querySelector('#profile_picture-clear_id')
+        const imageDivParent = imageDiv.parentNode
+        const firstAnchorChild = imageDivParent.querySelector('a')
+        let hrefValue = ''
 
-        // change the image src div to show the image
-        imageSrcDiv.innerHTML = `<div class="col-12">Current Image:<img style="display: block;" src="${imageSrc.href}" /></div>`
+        if (firstAnchorChild && firstAnchorChild.href.includes('cloudinary')) {
+            hrefValue = firstAnchorChild.href
+        }
+
+        const imgElement = document.createElement('img')
+        imgElement.src = hrefValue
+
+        imgElement.style.borderRadius = '20px'
+        imgElement.style.objectFit = 'cover'
+        imgElement.style.objectPosition = 'center'
+        imgElement.style.height = '200px'
+        imgElement.style.width = '200px'
+        imgElement.style.margin = '20px'
+        imageDivParent.classList.add('text-center')
+
+        for (let i = 0; i < 8; i++) {
+            imageDivParent.removeChild(imageDivParent.firstChild)
+        }
+        imageDivParent.insertBefore(imgElement, imageDivParent.firstChild)
     }
 })
