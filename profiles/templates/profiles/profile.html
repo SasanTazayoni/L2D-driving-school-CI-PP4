@@ -4,6 +4,11 @@
 
 {% block head_title %}{% trans "L2D - Your profile" %}{% endblock head_title %}
 
+{% block head_scripts %}
+    <script src="{% static 'js/deleteProfileModal.js' %}" defer></script>
+    <script src="{% static 'js/deleteReviewModal.js' %}" defer></script>
+{% endblock head_scripts %}
+
 {% block content %}
 <section class="block--grey">
   <div class="container mt-5 mb-2">
