@@ -36,7 +36,6 @@ a {
     text-decoration: none;
 }
 
-
 .page__header {
     margin-bottom: 30px;
     text-align: center;
@@ -140,7 +139,8 @@ textarea {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+textarea {
     width: 100%;
 }
 
