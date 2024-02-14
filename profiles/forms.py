@@ -10,7 +10,11 @@ from reviews.models import Review
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ('profile_picture', 'about_me')
+        fields = ('first_name', 'age', 'occupation', 'email', 'profile_picture', 'about_me')
+        labels = {
+            'first_name': 'Name',
+            'email': 'Email'
+        }
 
 
 class CustomUserCreationForm(UserCreationForm):
