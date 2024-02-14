@@ -100,7 +100,24 @@ def update_review(request, review_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your review has been updated')
-            return redirect('reviews')
+            return redirect('profile_page')
 
     context = {'form': form}
     return render(request, "reviews/review_form.html", context)
+
+
+@login_required(login_url="login")
+def delete_review(request, review_id):
+    profile = UserProfile.objects.get(user=request.user)
+    existing_review = Review.objects.filter(author=profile, id=review_id).first()
+
+    if not existing_review:
+        messages.info(request, 'There is no review to delete')
+        return redirect('profile_page')
+
+    if request.method == 'POST':
+        existing_review.delete()
+        messages.success(request, 'Your review has been deleted')
+        return redirect('profile_page')
+    
+    return redirect('profile_page')
