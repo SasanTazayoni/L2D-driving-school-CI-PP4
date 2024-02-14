@@ -321,6 +321,7 @@ a.red-button,
     width: 120px;
     box-shadow: 0 0 6px #acacac;
     overflow: hidden;
+    text-align: center;
     transition: all 0.3s;
     position: relative;
 }
