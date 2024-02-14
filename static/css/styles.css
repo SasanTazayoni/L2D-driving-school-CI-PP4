@@ -729,6 +729,12 @@ footer i {
 
 /* User profile */
 
+.profile-image {
+    width: 300px;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+}
+
 .profile-info {
     font-size: 120%;
     font-weight: bold;
@@ -736,11 +742,23 @@ footer i {
     margin: 0;
 }
 
-.profile-image {
-    width: 300px;
-    margin: 20px 0;
-    border-radius: var(--border-radius);
-  }
+.profile-content {
+    border: 1px solid var(--block-grey);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.profile-content > p {
+    margin: 0;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.pending-approval {
+    color: rgb(170, 170, 170);
+}
 
 /* User profiles template for all users */
 
