@@ -30,7 +30,7 @@ function initialiseLogoutFunctionality() {
 }
 
 function showDeleteProfileModal() {
-    const deleteButton = document.getElementById('deleteButton')
+    const deleteProfileButton = document.getElementById('deleteProfileButton')
     const deleteProfileModal = new bootstrap.Modal(document.getElementById('deleteProfileModal'))
     const closeModalButton = document.getElementById('closeDeleteProfileModal')
 
@@ -38,7 +38,7 @@ function showDeleteProfileModal() {
         deleteProfileModal.show()
     }
 
-    deleteButton.addEventListener('click', openDeleteModal)
+    deleteProfileButton.addEventListener('click', openDeleteModal)
 
     if (closeModalButton) {
         closeModalButton.addEventListener('click', () => {
@@ -47,7 +47,26 @@ function showDeleteProfileModal() {
     }
 }
 
+function showDeleteReviewModal() {
+    const deleteReviewButton = document.getElementById('deleteReviewButton')
+    const deleteReviewModal = new bootstrap.Modal(document.getElementById('deleteReviewModal'))
+    const closeModalButton = document.getElementById('closeDeleteReviewModal')
+
+    const openDeleteReviewModal = () => {
+        deleteReviewModal.show()
+    }
+
+    deleteReviewButton.addEventListener('click', openDeleteReviewModal)
+
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', () => {
+            deleteReviewModal.hide()
+        })
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     initialiseLogoutFunctionality()
     showDeleteProfileModal()
+    showDeleteReviewModal()
 })
