@@ -7,16 +7,6 @@ from .models import UserProfile
 from reviews.models import Review
 
 
-class UserProfileForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
-        fields = ('first_name', 'age', 'occupation', 'email', 'profile_picture', 'about_me')
-        labels = {
-            'first_name': 'Name',
-            'email': 'Email'
-        }
-
-
 class CustomUserCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -37,3 +27,14 @@ class CustomUserCreationForm(UserCreationForm):
             'first_name': 'Name',
             'email': 'Email'
         }
+
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['first_name', 'age', 'occupation', 'email', 'profile_picture', 'about_me']
+        labels = {
+            'first_name': 'Name',
+            'email': 'Email'
+        }
+        
