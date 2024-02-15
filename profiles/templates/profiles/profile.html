@@ -7,18 +7,19 @@
 {% block head_scripts %}
     <script src="{% static 'js/deleteProfileModal.js' %}" defer></script>
     <script src="{% static 'js/deleteReviewModal.js' %}" defer></script>
+    <script src="{% static 'js/rating.js' %}" defer></script>
 {% endblock head_scripts %}
 
 {% block content %}
 <section class="block--grey">
   <div class="container mt-5 mb-2">
     <div class="card card--profile">
-      <header class="page__header text-center">
+      <header class="page-header text-center">
         <h1>Your Profile</h1>
       </header>
       <div class="row">
         <!-- Left column -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6">
           <div class="col-12 text-center">
             <h2>{{ profile.first_name }}</h2>
             {% if profile.profile_picture.url %}
@@ -41,7 +42,7 @@
           </div>
         </div>
         <!-- Right column -->
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-6">
           <div class="col-12 text-center mt-3">
             <h3>About me</h3>
             {% if profile.about_me %}
@@ -59,10 +60,14 @@
             {% if profile.review %}
             {% if profile.review.approved %}
             <div class="profile-content">
+              <div data-rating>{{ profile.review.rating }}</div>
+              <p class="mb-3">{{ profile.review.created_on }} - <a href="{% url 'review_detail' profile.review.id %}">View comments</a></p>
               <p>{{ profile.review.content }}</p>
             </div>
             {% else %}
             <div class="profile-content">
+              <div data-rating>{{ profile.review.rating }}</div>
+              <p class="mb-3">{{ profile.review.created_on }}</p>
               <p class="pending-approval">{{ profile.review.content | safe }} (pending approval)</p>
             </div>
             {% endif %}
@@ -84,13 +89,30 @@
             </div>
           </div>
           <div class="col-12 text-center mt-3">
-              <!-- Iterate over comments if they exist -->
-              {% for comment in profile.commenter.all %}
+            {% if profile.commenter.all %}
               <h3>Comments</h3>
-              <div class="profile-content">
-                {{ comment.content | safe }}
-              </div>
+              {% for comment in profile.commenter.all %}
+                {% if comment.approved %}
+                <div class="profile-content mb-4">
+                  <p class="mb-3">{{ comment.replied_on }} - <a href="{% url 'review_detail' comment.review.id %}">Review by {{ comment.review.author }}</a></p>
+                  <p class="mb-3">{{ comment.content | safe }}</p>
+                  <div class="btn-container d-flex justify-content-center m-0">
+                    <a href="" class="blue-button">Edit</a>
+                    <button type="button" id="deleteCommentButton" class="red-button">Delete</button>
+                  </div>
+                </div>
+                {% else %}
+                <div class="profile-content mb-4">
+                  <p class="mb-3">{{ comment.replied_on }} - <a href="{% url 'review_detail' comment.review.id %}">Review by {{ comment.review.author }}</a></p>
+                  <p class="pending-approval mb-3">{{ comment.content | safe }} (pending approval)</p>
+                  <div class="btn-container d-flex justify-content-center m-0">
+                    <a href="" class="blue-button">Edit</a>
+                    <button type="button" id="deleteCommentButton" class="red-button">Delete</button>
+                  </div>
+                </div>
+                {% endif %}
               {% endfor %}
+            {% endif %}
           </div>
         </div>
       </div>
