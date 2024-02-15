@@ -36,19 +36,19 @@ a {
     text-decoration: none;
 }
 
-.page__header {
+.page-header {
     margin-bottom: 30px;
     text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-    .page__header {
+    .page-header {
         margin-bottom: 20px 0;
     }
 }
 
 @media screen and (max-width: 428px) {
-    .page__header {
+    .page-header {
         margin-bottom: 15px 0;
     }
 }
@@ -159,7 +159,7 @@ textarea {
     resize: none;
 }
 
-.form__container {
+.form-container {
     max-width: 500px;
     margin-top: 60px;
     opacity: 0.9;
@@ -171,11 +171,11 @@ textarea {
     padding: 0;
 }
 
-.form__image {
+.form-image {
     height: 80px;
 }
 
-.form__field {
+.form-field {
     padding: 0 50px;
     width: 100%;
 }
@@ -194,7 +194,7 @@ textarea {
 }
 
 @media screen and (max-width: 768px) {
-    .form__container {
+    .form-container {
         max-width: 360px;
     }
 
@@ -202,11 +202,11 @@ textarea {
         margin-top: 15px;
     }
 
-    .form__image {
+    .form-image {
         height: 70px;
     }
 
-    .form__field {
+    .form-field {
         padding: 0 40px;
     }
 
@@ -216,15 +216,15 @@ textarea {
 }
 
 @media screen and (max-width: 428px) {
-    .form__container {
+    .form-container {
         max-width: 300px;
     }
 
-    .form__image {
+    .form-image {
         height: 60px;
     }
 
-    .form__field {
+    .form-field {
         padding: 0 30px;
     }
 
@@ -234,7 +234,7 @@ textarea {
 }
 
 @media screen and (max-width: 376px) {
-    .form__container {
+    .form-container {
         max-width: 260px;
     }
 
@@ -257,13 +257,13 @@ textarea {
         margin-top: 10px;
     }
 
-    .form__field {
+    .form-field {
         padding: 0 10px;
     }
 }
 
 @media screen and (max-width: 324px) {
-    .form__container {
+    .form-container {
         max-width: 240px;
     }
 }
