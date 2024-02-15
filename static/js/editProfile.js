@@ -16,14 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
         imgElement.style.borderRadius = '20px'
         imgElement.style.objectFit = 'cover'
         imgElement.style.objectPosition = 'center'
-        imgElement.style.height = '200px'
-        imgElement.style.width = '200px'
-        imgElement.style.margin = '20px'
+        imgElement.style.height = '150px'
+        imgElement.style.width = '150px'
+        imgElement.style.margin = '20px 0'
 
         for (let i = 0; i < 8; i++) {
             imageDivParent.removeChild(imageDivParent.firstChild)
         }
         imageDivParent.insertBefore(imgElement, imageDivParent.firstChild)
         imageDivParent.insertBefore(textNode, imgElement)
+
+        imageDivParent.style.marginBottom = '20px'
     }
 })
