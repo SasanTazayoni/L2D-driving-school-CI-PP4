@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     alertElements.forEach((alertElement) => {
         setTimeout(() => {
             alertElement.remove()
-        }, 5000)
+        }, 7000)
     })
 })

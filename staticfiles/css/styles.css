@@ -22,6 +22,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 /* Typography */
 
 body {
@@ -34,27 +38,21 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     text-decoration: none;
-    color: var(--color-primary);
-    transition: 0.3s;
 }
 
-a:hover {
-    color: var(--color-secondary);
-}
-
-.page__header {
-    margin-bottom: 30px 0;
+.page-header {
+    margin-bottom: 30px;
     text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-    .page__header {
+    .page-header {
         margin-bottom: 20px 0;
     }
 }
 
 @media screen and (max-width: 428px) {
-    .page__header {
+    .page-header {
         margin-bottom: 15px 0;
     }
 }
@@ -110,11 +108,29 @@ a:hover {
     border-radius: var(--border-radius);
     box-shadow: 0 0 10px #acacac;
     background: var(--block-light);
+    padding: 20px;
+}
+
+.card--profile {
+    padding: 40px;
+    background: linear-gradient(to bottom right, rgba(125, 174, 248, 0.1), white 30%, white 70%, rgba(125, 174, 248, 0.1));
 }
 
 @media screen and (max-width: 768px) {
     .card {
         box-shadow: 0 0 5px #acacac;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card--profile {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .card--profile {
+        padding: 20px;
     }
 }
 
@@ -128,6 +144,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="number"],
 textarea {
     border: 2px solid var(--color-primary);
     border-radius: 5px;
@@ -139,13 +156,16 @@ textarea {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="number"],
+textarea {
     width: 100%;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
+input[type="number"]:focus,
 textarea:focus {
     border-color: var(--color-secondary);
     outline: 0;
@@ -153,26 +173,25 @@ textarea:focus {
 
 textarea {
     resize: none;
+    height: 200px;
 }
 
-.form__container {
+.form-container {
     max-width: 500px;
-    padding: 20px;
     margin-top: 60px;
     opacity: 0.9;
 }
-
 
 .form {
     margin-top: 10px;
     padding: 0;
 }
 
-.form__image {
+.form-image {
     height: 80px;
 }
 
-.form__field {
+.form-field {
     padding: 0 50px;
     width: 100%;
 }
@@ -190,8 +209,20 @@ textarea {
     color: #c50000;
 }
 
+@media screen and (max-width: 1199px) {
+    .form-field {
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .form-field {
+        padding: 0 30px;
+    }
+}
+
 @media screen and (max-width: 768px) {
-    .form__container {
+    .form-container {
         max-width: 360px;
     }
 
@@ -199,12 +230,8 @@ textarea {
         margin-top: 15px;
     }
 
-    .form__image {
+    .form-image {
         height: 70px;
-    }
-
-    .form__field {
-        padding: 0 40px;
     }
 
     .signup-link, .login-link {
@@ -213,16 +240,16 @@ textarea {
 }
 
 @media screen and (max-width: 428px) {
-    .form__container {
+    .form-container {
         max-width: 300px;
     }
 
-    .form__image {
+    .form-image {
         height: 60px;
     }
 
-    .form__field {
-        padding: 0 30px;
+    .form-field {
+        padding: 0 20px;
     }
 
     .signup-link, .login-link {
@@ -231,12 +258,13 @@ textarea {
 }
 
 @media screen and (max-width: 376px) {
-    .form__container {
+    .form-container {
         max-width: 260px;
     }
 
     input[type="text"],
     input[type="email"],
+    input[type="number"],
     textarea {
         font-size: 12px;
     }
@@ -244,21 +272,22 @@ textarea {
     input[type="text"],
     input[type="email"],
     input[type="password"],
+    input[type="number"],
     textarea {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .form {
         margin-top: 10px;
     }
 
-    .form__field {
-        padding: 0 10px;
+    .form-field {
+        padding: 0;
     }
 }
 
 @media screen and (max-width: 324px) {
-    .form__container {
+    .form-container {
         max-width: 240px;
     }
 }
@@ -305,17 +334,23 @@ textarea {
 }
 
 .btn-container {
-    margin: 30px 0;
+    padding: 10px 0;
 }
 
+a.blue-button,
+a.red-button,
 .blue-button,
 .red-button {
     border-radius: 10px;
+    color: #000;
+    display: inline-block;
+    line-height: 1.4;
     margin: 0 7px;
     padding: 10px 20px;
     width: 120px;
     box-shadow: 0 0 6px #acacac;
     overflow: hidden;
+    text-align: center;
     transition: all 0.3s;
     position: relative;
 }
@@ -351,6 +386,11 @@ textarea {
     animation: ripple 0.6s linear infinite;
 }
 
+.logout-btn {
+    text-align: center;
+    color: #000;
+}
+
 @keyframes ripple {
     0% {
         height: 0;
@@ -372,6 +412,8 @@ textarea {
 }
 
 @media screen and (max-width: 768px) {
+    a.blue-button,
+    a.red-button,
     .blue-button,
     .red-button {
         margin: 0 5px;
@@ -381,13 +423,25 @@ textarea {
 }
 
 @media screen and (max-width: 428px) {
-    .btn-container {
-        margin: 20px 0;
-    }
-
+    a.blue-button,
+    a.red-button,
     .blue-button,
     .red-button {
         width: 80px;
+    }
+}
+
+/* Grids */
+
+@media (max-width: 1200px) {
+    .col-md-4, .col-md-8 {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .col-md-4, .col-md-8 {
+        width: 100%;
     }
 }
 
@@ -397,6 +451,15 @@ textarea {
 .navbar {
     border-bottom: 1px solid rgb(197, 197, 197);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    color: var(--color-primary);
+    transition: all 0.3s;
+}
+
+.navbar-brand:hover {
+    color: var(--color-secondary);
 }
 
 .logo {
@@ -541,6 +604,7 @@ textarea {
 
 [data-alert] {
     animation: fadeOut 5s linear forwards;
+    animation-delay: 2s;
     position: absolute;
     left: 0;
     right: 0;
@@ -583,6 +647,34 @@ textarea {
     .alert {
         font-size: 12px;
     }
+}
+
+/* Modals */
+
+.modal-content {
+    border: solid 2px #000;
+    border-radius: var(--border-radius);
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-header {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.modal-header,
+.modal-body {
+    background-color: var(--block-grey);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-footer {
+    background-color: var(--block-grey);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 /* Footer */
@@ -679,7 +771,57 @@ footer i {
     padding-left: 1rem;
 }
 
-/* User profiles template */
+/* User profile */
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-info {
+    font-size: 120%;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.profile-content {
+    border: 2px solid var(--block-grey);
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.profile-content > p {
+    margin: 0;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.pending-approval {
+    color: rgb(170, 170, 170);
+}
+
+@media screen and (max-width: 428px) {
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* User profiles template for all users */
 
 .profile-picture {
     width: 150px;
