@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     profile_picture = CloudinaryField('image', null=True, blank=True)
     age = models.PositiveIntegerField(blank=True, null=True)
     occupation = models.CharField(max_length=100, blank=True, null=True)
-    about_me = models.TextField(max_length=200, blank=True, null=True)
+    about_me = models.TextField(max_length=400, blank=True, null=True)
 
     def __str__(self):
         return self.username
