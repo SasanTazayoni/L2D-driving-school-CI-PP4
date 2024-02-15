@@ -5,26 +5,37 @@
 {% block head_title %}{% trans "L2D - Edit profile" %}{% endblock head_title %}
 
 {% block head_scripts %}
-    <script src="{% static 'js/profile.js' %}" defer></script>
+    <script src="{% static 'js/editProfile.js' %}" defer></script>
 {% endblock head_scripts %}
 
 {% block content %}
-{% load static %}
-{% load crispy_forms_tags %}
 
-<div class="col-md-4 card mb-4 mt-3">
-    <div class="card-body">
-        {% if user.is_authenticated %}
-        <h3>Your profile:</h3>
+<section class="block--grey">
+    <div class="container mt-5">
+        <div class="card card--profile">
+            <header class="page-header text-center">
+                <h1>Edit Profile</h1>
+            </header>
+            <form id="profileForm" method="POST" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
+                {% csrf_token %}
 
-        <form id="profileForm" method="post" enctype="multipart/form-data" style="margin-top: 1.3em;">
-            {% csrf_token %}
+                <div class="row">
+                    {% for field in form %}
+                    <div class="col-md-6">
+                        <div class="form-field">
+                            <label for="form-input">{{ field.label }}:</label>
+                            {{ field }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
 
-            {{ form | crispy }}
-
-            <button type="submit" class="btn btn-primary">Save Changes</button>
-        </form>
-        {% endif %}
+                <div class="btn-container d-flex justify-content-center m-0">
+                    <button type="submit" class="blue-button">Save</button>
+                    <a type="button" href="{% url 'profile_page' %}" class="red-button">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+</section>
 {% endblock content %}
