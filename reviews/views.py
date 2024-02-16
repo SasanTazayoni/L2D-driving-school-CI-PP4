@@ -62,6 +62,7 @@ def review_detail(request, review_id):
     )
 
 
+@login_required(login_url="login")
 def edit_comment(request, review_id, comment_id):
     """
     View to edit comments.
@@ -70,7 +71,7 @@ def edit_comment(request, review_id, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
 
     if comment.author.user != request.user:
-        messages.error(request, 'You are not authorized to edit this comment')
+        messages.error(request, 'You are not authorised to edit this comment')
         return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
 
     if request.method == "POST":
@@ -86,7 +87,12 @@ def edit_comment(request, review_id, comment_id):
     else:
         comment_form = CommentForm(instance=comment)
 
-    return render(request, 'reviews/review_detail.html', {'review': review, 'comment_form': comment_form})
+    context = {
+        'review': review,
+        'comment_form': comment_form
+    }
+
+    return render(request, 'reviews/review_detail.html', context)
 
 
 @login_required(login_url="login")
