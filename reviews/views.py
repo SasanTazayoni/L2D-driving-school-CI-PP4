@@ -80,7 +80,7 @@ def edit_comment(request, review_id, comment_id):
             edited_comment = comment_form.save(commit=False)
             edited_comment.review = review
             edited_comment.save()
-            messages.success(request, 'Comment updated successfully')
+            messages.success(request, 'Comment updated')
             return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
         else:
             messages.error(request, 'Error updating comment')
@@ -93,6 +93,25 @@ def edit_comment(request, review_id, comment_id):
     }
 
     return render(request, 'reviews/review_detail.html', context)
+
+
+@login_required(login_url="login")
+def delete_comment(request, review_id, comment_id):
+    """
+    View to delete a comment.
+    """
+    review = get_object_or_404(Review, id=review_id)
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if comment.author.user != request.user:
+        messages.error(request, 'You are not authorised to delete this comment')
+        return redirect('review_detail', review_id=review_id)
+
+    if request.method == "POST":
+        comment.delete()
+        messages.success(request, 'Comment removed')
+
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', reverse('review_detail', args=[review_id])))
 
 
 @login_required(login_url="login")

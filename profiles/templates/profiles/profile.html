@@ -96,7 +96,7 @@
                     <p class="mb-3">{{ comment.content | safe }}</p>
                     <div class="btn-container d-flex justify-content-center m-0">
                       <a href="{% url 'edit_comment' review_id=comment.review.id comment_id=comment.id %}" class="blue-button">Edit</a>
-                      <button type="button" class="red-button" data-bs-toggle="modal" data-bs-target="#deleteCommentModal">Delete</button>
+                      <button type="button" class="red-button" data-bs-toggle="modal" data-bs-target="#deleteCommentModal_{{comment.id}}">Delete</button>
                     </div>
                   </div>
                 {% else %}
@@ -161,18 +161,20 @@
     </div>
   {% endif %}
 
+  {% for comment in comments %}
   <!-- Delete Comment Modal -->
-    <div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deleteCommentModal_{{comment.id}}" tabindex="-1" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title" id="deleteCommentModalLabel">Delete Comment Confirmation</h5>
+            <h5 class="modal-title" id="deleteCommentModalLabel">Delete Comment Confirmation - {{comment.id}}</h5>
           </div>
           <div class="modal-body d-flex justify-content-center">
             Are you sure you want to delete your comment?
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <form method="POST" action="">
+            <form method="POST" action="{% url 'delete_comment' review_id=review_id comment_id=comment.id %}">
+
               {% csrf_token %}
               <button type="submit" class="blue-button">Yes</button>
             </form>
@@ -181,6 +183,9 @@
         </div>
       </div>
     </div>
+    {% endfor %}
 </section>
+
+<p>Comment: {{ comment }}</p>
 
 {% endblock content %}
