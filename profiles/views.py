@@ -85,14 +85,16 @@ def profile_page(request):
 
     comments = Comment.objects.filter(author=profile)
 
+    context = {
+        'profile': profile,
+        'review_id': review_id,
+        'comments': comments
+    }
+
     return render(
         request,
         'profiles/profile.html',
-        {
-            'profile': profile,
-            'review_id': review_id,
-            'comments': comments
-        }
+        context
     )
 
 
