@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.contrib import messages
-from .models import Review
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from .models import Review, Comment
 from .forms import ReviewForm
 from .forms import CommentForm
 from profiles.models import UserProfile
@@ -58,6 +60,33 @@ def review_detail(request, review_id):
             "comment_form": comment_form,
         },
     )
+
+
+def edit_comment(request, review_id, comment_id):
+    """
+    View to edit comments.
+    """
+    review = get_object_or_404(Review, id=review_id)
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if comment.author.user != request.user:
+        messages.error(request, 'You are not authorized to edit this comment')
+        return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
+
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST, instance=comment)
+        if comment_form.is_valid():
+            edited_comment = comment_form.save(commit=False)
+            edited_comment.review = review
+            edited_comment.save()
+            messages.success(request, 'Comment updated successfully')
+            return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
+        else:
+            messages.error(request, 'Error updating comment')
+    else:
+        comment_form = CommentForm(instance=comment)
+
+    return render(request, 'reviews/review_detail.html', {'review': review, 'comment_form': comment_form})
 
 
 @login_required(login_url="login")

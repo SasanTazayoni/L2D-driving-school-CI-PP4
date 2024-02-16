@@ -97,7 +97,7 @@
                   <p class="mb-3">{{ comment.replied_on }} - <a href="{% url 'review_detail' comment.review.id %}">Review by {{ comment.review.author }}</a></p>
                   <p class="mb-3">{{ comment.content | safe }}</p>
                   <div class="btn-container d-flex justify-content-center m-0">
-                    <a href="" class="blue-button">Edit</a>
+                    <a href="{% url 'edit_comment' review_id=comment.review.id comment_id=comment.id %}" class="blue-button">Edit</a>
                     <button type="button" id="deleteCommentButton" class="red-button">Delete</button>
                   </div>
                 </div>
@@ -106,7 +106,7 @@
                   <p class="mb-3">{{ comment.replied_on }} - <a href="{% url 'review_detail' comment.review.id %}">Review by {{ comment.review.author }}</a></p>
                   <p class="pending-approval mb-3">{{ comment.content | safe }} (pending approval)</p>
                   <div class="btn-container d-flex justify-content-center m-0">
-                    <a href="" class="blue-button">Edit</a>
+                    <a href="{% url 'edit_comment' review_id=comment.review.id comment_id=comment.id %}" class="blue-button">Edit</a>
                     <button type="button" id="deleteCommentButton" class="red-button">Delete</button>
                   </div>
                 </div>

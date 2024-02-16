@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
+from reviews.models import Comment
 from .models import UserProfile
 from .forms import UserProfileForm
 from .forms import CustomUserCreationForm
@@ -82,12 +83,15 @@ def profile_page(request):
     except ObjectDoesNotExist:
         review_id = None
 
+    comments = Comment.objects.filter(author=profile)
+
     return render(
         request,
         'profiles/profile.html',
         {
             'profile': profile,
-            'review_id': review_id
+            'review_id': review_id,
+            'comments': comments
         }
     )
 
