@@ -329,7 +329,7 @@ textarea {
     opacity: 0.7;
 }
 
-#logoutBtn, #loginBtn {
+#logoutBtn {
     color: var(--block-light);
 }
 
