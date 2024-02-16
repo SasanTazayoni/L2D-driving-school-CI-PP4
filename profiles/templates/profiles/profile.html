@@ -5,8 +5,6 @@
 {% block head_title %}{% trans "L2D - Your profile" %}{% endblock head_title %}
 
 {% block head_scripts %}
-    <script src="{% static 'js/deleteProfileModal.js' %}" defer></script>
-    <script src="{% static 'js/deleteReviewModal.js' %}" defer></script>
     <script src="{% static 'js/rating.js' %}" defer></script>
 {% endblock head_scripts %}
 
@@ -36,7 +34,7 @@
             <div class="row mt-3 mb-1">
               <div class="btn-container d-flex justify-content-center m-0">
                 <a type="button" href="{% url 'edit_profile' %}" class="blue-button">Edit Profile</a>
-                <button type="button" id="deleteProfileButton" class="red-button">Delete Profile</button>
+                <button type="button" class="red-button" data-bs-toggle="modal" data-bs-target="#deleteProfileModal">Delete Profile</button>
               </div>
             </div>
           </div>
@@ -83,7 +81,7 @@
               {% if profile.review %}
                 <div class="btn-container d-flex justify-content-center m-0">
                   <a href="{% url 'update_review' review_id %}" class="blue-button">Edit Review</a>
-                  <button type="button" id="deleteReviewButton" class="red-button">Delete Review</button>
+                  <button type="button" class="red-button" data-bs-toggle="modal" data-bs-target="#deleteReviewModal">Delete Review</button>
                 </div>
               {% endif %}
             </div>
@@ -98,7 +96,7 @@
                     <p class="mb-3">{{ comment.content | safe }}</p>
                     <div class="btn-container d-flex justify-content-center m-0">
                       <a href="{% url 'edit_comment' review_id=comment.review.id comment_id=comment.id %}" class="blue-button">Edit</a>
-                      <button type="button" id="deleteCommentButton" class="red-button">Delete</button>
+                      <button type="button" class="red-button" data-bs-toggle="modal" data-bs-target="#deleteCommentModal">Delete</button>
                     </div>
                   </div>
                 {% else %}
@@ -107,7 +105,7 @@
                     <p class="pending-approval mb-3">{{ comment.content | safe }} (pending approval)</p>
                     <div class="btn-container d-flex justify-content-center m-0">
                       <a href="{% url 'edit_comment' review_id=comment.review.id comment_id=comment.id %}" class="blue-button">Edit</a>
-                      <button type="button" id="deleteCommentButton" class="red-button">Delete</button>
+                      <button type="button" class="red-button" data-bs-toggle="modal" data-bs-target="#deleteCommentModal">Delete</button>
                     </div>
                   </div>
                 {% endif %}
@@ -120,8 +118,8 @@
   </div>
 
   <!-- Delete Profile Modal -->
-  <div class="modal fade" id="deleteProfileModal" tabindex="-1" role="dialog" aria-labelledby="deleteProfileModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header d-flex justify-content-center">
                 <h5 class="modal-title" id="deleteProfileModalLabel">Confirm Profile Deletion</h5>
@@ -134,9 +132,7 @@
                 {% csrf_token %}
                 <button type="submit" class="blue-button">Yes</button>
               </form>
-              <button type="button" id="closeDeleteProfileModal" class="red-button" data-dismiss="modal" aria-label="Close">
-                  No
-              </button>
+              <button type="button" class="red-button" data-bs-dismiss="modal">No</button>
             </div>
         </div>
     </div>
@@ -144,8 +140,8 @@
 
   <!-- Delete Review Modal -->
   {% if review_id %}
-    <div class="modal fade" id="deleteReviewModal" tabindex="-1" role="dialog" aria-labelledby="deleteReviewModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" id="deleteReviewModal" tabindex="-1" aria-labelledby="deleteReviewModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header d-flex justify-content-center">
                 <h5 class="modal-title" id="deleteReviewModalLabel">Delete Review Confirmation</h5>
@@ -158,13 +154,33 @@
                 {% csrf_token %}
                 <button type="submit" class="blue-button">Yes</button>
               </form>
-              <button type="button" id="closeDeleteReviewModal" class="red-button" data-dismiss="modal" aria-label="Close">
-                  No
-              </button>
+              <button type="button" class="red-button" data-bs-dismiss="modal">No</button>
             </div>
         </div>
+      </div>
     </div>
-  </div>
-{% endif %}
+  {% endif %}
+
+  <!-- Delete Comment Modal -->
+    <div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-center">
+            <h5 class="modal-title" id="deleteCommentModalLabel">Delete Comment Confirmation</h5>
+          </div>
+          <div class="modal-body d-flex justify-content-center">
+            Are you sure you want to delete your comment?
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <form method="POST" action="">
+              {% csrf_token %}
+              <button type="submit" class="blue-button">Yes</button>
+            </form>
+            <button type="button" class="red-button" data-bs-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </section>
+
 {% endblock content %}
