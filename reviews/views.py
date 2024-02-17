@@ -100,8 +100,8 @@ def delete_comment(request, review_id, comment_id):
     """
     View to delete a comment.
     """
-    review = get_object_or_404(Review, id=review_id)
     comment = get_object_or_404(Comment, id=comment_id)
+    review_id = comment.review.id
 
     if comment.author.user != request.user:
         messages.error(request, 'You are not authorised to delete this comment')
@@ -110,8 +110,12 @@ def delete_comment(request, review_id, comment_id):
     if request.method == "POST":
         comment.delete()
         messages.success(request, 'Comment removed')
-
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', reverse('review_detail', args=[review_id])))
+        
+        source_page = request.POST.get('source_page')
+        if source_page == "profile":
+            return redirect('profile_page')
+        else:
+            return redirect(reverse('review_detail', args=[review_id]))
 
 
 @login_required(login_url="login")
