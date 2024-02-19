@@ -1,34 +1,40 @@
 {% extends "base.html" %}
-
 {% load i18n %}
-{% load account socialaccount %}
+{% load static %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "L2D - Authentication" %}{% endblock head_title %}
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
-
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
-                you
-                have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-                first.{% endblocktrans %}</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
+<section class="block--background d-flex align-items-center" data-block>
+    <div class="container-fluid d-flex justify-content-center">
+        <!-- Login form -->
+        <div class="card form-container">
+            <header class="page-header">
+                <h1>Account Login</h1>
+                <img src="{% static 'images/car.png' %}" class="form-image" alt="An image of a car">
+            </header>
+            <form action="{% url 'account_login' %}" method="POST" class="d-flex justify-content-center align-items-center flex-column form">
                 {% csrf_token %}
-                {{ form.as_p }}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+                <div class="form-field">
+                    <label for="id_login">Username:</label>
+                    <input id="id_login" type="text" name="login" placeholder="Enter username">
+                </div>
+                <div class="form-field">
+                    <label for="id_password">Password:</label>
+                    <input id="id_password" type="password" name="password" placeholder="Enter password">
+                </div>
+                <!-- Forgot password link -->
+                <a href="{% url 'account_reset_password' %}" class="pw-reset">Forgot your password?</a>
+                <div class="btn-container">
+                    <button class="blue-button" type="submit">Log in</button>
+                    <button class="red-button" type="reset">Reset</button>
+                </div>
+                <!-- Link to registration page -->
+                <p class="signup-link">Don't have an account? Sign up <a href="{% url 'account_signup' %}">here</a></p>
             </form>
         </div>
     </div>
-</div>
-{% endblock %}
+</section>
+
+{% endblock content %}

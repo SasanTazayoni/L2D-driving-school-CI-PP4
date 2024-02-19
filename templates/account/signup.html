@@ -1,38 +1,51 @@
 {% extends "base.html" %}
-
 {% load i18n %}
+{% load static %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock head_title %}
+{% block head_title %}{% trans "L2D - Authentication" %}{% endblock head_title %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign Up" %}</h3>
 
-      <p>{% blocktrans %}
-        Welcome back to the code|star blog.
-        Do you already have an account? Then please
-        <a class="link" href="{{ login_url }}">sign in</a>
-        instead.
-      {% endblocktrans %}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <form class="signup" id="signup_form" method="post"
-        action="{% url 'account_signup' %}">
+<section class="block--background d-flex align-items-center" data-block>
+  <div class="container-fluid d-flex justify-content-center">
+    <!-- Registration form -->
+    <div class="card form-container">
+      <header class="page-header">
+        <h1>Register New User</h1>
+        <img src="{% static 'images/car.png' %}" class="form-image" alt="An image of a car">
+      </header>
+      <form action="{% url 'account_signup' %}" method="POST" class="d-flex justify-content-center align-items-center flex-column form">
         {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}"
-          value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="btn btn-signup right" type="submit">
-          {% trans "Sign Up" %} &raquo;</button>
+        <div class="form-field">
+            <label for="id_username">Username:</label>
+            <input id="id_username" type="text" name="username" placeholder="Enter username">
+        </div>
+        <div class="form-field">
+            <label for="id_email">Email:</label>
+            <input id="id_email" type="text" name="email" placeholder="Enter email address">
+        </div>
+        <div class="form-field">
+            <label for="id_password1">Password:</label>
+            <input id="id_password1" type="password" name="password1" placeholder="Enter password">
+        </div>
+        <div class="form-field">
+            <label for="id_password2">Password (again):</label>
+            <input id="id_password2" type="password" name="password2" placeholder="Enter password again">
+        </div>
+        <!-- Display field errors -->
+        {% for error in form.field.errors %}
+          <p class="error-text">{{ error }}</p>
+        {% endfor %}
+
+        <div class="btn-container">
+          <button class="blue-button" type="submit">Sign up</button>
+          <button class="red-button" type="reset">Reset</button>
+        </div>
       </form>
+      <!-- Link to login page -->
+      <p class="login-link">Already have an account? Log in <a href="{% url 'account_login' %}">here</a></p>
     </div>
   </div>
-</div>
+</section>
 
 {% endblock content %}
