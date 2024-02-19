@@ -7,68 +7,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from reviews.models import Comment
 from .models import UserProfile
 from .forms import UserProfileForm
-from .forms import CustomUserCreationForm
-
-
-def register_user(request):
-    if request.user.is_authenticated:
-        return redirect('profile_page')
-
-    page = 'register'
-    form = CustomUserCreationForm()
-
-    if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            user.username = user.username.lower()
-            user.save()
-
-            messages.success(request, 'User account was created')
-
-            login(request, user)
-            return redirect('edit_profile')
-
-        else:
-            messages.error(request, 'An error occurred during registration')
-
-    context = {'page': page, 'form': form}
-    return render(request, 'profiles/login_register.html', context)
-
-
-def user_login(request):
-    page = 'login'
-
-    if request.user.is_authenticated:
-        return redirect('profile_page')
-
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-
-        try:
-            user = User.objects.get(username=username)
-        except:
-            messages.error(request, 'Username OR password is incorrect')
-            return render(request, 'profiles/login_register.html')
-
-        user = authenticate(request, username=username, password=password)
-
-        if user is not None:
-            login(request, user)
-            messages.success(request, f'You have logged in as {user.username}')
-            return redirect('home')
-        else:
-            messages.error(request, 'Username OR password is incorrect')
-
-    return render(request, 'profiles/login_register.html')
-
-
-@login_required
-def user_logout(request):
-    logout(request)
-    messages.success(request, 'You have logged out')
-    return redirect('home')
 
 
 @login_required(login_url="login")
