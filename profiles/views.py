@@ -50,11 +50,10 @@ def edit_profile(request):
             request.POST, request.FILES,
             instance=profile,
             initial={
-                'username': user.username, 'name': user.first_name, 'email': user.email
+                'username': user.username, 'email': user.email
             }
         )
         if form.is_valid():
-            user.first_name = request.POST.get('name')
             user.email = request.POST.get('email')
             user.save()
             form.save()
@@ -65,7 +64,7 @@ def edit_profile(request):
         form = UserProfileForm(
             instance=profile,
             initial={
-                'username': user.username, 'name': user.first_name, 'email': user.email
+                'username': user.username, 'email': user.email
             }
         )
 
