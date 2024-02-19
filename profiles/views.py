@@ -105,21 +105,38 @@ def edit_profile(request):
     """
 
     profile = get_object_or_404(UserProfile, user=request.user)
+    user = get_object_or_404(User, username=request.user)
 
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=profile)
+        form = UserProfileForm(
+            request.POST, request.FILES,
+            instance=profile,
+            initial={
+                'username': user.username, 'name': user.first_name, 'email': user.email
+            }
+        )
         if form.is_valid():
+            user.first_name = request.POST.get('name')
+            user.email = request.POST.get('email')
+            user.save()
             form.save()
             messages.success(request, 'Profile updated successfully.')
             return redirect('profile_page')
-    else:
-        form = UserProfileForm(instance=profile)
 
-    return render(
-        request,
-        'profiles/edit_profile.html',
-        {'form': form}
-    )
+    else:
+        form = UserProfileForm(
+            instance=profile,
+            initial={
+                'username': user.username, 'name': user.first_name, 'email': user.email
+            }
+        )
+
+    template = 'profiles/edit_profile.html',
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)
+
 
 @login_required(login_url="login")
 def delete_profile(request):
