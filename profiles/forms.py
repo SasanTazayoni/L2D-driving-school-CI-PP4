@@ -8,27 +8,36 @@ from allauth.account.forms import SignupForm
 
 
 class CustomSignupForm(SignupForm):
+    first_name = forms.CharField(label="Name", max_length=30)
+
     def __init__(self, *args, **kwargs):
         super(CustomSignupForm, self).__init__(*args, **kwargs)
+        self.fields['first_name'].required = True
         self.fields['email'].required = True
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if User.objects.filter(email=email).exists():
-            raise ValidationError("This email address is already in use.")
+            raise ValidationError("This email address is already in use")
         return email
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if User.objects.filter(username=username).exists():
+            raise ValidationError("Please choose a different username")
+        return username
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['first_name','username', 'email', 'password1', 'password2']
 
 
 class UserProfileForm(forms.ModelForm):
-    username = forms.CharField(
+    email = forms.EmailField(
         widget=forms.TextInput(attrs={'readonly': 'readonly'})
     )
-    email = forms.EmailField(max_length=256)
+    first_name = forms.CharField(label="Name", max_length=30)
 
     class Meta:
         model = UserProfile
-        fields = ['username', 'age', 'occupation', 'email', 'about_me', 'profile_picture']
+        fields = ['email', 'first_name', 'age', 'occupation', 'about_me', 'profile_picture']

@@ -50,21 +50,22 @@ def edit_profile(request):
             request.POST, request.FILES,
             instance=profile,
             initial={
-                'username': user.username, 'email': user.email
+                'email': user.email, 'first_name': user.first_name
             }
         )
         if form.is_valid():
             user.email = request.POST.get('email')
+            user.first_name = request.POST.get('first_name')
             user.save()
             form.save()
-            messages.success(request, 'Profile updated successfully.')
+            messages.success(request, 'Profile updated successfully')
             return redirect('profile_page')
 
     else:
         form = UserProfileForm(
             instance=profile,
             initial={
-                'username': user.username, 'email': user.email
+                'email': user.email, 'first_name': user.first_name
             }
         )
 
