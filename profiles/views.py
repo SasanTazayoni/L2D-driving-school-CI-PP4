@@ -9,7 +9,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 
-@login_required(login_url="login")
+@login_required(login_url='/accounts/login/')
 def profile_page(request):
     """
     Renders the profile page
@@ -36,7 +36,7 @@ def profile_page(request):
     )
 
 
-@login_required(login_url="login")
+@login_required(login_url='/accounts/login/')
 def edit_profile(request):
     """
     Renders the edit profile page and handles form submission
@@ -76,7 +76,7 @@ def edit_profile(request):
     return render(request, template, context)
 
 
-@login_required(login_url="login")
+@login_required(login_url='/accounts/login/')
 def delete_profile(request):
     if request.method == 'POST':
         request.user.delete()
