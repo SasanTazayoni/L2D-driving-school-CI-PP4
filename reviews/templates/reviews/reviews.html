@@ -19,9 +19,11 @@
                             <div class="image-container">
                                 <div class="image-flash d-flex align-items-center">
                                     {% if review.author.profile_picture %}
-                                        <img src="{{ review.author.profile_picture.url }}" alt="{{ review.author.username }}" class="review-picture">
+                                    <img src="{{ review.author.profile_picture.url }}"
+                                        alt="{{ review.author.username }}" class="review-picture">
                                     {% else %}
-                                        <img src="{% static 'images/defaultpicture.png' %}" alt="{{ review.author.username }}" class="review-picture">
+                                    <img src="{% static 'images/defaultpicture.png' %}"
+                                        alt="{{ review.author.username }}" class="review-picture">
                                     {% endif %}
                                     <p class="author-date">
                                         Review by {{ review.author }} on {{ review.created_on }}
@@ -45,21 +47,20 @@
                 {% endfor %}
             </div>
         </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li>
-                <a href="?page={{ page_obj.previous_page_number }}"
-                class="page-link">&laquo; PREV</a>
-            </li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li>
+                    <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
+                </li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
 
-{% endblock %}
+    {% endblock %}
