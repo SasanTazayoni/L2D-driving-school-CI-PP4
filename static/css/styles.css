@@ -76,8 +76,14 @@ a {
     background-image: url('../images/road.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 90vh;
+    min-height: 85vh;
     padding: 20px 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .block--background {
+        min-height: 90vh;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -801,6 +807,10 @@ footer i {
 
 .italic {
     font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .pending-approval {
