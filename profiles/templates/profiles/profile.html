@@ -19,7 +19,7 @@
         <!-- Left column -->
         <div class="col-md-4 col-sm-6">
           <div class="col-12 text-center">
-            <h2>{{ profile.first_name }}</h2>
+            <h2>{{ profile.user.first_name }}</h2>
             {% if profile.profile_picture.url %}
               <img src="{{ profile.profile_picture.url }}" class="profile-image" />
             {% else %}
