@@ -27,9 +27,15 @@ class CustomSignupForm(SignupForm):
             raise ValidationError("Please choose a different username")
         return username
 
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if not first_name:
+            raise ValidationError("First name is required")
+        return first_name
+
     class Meta:
         model = User
-        fields = ['first_name','username', 'email', 'password1', 'password2']
+        fields = ['first_name', 'username', 'email', 'password1', 'password2']
 
 
 class UserProfileForm(forms.ModelForm):

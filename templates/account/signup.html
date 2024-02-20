@@ -18,8 +18,11 @@
         class="d-flex justify-content-center align-items-center flex-column form">
         {% csrf_token %}
         <div class="form-field">
-          <label for="id_name">Name:</label>
-          <input id="id_name" type="text" name="name" placeholder="Enter name">
+          <label for="id_first_name">Name:</label>
+          <input id="id_first_name" type="text" name="first_name" placeholder="Enter name">
+          {% for error in form.first_name.errors %}
+          <p class="error-text">{{ error }}</p>
+          {% endfor %}
         </div>
         <div class="form-field">
           <label for="id_username">Username:</label>
