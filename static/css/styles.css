@@ -777,6 +777,32 @@ footer i {
     padding-left: 1rem;
 }
 
+/* Appointments template */
+
+[data-url] {
+    height: 720px;
+    min-width: 320px;
+}
+
+.small-screen-container {
+    display: none;
+    height: 90vh;
+    padding: 20px;
+}
+
+@media screen and (max-width: 376px) {
+    [data-url] {
+        display: none;
+    }
+
+    .small-screen-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 /* User profile */
 
 .profile-image {
