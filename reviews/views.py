@@ -187,7 +187,7 @@ def delete_review(request, review_id):
 
 
 @login_required(login_url='/accounts/login/')
-def like_view(request, review_id):
+def like_toggle(request, review_id):
     review = get_object_or_404(Review, id=request.POST.get('like_id'))
     user_profile = UserProfile.objects.get(user=request.user)
     liked = False
