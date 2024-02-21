@@ -510,16 +510,16 @@ a.red-button,
     align-items: center;
 }
 
-#navbarText .navbar-nav .nav-item .active {
-    border: 2px solid rgba(125, 174, 248, 0.5);
-    border-radius: 5px;
-    color: var(--color-primary);
-}
-
 #navbarText .navbar-nav .nav-link {
     color: var(--color-secondary);
     transition: 0.3s;
     padding: 5px;
+}
+
+#navbarText .navbar-nav .nav-link.active {
+    border: 2px solid rgba(125, 174, 248, 0.5);
+    border-radius: 5px;
+    color: var(--color-primary);
 }
 
 #navbarText .navbar-nav .nav-link:hover {

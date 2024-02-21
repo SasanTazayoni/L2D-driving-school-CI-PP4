@@ -26,8 +26,8 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("appointments/", core_views.appointments, name="appointments"),
     path("contact/", core_views.contact, name="contact"),
-    path("profile/", include("profiles.urls"), name="profile-urls"),
-    path("reviews/", include("reviews.urls"), name="reviews-urls"),
+    path("profile/", include("profiles.urls"), name="profile"),
+    path("reviews/", include("reviews.urls"), name="reviews"),
     path("summernote/", include("django_summernote.urls")),
-    path("user-profiles/", include("core.urls"), name="core-urls"),
+    path("user-profiles/", include("core.urls"), name="user-profiles"),
 ]
