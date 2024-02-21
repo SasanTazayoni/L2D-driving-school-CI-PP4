@@ -20,10 +20,10 @@
                                 <div class="image-flash d-flex align-items-center">
                                     {% if review.author.profile_picture %}
                                     <img src="{{ review.author.profile_picture.url }}"
-                                        alt="{{ review.author.username }}" class="review-picture">
+                                        alt="{{ review.author.username }}" class="review-image">
                                     {% else %}
                                     <img src="{% static 'images/defaultpicture.png' %}"
-                                        alt="{{ review.author.username }}" class="review-picture">
+                                        alt="{{ review.author.username }}" class="review-image">
                                     {% endif %}
                                     <p class="author-date">
                                         Review by {{ review.author }} on {{ review.created_on }}
