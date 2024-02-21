@@ -691,7 +691,7 @@ footer {
 }
 
 footer i {
-    color: var(--block-light);
+    color: rgba(0, 0, 0, 0.6);
     margin-left: 10px;
     font-size: 20px;
 }
@@ -707,22 +707,24 @@ footer i {
 @keyframes spin {
     0% { 
         transform: rotateY(0deg);
-        color: #000;
+        color: rgba(0, 0, 0, 0.4);
     }
     100% { 
         transform: rotateY(360deg);
-        color: var(--block-light);
+        color: #000;
+        filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
     }
 }
 
 @keyframes spin-backward {
     0% {
         transform: rotateY(360deg);
-        color: var(--block-light);
+        color: #000;
+        filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
     }
     100% {
         transform: rotateY(0deg);
-        color: #000;
+        color: rgba(0, 0, 0, 0.4);
     }
 }
 
