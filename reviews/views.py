@@ -92,9 +92,13 @@ def edit_comment(request, review_id, comment_id):
     else:
         comment_form = CommentForm(instance=comment)
 
+    is_edit_comment_view = True
+
     context = {
+        'review_id': review_id,
         'review': review,
-        'comment_form': comment_form
+        'comment_form': comment_form,
+        'is_edit_comment_view': is_edit_comment_view,
     }
 
     return render(request, 'reviews/review_detail.html', context)
