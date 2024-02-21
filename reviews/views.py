@@ -93,6 +93,8 @@ def edit_comment(request, review_id, comment_id):
     else:
         comment_form = CommentForm(instance=comment)
 
+    comment_count = review.comments.filter(approved=True).count()
+    like_count = review.likes.count()
     is_edit_comment_view = True
 
     context = {
@@ -100,6 +102,8 @@ def edit_comment(request, review_id, comment_id):
         'review': review,
         'comment_form': comment_form,
         'is_edit_comment_view': is_edit_comment_view,
+        'comment_count': comment_count,
+        'like_count': like_count,
     }
 
     return render(request, 'reviews/review_detail.html', context)
