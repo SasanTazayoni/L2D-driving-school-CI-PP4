@@ -7,6 +7,39 @@
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ review.rating }}</h1>
+                <!-- Displaying count of comments and likes -->
+                <div class="row">
+                    <div class="col-12">
+                        <strong class="text-secondary">
+                            <i class="far fa-comments"></i> {{ comment_count }}
+                        </strong>
+                    </div>
+                    <div class="col-12">
+                        <form action="{% url 'like_review' review_id %}" method="POST">
+                            {% csrf_token %}
+                            <strong class="text-secondary">
+                                {% if request.user.is_authenticated %}
+                                    <button type="submit" name="like_id" value="{{ review.id }}">
+                                        {% if liked %}
+                                            <i class="fa-solid fa-heart"></i>
+                                        {% else %}
+                                            <i class="fa-regular fa-heart"></i>
+                                        {% endif %}
+                                    </button>
+                                {% else %}
+                                    {% if like_count > 0 %}
+                                        <i class="fa-solid fa-heart"></i>
+                                    {% else %}
+                                        <i class="fa-regular fa-heart"></i>
+                                    {% endif %}
+                                {% endif %} {{ like_count }}
+                            </strong>
+                        </form>
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                </div>
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ review.author }} | {{ review.created_on }}</p>
             </div>
@@ -27,17 +60,6 @@
                     {{ review.content | safe }}
                 </p>
             </div>
-        </div>
-    </div>
-    <!-- Displaying count of comments -->
-    <div class="row">
-        <div class="col-12">
-            <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ comment_count }}
-            </strong>
-        </div>
-        <div class="col-12">
-            <hr>
         </div>
     </div>
     <!-- Displaying Comments -->

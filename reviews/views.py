@@ -34,6 +34,11 @@ def review_detail(request, review_id):
     review = get_object_or_404(Review, id=review_id)
     comments = review.comments.all().order_by("-replied_on")
     comment_count = review.comments.filter(approved=True).count()
+    like_count = review.likes.count()
+    liked = False
+
+    if request.user.is_authenticated:
+        liked = review.likes.filter(user=request.user).exists()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
@@ -50,19 +55,19 @@ def review_detail(request, review_id):
 
     comment_form = CommentForm()
 
-    return render(
-        request,
-        "reviews/review_detail.html",
-        {
-            'review': review,
-            "comments": comments,
-            "comment_count": comment_count,
-            "comment_form": comment_form,
-        },
-    )
+    context = {
+        'review': review,
+        "comments": comments,
+        "comment_count": comment_count,
+        "like_count": like_count,
+        "liked": liked,
+        "review_id": review_id,
+        "comment_form": comment_form,
+    }
+
+    return render(request, "reviews/review_detail.html", context)
 
 
-@login_required(login_url='/accounts/login/')
 def edit_comment(request, review_id, comment_id):
     """
     View to edit comments.
@@ -179,3 +184,19 @@ def delete_review(request, review_id):
         return redirect('profile_page')
     
     return redirect('profile_page')
+
+
+@login_required(login_url='/accounts/login/')
+def like_view(request, review_id):
+    review = get_object_or_404(Review, id=request.POST.get('like_id'))
+    user_profile = UserProfile.objects.get(user=request.user)
+    liked = False
+
+    if review.likes.filter(id=user_profile.id).exists():
+        review.likes.remove(user_profile)
+        liked = False
+    else:
+        review.likes.add(user_profile)
+        liked = True
+
+    return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
