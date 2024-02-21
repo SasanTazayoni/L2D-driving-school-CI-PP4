@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
+from django.views.generic import ListView
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -31,7 +32,7 @@ def review_detail(request, review_id):
     """
 
     queryset = Review.objects.filter(approved=True)
-    review = get_object_or_404(Review, id=review_id)
+    review = get_object_or_404(Review.objects.select_related('author'), id=review_id)
     comments = review.comments.all().order_by("-replied_on")
     comment_count = review.comments.filter(approved=True).count()
     like_count = review.likes.count()
