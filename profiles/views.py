@@ -58,7 +58,7 @@ def edit_profile(request):
             user.first_name = request.POST.get('first_name')
             user.save()
             form.save()
-            messages.success(request, 'Profile updated successfully')
+            messages.success(request, 'Profile updated successfully.')
             return redirect('profile_page')
 
     else:
@@ -81,7 +81,7 @@ def delete_profile(request):
     if request.method == 'POST':
         request.user.delete()
         logout(request)
-        messages.success(request, 'Your account has been deleted')
+        messages.success(request, 'Your account has been deleted.')
         return redirect('home')
     else:
         return redirect('profile_page')

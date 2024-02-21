@@ -45,7 +45,7 @@ def review_detail(request, review_id):
             comment.save()
             messages.add_message(
             request, messages.SUCCESS,
-            'Your comment was submitted and is now pending admin approval'
+            'Your comment was submitted and is now pending admin approval.'
         )
 
     comment_form = CommentForm()
@@ -71,7 +71,7 @@ def edit_comment(request, review_id, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
 
     if comment.author.user != request.user:
-        messages.error(request, 'You are not authorised to edit this comment')
+        messages.error(request, 'You are not authorised to edit this comment.')
         return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
 
     if request.method == "POST":
@@ -80,10 +80,10 @@ def edit_comment(request, review_id, comment_id):
             edited_comment = comment_form.save(commit=False)
             edited_comment.review = review
             edited_comment.save()
-            messages.success(request, 'Comment updated')
+            messages.success(request, 'Comment updated.')
             return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
         else:
-            messages.error(request, 'Error updating comment')
+            messages.error(request, 'Error updating comment.')
     else:
         comment_form = CommentForm(instance=comment)
 
@@ -104,12 +104,12 @@ def delete_comment(request, review_id, comment_id):
     review_id = comment.review.id
 
     if comment.author.user != request.user:
-        messages.error(request, 'You are not authorised to delete this comment')
+        messages.error(request, 'You are not authorised to delete this comment.')
         return redirect('review_detail', review_id=review_id)
 
     if request.method == "POST":
         comment.delete()
-        messages.success(request, 'Comment removed')
+        messages.success(request, 'Comment removed.')
         
         source_page = request.POST.get('source_page')
         if source_page == "profile":
@@ -124,7 +124,7 @@ def create_review(request):
     existing_review = Review.objects.filter(author=profile).first()
 
     if existing_review:
-        messages.info(request, 'You have already made a review')
+        messages.info(request, 'You have already made a review.')
         return redirect('profile_page')
 
     form = ReviewForm()
@@ -135,7 +135,7 @@ def create_review(request):
             review = form.save(commit=False)
             review.author = profile
             form.save()
-            messages.success(request, 'Your review was submitted and is now pending admin approval')
+            messages.success(request, 'Your review was submitted and is now pending admin approval.')
             return redirect('profile_page')
 
     context = {'form': form}
@@ -157,7 +157,7 @@ def update_review(request, review_id):
         form = ReviewForm(request.POST, instance=existing_review)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your review has been updated')
+            messages.success(request, 'Your review has been updated.')
             return redirect('profile_page')
 
     context = {'form': form}
@@ -170,12 +170,12 @@ def delete_review(request, review_id):
     existing_review = Review.objects.filter(author=profile, id=review_id).first()
 
     if not existing_review:
-        messages.info(request, 'There is no review to delete')
+        messages.info(request, 'There is no review to delete.')
         return redirect('profile_page')
 
     if request.method == 'POST':
         existing_review.delete()
-        messages.success(request, 'Your review has been deleted')
+        messages.success(request, 'Your review has been deleted.')
         return redirect('profile_page')
     
     return redirect('profile_page')
