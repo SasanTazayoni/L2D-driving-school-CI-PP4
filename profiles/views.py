@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
-from reviews.models import Comment
+from reviews.models import Review, Comment
 from .models import UserProfile
 from .forms import UserProfileForm
 
@@ -22,11 +22,15 @@ def profile_page(request):
         review_id = None
 
     comments = Comment.objects.filter(author=profile)
+    comment_count = comments.count()
+    like_count = Review.objects.filter(id=review_id).first().likes.count()
 
     context = {
         'profile': profile,
         'review_id': review_id,
-        'comments': comments
+        'comments': comments,
+        'comment_count': comment_count,
+        'like_count': like_count,
     }
 
     return render(
