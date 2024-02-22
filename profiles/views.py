@@ -18,20 +18,24 @@ def profile_page(request):
     profile = get_object_or_404(UserProfile, user=request.user)
     try:
         review_id = profile.review.id
+        review = Review.objects.get(id=review_id)
+        like_count = review.likes.count()
     except ObjectDoesNotExist:
         review_id = None
+        like_count = 0
 
     comments = Comment.objects.filter(author=profile)
     comment_count = comments.count()
-    like_count = Review.objects.filter(id=review_id).first().likes.count()
 
     context = {
         'profile': profile,
         'review_id': review_id,
         'comments': comments,
         'comment_count': comment_count,
-        'like_count': like_count,
     }
+
+    if like_count is not None:
+        context['like_count'] = like_count
 
     return render(
         request,
