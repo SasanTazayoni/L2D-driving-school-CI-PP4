@@ -24,8 +24,8 @@ def profile_page(request):
         review_id = None
         like_count = 0
 
-    comments = Comment.objects.filter(author=profile)
-    comment_count = comments.count()
+    comments = Comment.objects.filter(review_id=review_id)
+    comment_count = comments.filter(approved=True).count()
 
     context = {
         'profile': profile,
