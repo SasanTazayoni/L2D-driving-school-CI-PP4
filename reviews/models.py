@@ -11,7 +11,7 @@ class Review(models.Model):
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    likes = models.ManyToManyField(UserProfile, related_name="user_reviews")
+    likes = models.ManyToManyField(UserProfile, related_name="user_reviews", null=True, blank=True)
 
     class Meta:
         ordering = ["-created_on"]
