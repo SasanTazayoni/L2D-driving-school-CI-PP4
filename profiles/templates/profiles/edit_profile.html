@@ -18,15 +18,14 @@
             </header>
             <form id="profileForm" method="POST" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
                 {% csrf_token %}
-
                 <div class="row">
                     {% for field in form %}
-                    <div class="col-md-6">
-                        <div class="form-field">
-                            <label for="form-input">{{ field.label }}:</label>
-                            {{ field }}
+                        <div class="col-md-6">
+                            <div class="form-field">
+                                <label for="form-input">{{ field.label }}:</label>
+                                {{ field }}
+                            </div>
                         </div>
-                    </div>
                     {% endfor %}
                 </div>
 
@@ -38,4 +37,5 @@
         </div>
     </div>
 </section>
+
 {% endblock content %}
