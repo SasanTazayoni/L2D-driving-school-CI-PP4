@@ -5,7 +5,7 @@
 {% block head_title %}{% trans "L2D - Your Profile" %}{% endblock head_title %}
 
 {% block head_scripts %}
-<script src="{% static 'js/rating.js' %}" defer></script>
+<script src="{% static 'js/profileStars.js' %}" defer></script>
 {% endblock head_scripts %}
 
 {% block content %}
@@ -60,8 +60,22 @@
               {% if profile.review.approved %}
                 <div class="profile-content">
                   <div data-rating>{{ profile.review.rating }}</div>
-                  <p class="mb-3">{{ profile.review.created_on }} - <a
-                    href="{% url 'review_detail' profile.review.id %}">View comments</a></p>
+                  <p>{{ profile.review.created_on }} - <a class="link"
+                    href="{% url 'review_detail' profile.review.id %}">View comments</a>
+                  </p>
+                  <div class="col-12 text-center mb-3">
+                    <div class="comment-icon-container bold">
+                      <i class="far fa-comments"></i> {{ comment_count }}
+                    </div>
+                    <div class="like-icon-container bold">
+                      {% if like_count > 0 %}
+                        <i class="fa-solid fa-heart"></i>
+                      {% else %}
+                        <i class="fa-regular fa-heart"></i>
+                      {% endif %}
+                      {{ like_count }}
+                    </div>
+                  </div>
                   <p>{{ profile.review.content }}</p>
                 </div>
               {% else %}
@@ -95,7 +109,7 @@
               {% for comment in profile.commenter.all %}
                 {% if comment.approved %}
                   <div class="profile-content mb-4">
-                    <p class="mb-3">{{ comment.replied_on }} - <a href="{% url 'review_detail' comment.review.id %}">Review by
+                    <p class="mb-3">{{ comment.replied_on }} - <a class="link" href="{% url 'review_detail' comment.review.id %}">Review by
                       {{ comment.review.author }}</a></p>
                     <p class="mb-3">{{ comment.content | safe }}</p>
                     <div class="btn-container d-flex justify-content-center m-0">
