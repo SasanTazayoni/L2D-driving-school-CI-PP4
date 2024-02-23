@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.db.models import Count
 from profiles.models import UserProfile
+from reviews.models import Review, Comment
 
 
 def home(request):
@@ -37,5 +39,13 @@ def user_profiles(request):
 
 def profile_detail(request, user_id):
     user_profile = get_object_or_404(UserProfile, user_id=user_id)
-    context = {'user_profile': user_profile}
+    comment_count = Comment.objects.filter(review__author=user_profile, approved=True).count()
+    like_count = Review.objects.filter(author=user_profile).aggregate(total_likes=Count('likes'))['total_likes'] or 0
+
+    context = {
+        'user_profile': user_profile,
+        'comment_count': comment_count,
+        'like_count': like_count,
+    }
+
     return render(request, 'core/profile_detail.html', context)
