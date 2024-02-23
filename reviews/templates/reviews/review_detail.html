@@ -4,40 +4,54 @@
 
 {% block head_title %}{% trans "L2D - Review Detail" %}{% endblock head_title %}
 
+{% block head_scripts %}
+<script src="{% static 'js/reviewDetailStars.js' %}" defer></script>
+{% endblock head_scripts %}
+
 {% block content %}
 <section class="block--grey">
-    <header class="page-header">
-        <h1>Review Details</h1>
-    </header>
     <div class="container mt-5 mb-2">
         <div class="card card--gradient">
-            <header>
+            <header class="page-header">
+                <h1>Review Details</h1>
+            </header>
+            <h2 class="review-card-header">
                 {% if review.author.profile_picture %}
                     <img src="{{ review.author.profile_picture.url }}" alt="{{ review.author.user.username }}" class="review-image">
                 {% else %}
                     <img src="{% static 'images/defaultpicture.png' %}" alt="{{ profile.user.username }}" class="review-image" />
                 {% endif %}
-                <h2>Review by {{ review.author }} on {{ review.created_on }}</h2>
-            </header>
-            <h1 class="post-title">{{ review.rating }}</h1>
-            <!-- Displaying count of comments and likes -->
-            <div class="row">
-                <div class="col-12">
-                    <strong class="text-secondary">
-                        <i class="far fa-comments"></i> {{ comment_count }}
-                    </strong>
+                <div class="header-text">
+                    <span class="review-header">
+                        {% if request.user.is_authenticated %}
+                            {% if review.author.user == request.user %}
+                                <a class="link" href="{% url 'profile_page' %}">{{ review.author }}</a>
+                            {% else %}
+                                <a href="{% url 'profile_detail' review.author.user.id %}">{{ review.author }}</a>
+                            {% endif %}
+                        {% else %}
+                            <a href="{% url 'profile_detail' review.author.user.id %}">{{ review.author }}</a>
+                        {% endif %}
+                    </span>
+                    <span class="author-date">- {{ review.created_on }}</span>
                 </div>
-                <div class="col-12">
-                    <form action="{% url 'like_review' review_id %}" method="POST">
+            </h2>
+            <div class="d-flex align-items-center icon-container">
+                <div class="review-detail-stars" data-rating>{{ review.rating }}</div>
+                <div class="d-flex">
+                    <div class="comment-icon-container bold">
+                        <i class="far fa-comments"></i> {{ comment_count }}
+                    </div>
+                    <form action="{% url 'like_review' review_id %}" method="POST" class="like-icon-container">
                         {% csrf_token %}
-                        <strong class="text-secondary">
+                        <div class="bold">
                             {% if request.user.is_authenticated %}
                                 {% if not is_edit_comment_view %}
                                     <button type="submit" name="like_id" value="{{ review.id }}">
                                     {% if liked %}
-                                        <i class="fa-solid fa-heart"></i>
+                                        <i class="fa-solid fa-heart animate"></i>
                                     {% else %}
-                                        <i class="fa-regular fa-heart"></i>
+                                        <i class="fa-regular fa-heart animate"></i>
                                     {% endif %}
                                         </button>
                                     {% endif %}
@@ -49,72 +63,121 @@
                                     <i class="fa-regular fa-heart"></i>
                                 {% endif %}
                             {% endif %} {{ like_count }}
-                        </strong>
+                        </div>
                     </form>
                 </div>
             </div>
+            <div class="review-content">
+                {{ review.content | safe }}
+            </div>
+            {% if request.user.is_authenticated and request.user == review.author.user %}
+                <div class="btn-container d-flex justify-content-center mt-3">
+                    <a href="{% url 'update_review' review.id %}" class="blue-button">Edit Review</a>
+                    <button type="button" class="red-button" data-bs-toggle="modal" data-bs-target="#deleteReviewModal">Delete Review</button>
+                </div>
+            {% endif %}
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col card mb-4  mt-3 left  top">
-                <div class="card-body">
-                    <!-- The post content goes inside the card-text. -->
-                    <!-- Use the | safe filter inside the template tags -->
-                    <p class="card-text">
-                        {{ review.content | safe }}
-                    </p>
-                </div>
+    <!-- Delete Review Modal -->
+    <div class="modal fade" id="deleteReviewModal" tabindex="-1" aria-labelledby="deleteReviewModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center">
+            <h5 class="modal-title" id="deleteReviewModalLabel">Delete Review Confirmation</h5>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+            Are you sure you want to delete your review?
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+            <form method="POST" action="{% url 'delete_review' review_id %}">
+                {% csrf_token %}
+                <button type="submit" class="blue-button">Yes</button>
+            </form>
+            <button type="button" class="red-button" data-bs-dismiss="modal">No</button>
             </div>
         </div>
+        </div>
+    </div>
+</section>
+<section class="block--grey">
+    <div class="container">
+        <div class="card card--comments">
         <!-- Displaying Comments -->
-        <div class="row">
-            <div class="col-md-8 card mb-4  mt-3 ">
-                <h3>Comments:</h3>
-                <div class="card-body">
-                    <!-- We want a for loop inside the empty control tags
-            to iterate through each comment in comments -->
-                    {% for comment in comments %}
-                    <div class="p-2 comments
-            {% if not comment.approved and comment.author == user %}
-            faded{% elif not comment.approved %} d-none{% endif %}">
-                        <p class="font-weight-bold">
-                            {{ comment.author }}
-                            <span class="font-weight-normal">
-                                {{ comment.replied_on }}
-                            </span> wrote:
-                        </p>
-                        <div id="comment{{ comment.id }}">
-                            {{ comment.content | linebreaks }}
-                        </div>
-                        {% if not comment.approved and comment.author == user %}
-                        <p class="approval">
-                            This comment is awaiting approval
-                        </p>
+        {% if not is_edit_comment_view %}
+        <header class="page-header">
+            <h2 class="text-center">Comments</h2>
+        </header>
+        {% endif %}
+        {% for comment in comments %}
+            {% if comment.approved %}
+                <div class="comment-container">
+                    <p class="comment-author">
+                        <span class="bold">{{ comment.author }}</span> wrote ({{ comment.replied_on }}):
+                    </p>
+                    <div id="comment{{ comment.id }}" class="comment-content">
+                        {{ comment.content | safe }}
+                        {% if request.user.is_authenticated and comment.author.user == request.user %}
+                            <div class="btn-container d-flex justify-content-center mt-5">
+                                <a href="{% url 'edit_comment' review_id=comment.review.id comment_id=comment.id %}"
+                                    class="blue-button">Edit</a>
+                                <button type="button" class="red-button" data-bs-toggle="modal"
+                                    data-bs-target="#deleteCommentModal{{ comment.id }}">Delete</button>
+                            </div>
                         {% endif %}
                     </div>
-                    <!-- Our for loop ends here -->
-                    {% endfor %}
                 </div>
-            </div>
-            <!-- Creating New Comments -->
-            <div class="col-md-4 card mb-4 mt-3">
-                <div class="card-body">
-                    {% if user.is_authenticated %}
-                    <h3>Leave a comment:</h3>
-                    <p>Posting as: {{ user.username }}</p>
-                    <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                        {{ comment_form }}
-                        {% csrf_token %}
-                        <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                    </form>
-                    {% else %}
-                    <p>Log in to leave a comment</p>
+            {% endif %}
+        {% endfor %}
+        <!-- Creating New Comments -->
+        {% if user.is_authenticated %}
+            {% if is_edit_comment_view %}
+                <h3 class="comment-prompt">Edit comment:</h3>
+            {% else %}
+                <h3 class="comment-prompt">Leave a comment:</h3>
+            {% endif %}
+            {% if not is_edit_comment_view %}
+                <p class="post-author">Posting as <span class="bold">{{ user.username }}</span></p>
+            {% endif %}
+            <form id="commentForm" method="POST">
+                {% csrf_token %}
+                {{ comment_form }}
+                <div class="btn-container d-flex justify-content-center">
+                    <button id="submitButton" type="submit" class="blue-button">Submit</button>
+                    {% if is_edit_comment_view %}
+                        <a type="button" href="{% url 'review_detail' review_id=review_id %}" class="red-button">Cancel</a>
                     {% endif %}
                 </div>
-            </div>
+            </form>
+        {% endif %}
         </div>
+    </div>
+
+    {% for comment in comments %}
+  <!-- Delete Comment Modal -->
+    <div class="modal fade" id="deleteCommentModal{{ comment.id }}" tabindex="-1"
+      aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-center">
+            <h5 class="modal-title" id="deleteCommentModalLabel">Delete Comment Confirmation</h5>
+          </div>
+          <div class="modal-body d-flex justify-content-center">
+            Are you sure you want to delete your comment?
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <form method="POST" action="{% url 'delete_comment' review_id=comment.review.id comment_id=comment.id %}">
+              {% csrf_token %}
+              <input type="hidden" name="source_page" value="profile">
+              <button type="submit" class="blue-button">Yes</button>
+            </form>
+            <button type="button" class="red-button" data-bs-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 </section>
 
 {% endblock content %}
