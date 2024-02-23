@@ -4,22 +4,89 @@
 
 {% block head_title %}{% trans "L2D - User Profile" %}{% endblock head_title %}
 
+{% block head_scripts %}
+<script src="{% static 'js/userProfileStars.js' %}" defer></script>
+{% endblock head_scripts %}
+
 {% block content %}
 
-<h1>Page</h1>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <!-- Display user profile details here -->
-                    <h2>{{ user_profile.user.username }}</h2>
+<section class="block--grey user-profile-block">
+    <div class="container mt-5 mb-2">
+        <div class="card card--gradient">
+            <header class="page-header">
+                <h1>User Profile</h1>
+            </header>
+            <div class="row">
+                <!-- Left column -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="col-12 text-center">
+                        <h2>{{ user_profile.user.first_name }}</h2>
+                        {% if user_profile.profile_picture.url %}
+                            <img src="{{ user_profile.profile_picture.url }}" class="profile-image" />
+                        {% else %}
+                            <img src="{% static 'images/defaultpicture.png' %}" class="profile-image" />
+                        {% endif %}
+                        {% if user_profile.age %}
+                            <p class="profile-info py-1">Age: {{ user_profile.age }}</p>
+                        {% endif %}
+                        {% if user_profile.occupation %}
+                            <p class="profile-info py-1">Occupation: {{ user_profile.occupation }}</p>
+                        {% endif %}
+                        <div class="btn-container d-flex justify-content-center mt-3">
+                            <a href="{% url 'user_profiles' %}" class="blue-button">All users</a>
+                            <a href="{% url 'profile_page' %}" class="blue-button">My profile</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right column -->
+                <div class="col-md-8 col-sm-6">
+                    <div class="col-12 text-center mt-3">
+                        <h3>About me</h3>
+                        {% if user_profile.about_me %}
+                        <div class="profile-content">
+                            {{ user_profile.about_me | safe }}
+                        </div>
+                        {% else %}
+                        <div class="profile-content italic">
+                            <p>User has not filled out their details</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-12 text-center mt-3">
+                        <h3>User Review</h3>
+                        {% if user_profile.review %}
+                            {% if user_profile.review.approved %}
+                                <div class="profile-content">
+                                    <div data-rating>{{ user_profile.review.rating }}</div>
+                                    <p>{{ user_profile.review.created_on }} - <a class="link"
+                                        href="{% url 'review_detail' user_profile.review.id %}">View comments</a>
+                                    </p>
+                                    <div class="col-12 text-center mb-3">
+                                        <div class="comment-icon-container bold">
+                                        <i class="far fa-comments"></i> {{ comment_count }}
+                                        </div>
+                                        <div class="like-icon-container bold">
+                                        {% if like_count > 0 %}
+                                            <i class="fa-solid fa-heart"></i>
+                                        {% else %}
+                                            <i class="fa-regular fa-heart"></i>
+                                        {% endif %}
+                                        {{ like_count }}
+                                        </div>
+                                    </div>
+                                    <p>{{ user_profile.review.content | safe }}</p>
+                                </div>
+                            {% endif %}
+                        {% else %}
+                        <div class="profile-content italic">
+                            <p>User has not made a review yet</p>
+                        </div>
+                    {% endif %}
+                    </div>
                 </div>
             </div>
-            <a href="{% url 'user_profiles' %}" class="btn btn-secondary mt-3">Back</a>
         </div>
     </div>
-</div>
+</section>
 
 {% endblock content %}

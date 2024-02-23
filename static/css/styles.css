@@ -447,6 +447,15 @@ a.red-button,
     a.red-button,
     .blue-button,
     .red-button {
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+    a.blue-button,
+    a.red-button,
+    .blue-button,
+    .red-button {
         width: 80px;
     }
 }
@@ -1091,6 +1100,7 @@ footer i {
     .profile-image {
         width: 200px;
         height: 200px;
+        margin: 10px 0;
     }
 }
 
@@ -1098,10 +1108,15 @@ footer i {
     .profile-image {
         width: 150px;
         height: 150px;
+        margin: 0;
     }
 }
 
 /* User profiles template for all users */
+
+.user-profile-block {
+    min-height: 90vh;
+}
 
 .profile-picture {
     width: 150px;
