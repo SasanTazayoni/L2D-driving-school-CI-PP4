@@ -125,11 +125,7 @@ def delete_comment(request, review_id, comment_id):
         comment.delete()
         messages.success(request, 'Comment removed.')
         
-        source_page = request.POST.get('source_page')
-        if source_page == "profile":
-            return redirect('profile_page')
-        else:
-            return redirect(reverse('review_detail', args=[review_id]))
+    return redirect(reverse('review_detail', args=[review_id]))
 
 
 @login_required(login_url='/accounts/login/')
