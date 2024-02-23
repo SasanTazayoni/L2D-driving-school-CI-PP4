@@ -187,7 +187,7 @@
     </div>
   {% endif %}
 
-  {% for comment in comments %}
+  {% for comment in profile.commenter.all %}
   <!-- Delete Comment Modal -->
     <div class="modal fade" id="deleteCommentModal{{ comment.id }}" tabindex="-1"
       aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
