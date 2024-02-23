@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add grey stars
         for (let i = 0; i < greyStars; i++) {
             const star = document.createElement('img')
-            star.src = `../../../../static/images/star.png`
+            star.src = `../../../../static/images/greystar.png`
             star.style.width = '36px'
             star.style.height = '36px'
             star.style.margin = '5px 0'
