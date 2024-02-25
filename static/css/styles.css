@@ -165,6 +165,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"],
+select,
 textarea {
     border: 2px solid var(--color-primary);
     border-radius: 5px;
@@ -285,6 +286,7 @@ textarea {
     input[type="text"],
     input[type="email"],
     input[type="number"],
+    select,
     textarea {
         font-size: 12px;
     }
@@ -293,6 +295,7 @@ textarea {
     input[type="email"],
     input[type="password"],
     input[type="number"],
+    select,
     textarea {
         margin-bottom: 8px;
     }
@@ -838,6 +841,13 @@ footer i {
 
 .like-icon-container button {
     background-color: transparent;
+}
+
+.review-form-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
 }
 
 @keyframes pulse {
