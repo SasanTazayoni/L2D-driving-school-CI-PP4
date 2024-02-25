@@ -32,8 +32,17 @@ def user_profiles(request):
     """
     Renders the user profiles page
     """
-    user_profiles = UserProfile.objects.all()
-    context = {'user_profiles': user_profiles}
+    search_query = ''
+
+    if request.GET.get('search_query'):
+        search_query = request.GET.get('search_query')
+
+    user_profiles = UserProfile.objects.filter(user__first_name__icontains=search_query)
+
+    context = {
+        'user_profiles': user_profiles,
+        'search_query': search_query,
+    }
     return render(request, 'core/user_profiles.html', context)
 
 

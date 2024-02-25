@@ -14,13 +14,13 @@
     </div>
 
     <div>
-        <form action="#" method="GET">
+        <form action="{% url 'user_profiles' %}" method="GET">
             <div class="form-field">
-
-            </div>
                 <label for="formInput#search">Search users</label>
-                <input type="text" id="formInput#search" placeholder="Search by username">
-                <input type="submit" class="btn" value="Search">
+                <input type="text" id="formInput#search" placeholder="Search for a user" 
+                    value="{{ search_query }}" name="search_query">
+            </div>
+            <input type="submit" class="btn" value="Search">
         </form>
     </div>
 </section>
@@ -40,8 +40,12 @@
                                 <img src="{% static 'images/defaultpicture.png' %}" alt="{{ user_profile.user.username }}" class="profile-picture img-fluid rounded-circle">
                             {% endif %}
                         </div>
-                        <h5 class="card-title text-center">{{ user_profile.user.username }}</h5>
-                        <a href="{% url 'profile_detail' user_profile.user.id %}" class="btn btn-primary">View</a>
+                        <h5 class="card-title text-center">{{ user_profile.user.first_name }}</h5>
+                        {% if user_profile.user == request.user %}
+                            <a href="{% url 'profile_page' %}" class="btn btn-primary">View</a>
+                        {% else %}
+                            <a href="{% url 'profile_detail' user_profile.user.id %}" class="btn btn-primary">View</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
