@@ -1146,6 +1146,13 @@ footer i {
 
 /* Contact page template */
 
+.contact-form-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
 .contact-form h1 {
     font-size: 24px;
     font-weight: bold;
