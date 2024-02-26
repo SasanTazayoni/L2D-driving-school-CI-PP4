@@ -165,6 +165,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"],
+input[type="tel"],
 select,
 textarea {
     border: 2px solid var(--color-primary);
@@ -179,6 +180,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"],
+input[type="tel"],
 textarea {
     width: 100%;
 }
@@ -187,6 +189,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="number"]:focus,
+input[type="tel"]:focus,
 textarea:focus {
     border-color: var(--color-secondary);
     outline: 0;
@@ -286,6 +289,7 @@ textarea {
     input[type="text"],
     input[type="email"],
     input[type="number"],
+    input[type="tel"],
     select,
     textarea {
         font-size: 12px;
@@ -295,6 +299,7 @@ textarea {
     input[type="email"],
     input[type="password"],
     input[type="number"],
+    input[type="tel"],
     select,
     textarea {
         margin-bottom: 8px;
@@ -1137,4 +1142,142 @@ footer i {
 
 .card-title {
     margin-bottom: 0.5rem;
+}
+
+/* Contact page template */
+
+.contact-form h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form-fields > .form-field {
+    padding: 0 30px;
+}
+
+.form-field:nth-child(5) {
+    grid-column: span 2;
+}
+
+.contact-info {
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-secondary), var(--color-primary));
+    color: var(--block-light);
+    border: none;
+}
+
+.contact-info > h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.contact-icon-info {
+    font-size: 16px;
+    margin: auto 0;
+    padding-left: 20px;
+}
+
+.google-maps-container {
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.google-maps {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media screen and (max-width: 1399px) {
+    .contact-icon-info {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .form-fields > .form-field {
+        padding: 0 20px;
+    }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .col-lg-9 {
+        flex: 0 0 66%;
+        max-width: 66%;
+    }
+
+    .col-lg-3 {
+        flex: 0 0 33%;
+        max-width: 33%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .contact-info {
+        margin-top: 20px;
+        height: 100%;
+    }
+
+    .google-maps-container {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form-field:nth-child(5) {
+        grid-column: span 1;
+    }
+
+    .form-fields {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .form-fields > .form-field {
+        padding: 0 10px;
+    }
+
+    .contact-icon {
+        font-size: 18px;
+    }
+
+    .contact-icon-info {
+        font-size: 14px;
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .form-fields > .form-field {
+        padding: 0 5px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+    .contact-icon {
+        font-size: 16px;
+    }
+
+    .contact-icon-info {
+        font-size: 12px;
+        padding-left: 5px;
+    }
 }
