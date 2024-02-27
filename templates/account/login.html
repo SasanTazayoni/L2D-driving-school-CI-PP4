@@ -24,6 +24,9 @@
                     <label for="id_password">Password:</label>
                     <input id="id_password" type="password" name="password" placeholder="Enter password">
                 </div>
+                {% if form.errors %}
+                    <p class="error-text">Invalid username or password. Please try again.</p>
+                {% endif %}
                 <!-- Forgot password link -->
                 <a href="{% url 'account_reset_password' %}" class="pw-reset">Forgot your password?</a>
                 <div class="btn-container">
