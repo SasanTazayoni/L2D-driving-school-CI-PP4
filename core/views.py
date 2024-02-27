@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Count
 from profiles.models import UserProfile
 from reviews.models import Review, Comment
@@ -39,9 +40,24 @@ def user_profiles(request):
 
     user_profiles = UserProfile.objects.filter(user__first_name__icontains=search_query).order_by('user__first_name')
 
+    page = request.GET.get('page')
+    results = 12
+    paginator = Paginator(user_profiles, results)
+
+    try:
+        user_profiles = paginator.page(page)
+    except PageNotAnInteger:
+        page = 1
+        user_profiles = paginator.page(page)
+    except EmptyPage:
+        page = paginator.num_pages
+        user_profiles = paginator.page(page)
+
+
     context = {
         'user_profiles': user_profiles,
         'search_query': search_query,
+        'paginator': paginator,
     }
     return render(request, 'core/user_profiles.html', context)
 
