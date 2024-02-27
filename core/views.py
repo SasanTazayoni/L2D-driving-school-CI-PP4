@@ -37,7 +37,7 @@ def user_profiles(request):
     if request.GET.get('search_query'):
         search_query = request.GET.get('search_query')
 
-    user_profiles = UserProfile.objects.filter(user__first_name__icontains=search_query)
+    user_profiles = UserProfile.objects.filter(user__first_name__icontains=search_query).order_by('user__first_name')
 
     context = {
         'user_profiles': user_profiles,
