@@ -131,26 +131,9 @@ a {
     background: linear-gradient(to bottom right, rgba(125, 174, 248, 0.1), white 30%, white 70%, rgba(125, 174, 248, 0.1));
 }
 
-.card--comments {
-    padding: 40px;
-    background: #fff;
-}
-
 @media screen and (max-width: 768px) {
     .card {
         box-shadow: 0 0 5px #acacac;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .card--comments, .card--gradient {
-        padding: 30px;
-    }
-}
-
-@media screen and (max-width: 428px) {
-    .card--comments, .card--gradient {
-        padding: 20px;
     }
 }
 
@@ -797,6 +780,17 @@ footer i {
 
 /* Reviews and review details template */
 
+.review-form-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.review-detail-block {
+    min-height: 90vh;
+}
+
 .review-image {
     width: 80px;
     height: 80px;
@@ -846,13 +840,6 @@ footer i {
 
 .like-icon-container button {
     background-color: transparent;
-}
-
-.review-form-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
 }
 
 @keyframes pulse {
@@ -1046,6 +1033,10 @@ footer i {
 
 /* Appointments template */
 
+.appointments-block {
+    min-height: 90vh;
+}
+
 [data-url] {
     height: 720px;
     min-width: 320px;
@@ -1129,8 +1120,15 @@ footer i {
 
 /* User profiles template for all users */
 
+.user-profiles-block {
+    min-height: 80vh;
+}
+
 .user-profile-block {
-    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
 }
 
 .profile-picture {

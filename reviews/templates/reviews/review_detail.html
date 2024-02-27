@@ -9,7 +9,7 @@
 {% endblock head_scripts %}
 
 {% block content %}
-<section class="block--grey">
+<section class="block--grey review-detail-block d-flex justify-content-center align-items-center flex-column">
     <div class="container mt-5 mb-2">
         <div class="card card--gradient">
             <header class="page-header">
@@ -100,59 +100,59 @@
         </div>
         </div>
     </div>
-</section>
-<section class="block--grey">
-    <div class="container">
-        <div class="card card--comments">
-        <!-- Displaying Comments -->
-        {% if not is_edit_comment_view %}
-        <header class="page-header">
-            <h2 class="text-center">Comments</h2>
-        </header>
-        {% endif %}
-        {% for comment in comments %}
-            {% if comment.approved %}
-                <div class="comment-container">
-                    <p class="comment-author">
-                        <span class="bold">{{ comment.author }}</span> wrote ({{ comment.replied_on }}):
-                    </p>
-                    <div id="comment{{ comment.id }}" class="comment-content">
-                        {{ comment.content | safe }}
-                        {% if request.user.is_authenticated and comment.author.user == request.user %}
-                            <div class="btn-container d-flex justify-content-center mt-5">
-                                <a href="{% url 'edit_comment' review_id=comment.review.id comment_id=comment.id %}"
-                                    class="blue-button">Edit</a>
-                                <button type="button" class="red-button" data-bs-toggle="modal"
-                                    data-bs-target="#deleteCommentModal{{ comment.id }}">Delete</button>
-                            </div>
+    {% if comments %}
+        <div class="container mt-5">
+            <div class="card card--gradient">
+            <!-- Displaying Comments -->
+            {% if not is_edit_comment_view %}
+            <header class="page-header">
+                <h2 class="text-center">Comments</h2>
+            </header>
+            {% endif %}
+            {% for comment in comments %}
+                {% if comment.approved %}
+                    <div class="comment-container">
+                        <p class="comment-author">
+                            <span class="bold">{{ comment.author }}</span> wrote ({{ comment.replied_on }}):
+                        </p>
+                        <div id="comment{{ comment.id }}" class="comment-content">
+                            {{ comment.content | safe }}
+                            {% if request.user.is_authenticated and comment.author.user == request.user %}
+                                <div class="btn-container d-flex justify-content-center mt-5">
+                                    <a href="{% url 'edit_comment' review_id=comment.review.id comment_id=comment.id %}"
+                                        class="blue-button">Edit</a>
+                                    <button type="button" class="red-button" data-bs-toggle="modal"
+                                        data-bs-target="#deleteCommentModal{{ comment.id }}">Delete</button>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <!-- Creating New Comments -->
+            {% if user.is_authenticated %}
+                {% if is_edit_comment_view %}
+                    <h3 class="comment-prompt">Edit comment:</h3>
+                {% else %}
+                    <h3 class="comment-prompt">Leave a comment:</h3>
+                {% endif %}
+                {% if not is_edit_comment_view %}
+                    <p class="post-author">Posting as <span class="bold">{{ user.username }}</span></p>
+                {% endif %}
+                <form id="commentForm" method="POST">
+                    {% csrf_token %}
+                    {{ comment_form }}
+                    <div class="btn-container d-flex justify-content-center">
+                        <button id="submitButton" type="submit" class="blue-button">Submit</button>
+                        {% if is_edit_comment_view %}
+                            <a type="button" href="{% url 'review_detail' review_id=review_id %}" class="red-button">Cancel</a>
                         {% endif %}
                     </div>
-                </div>
+                </form>
             {% endif %}
-        {% endfor %}
-        <!-- Creating New Comments -->
-        {% if user.is_authenticated %}
-            {% if is_edit_comment_view %}
-                <h3 class="comment-prompt">Edit comment:</h3>
-            {% else %}
-                <h3 class="comment-prompt">Leave a comment:</h3>
-            {% endif %}
-            {% if not is_edit_comment_view %}
-                <p class="post-author">Posting as <span class="bold">{{ user.username }}</span></p>
-            {% endif %}
-            <form id="commentForm" method="POST">
-                {% csrf_token %}
-                {{ comment_form }}
-                <div class="btn-container d-flex justify-content-center">
-                    <button id="submitButton" type="submit" class="blue-button">Submit</button>
-                    {% if is_edit_comment_view %}
-                        <a type="button" href="{% url 'review_detail' review_id=review_id %}" class="red-button">Cancel</a>
-                    {% endif %}
-                </div>
-            </form>
-        {% endif %}
+            </div>
         </div>
-    </div>
+    {% endif %}
 
     {% for comment in comments %}
     <!-- Delete Comment Modal -->
