@@ -778,6 +778,70 @@ footer i {
     }
 }
 
+/* Home page template */
+
+.block--background-home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+
+.fallback-image {
+   min-height: 90vh;
+   object-fit: cover;
+   object-position: center;
+   position: relative;
+}
+
+.overlay {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.5s;
+}
+
+.overlay.active {
+    opacity: 1;
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: var(--border-radius);
+}
+
+.hero-content > h1 {
+    font-weight: bold;
+}
+
+.hero-content > p {
+    font-size: 20px;
+    margin: 0;
+}
+
+@media screen and (max-width: 428px) {
+    .hero-content > h1 {
+        font-size: 24px;
+    }
+
+    .hero-content > p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .hero-content {
+        padding: 10px;
+    }
+}
+
 /* Reviews and review details template */
 
 .review-form-block {

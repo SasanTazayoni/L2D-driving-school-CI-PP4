@@ -4,8 +4,29 @@
 
 {% block head_title %}{% trans "L2D - Home" %}{% endblock head_title %}
 
+{% block head_scripts %}
+<script src="{% static 'js/overlay.js' %}" defer></script>
+{% endblock head_scripts %}
+
 {% block content %}
 
-<p>Home page</p>
+<section class="block--background-home">
+    <img src="{% static 'images/home-fallback-background.png' %}" alt="A view of someone driving" class="fallback-image">
+    <div class="overlay d-flex justify-content-center align-items-center">
+        <div class="hero-content d-flex justify-content-center align-items-center flex-column text-center">
+            <h1>L2D Driving School</h1>
+            {% if not user.is_authenticated %}
+                <p>Enrol today to start your journey to confident driving</p>
+                <a class="blue-button" href="{% url 'account_signup' %}">Sign up</a>
+            {% else %}
+                <p>Welcome back!</p>
+                <div class="btn-container d-flex justify-content-center">
+                    <a class="blue-button" href="{% url 'appointments' %}">Schedule</a>
+                    <a class="blue-button" href="{% url 'contact' %}">Contact</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
 
 {% endblock content %}
