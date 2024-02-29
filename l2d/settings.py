@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-sasantazayo-l2ddrivings-6rvcvzias25.ws-eu108.gitpod.io',
@@ -48,8 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'crispy_forms',
-    'crispy_bootstrap5',
     'django_summernote',
     'cloudinary',
     'core',
