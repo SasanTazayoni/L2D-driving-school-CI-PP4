@@ -23,14 +23,10 @@
                 {% endif %}
                 <div class="header-text">
                     <span class="review-header">
-                        {% if request.user.is_authenticated %}
-                            {% if review.author.user == request.user %}
-                                <a class="link" href="{% url 'profile_page' %}">{{ review.author }}</a>
-                            {% else %}
-                                <a href="{% url 'profile_detail' review.author.user.id %}">{{ review.author }}</a>
-                            {% endif %}
+                        {% if request.user.is_authenticated and review.author.user == request.user %}  
+                            <a class="link" href="{% url 'profile_page' %}">{{ review.author }}</a>
                         {% else %}
-                            <a href="{% url 'profile_detail' review.author.user.id %}">{{ review.author }}</a>
+                            <a class="link" href="{% url 'profile_detail' review.author.user.id %}">{{ review.author }}</a>
                         {% endif %}
                     </span>
                     <span class="author-date">- {{ review.created_on }}</span>
@@ -139,7 +135,7 @@
                 <h3 class="comment-prompt">Leave a comment:</h3>
             {% endif %}
             {% if not is_edit_comment_view %}
-                <p class="post-author">Posting as <span class="bold">{{ user.username }}</span></p>
+                <p class="post-author">Posting as <span class="bold">{{ user.first_name }}</span></p>
             {% endif %}
             <form id="commentForm" method="POST">
                 {% csrf_token %}
