@@ -27,7 +27,7 @@
         </header>
         <div class="row">
             {% for user_profile in user_profiles %}
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 profile-images-container">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 profile-image-container">
                     <a href="{% if user_profile.user == request.user %}{% url 'profile_page' %}{% else %}{% url 'profile_detail' user_profile.user.id %}{% endif %}"
                         class="card h-100 profile-card">
                         {% if user_profile.profile_picture %}
