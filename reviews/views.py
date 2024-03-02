@@ -4,6 +4,7 @@ from django.views.generic import ListView
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.db.models import Count, Q
 from .models import Review, Comment
 from .forms import ReviewForm
 from .forms import CommentForm
@@ -13,8 +14,10 @@ from django.contrib.auth.decorators import login_required
 
 class ReviewList(generic.ListView):
     queryset = Review.objects.filter(approved=True).order_by("-created_on").select_related('author')
+    queryset = queryset.annotate(comment_count=Count('comments', filter=Q(comments__approved=True), distinct=True))
+    queryset = queryset.annotate(like_count=Count('likes', distinct=True))
     template_name = "reviews/reviews.html"
-    paginate_by = 9
+    paginate_by = 6
 
 
 def review_detail(request, review_id):
