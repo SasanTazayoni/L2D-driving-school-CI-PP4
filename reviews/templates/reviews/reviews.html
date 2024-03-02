@@ -4,42 +4,95 @@
 
 {% block head_title %}{% trans "L2D - Reviews" %}{% endblock head_title %}
 
+{% block head_scripts %}
+<script src="{% static 'js/reviewStars.js' %}" defer></script>
+{% endblock head_scripts %}
+
 {% block content %}
 
-
-<div class="container-fluid">
-    <div class="row">
-        <!-- Review Entries -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for review in review_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash d-flex align-items-center">
-                                    {% if review.author.profile_picture %}
-                                    <img src="{{ review.author.profile_picture.url }}"
-                                        alt="{{ review.author.username }}" class="review-image">
+<section class="block--grey d-flex justify-content-center align-items-center flex-column reviews-block">
+    <div class="container my-2">
+        <header class="page-header">
+            <h1>About Me</h1>
+        </header>
+        <div class="row mb-5">
+            <div class="col-md-4 d-flex justify-content-center mb-2">
+                <img src="{% static 'images/bestplaceholder.jpg' %}" alt="Instructor's Picture"
+                    class="img-fluid about-picture">
+            </div>
+            <div class="col-md-8 mb-2">
+                <p>
+                    Hi, I'm Jhone Lumeo, your dedicated driving instructor. With a passion for teaching
+                    and over a decade of experience in the driver education field, I'm here to guide you
+                    through every step of your journey to becoming a confident and responsible driver.
+                    My approach is centered on creating a supportive and comfortable learning environment
+                    where you can feel empowered to tackle any challenge behind the wheel. Whether you're
+                    a nervous beginner or looking to polish your skills, I'm committed to helping you
+                    develop the knowledge, confidence, and safe driving habits needed to navigate the road
+                    with ease.
+                </p>
+                <p>
+                    Throughout my career, I've had the privilege of working with a diverse range of students,
+                    each with their own unique learning needs and goals. From teaching the basics to teenagers
+                    embarking on their driving adventures to assisting mature drivers in refining their
+                    techniques, I've encountered it all. My experience extends beyond traditional classroom
+                    instruction to hands-on training in real-world driving situations. As a seasoned instructor,
+                    I stay current with the latest industry standards and best practices to ensure that my
+                    students receive top-notch instruction tailored to their individual needs. Let's embark on
+                    this journey together, and I'll be by your side every step of the way.
+                </p>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <header>
+            <h2 class="text-center mb-4">Reviews</h2>
+        </header>
+        <div class="row">
+            {% for review in review_list %}
+            <div class="col-md-4">
+                <a href="{% url 'review_detail' review.id %}">
+                    <div class="card review-card mb-4">
+                        <div class="image-container">
+                            <div class="d-flex align-items-center justify-content-between">
+                                {% if review.author.profile_picture %}
+                                <img src="{{ review.author.profile_picture.url }}" alt="A picture of {{ review.author.username }}"
+                                    class="review-image">
+                                {% else %}
+                                <img src="{% static 'images/defaultpicture.png' %}" alt="A default user picture"
+                                    class="review-image">
+                                {% endif %}
+                                <p class="text-center px-2">
+                                    <span class="bold review-author">{{ review.author }}</span>
+                                    <br> <span class="small-author-date--faded">({{ review.created_on }})</span>
+                                    <!-- {% if review.updated_on %}
+                                    <br> <span class="small-author-date--faded italic">Edited: {{ review.updated_on }}</span>
+                                    {% endif %} -->
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-around icon-container">
+                            <p class="my-3" data-rating>{{ review.rating }}</p>
+                            <div class="d-flex">
+                                <div class="comment-icon-container-small bold">
+                                    <i class="far fa-comments"></i> {{ review.comment_count }}
+                                </div>
+                                <div class="like-icon-container-small bold">
+                                    {% if review.like_count > 0 %}
+                                        <i class="fa-solid fa-heart"></i>
                                     {% else %}
-                                    <img src="{% static 'images/defaultpicture.png' %}"
-                                        alt="{{ review.author.username }}" class="review-image">
+                                        <i class="fa-regular fa-heart"></i>
                                     {% endif %}
-                                    <p class="author-date">
-                                        Review by {{ review.author }} on {{ review.created_on }}
-                                    </p>
+                                    {{ review.like_count }}
                                 </div>
                             </div>
-                            <p>Rating: {{ review.rating }}</p>
-                            <br>
-                            <a href="{% url 'review_detail' review.id %}" class="btn btn-primary">View</a>
-
-                            <!-- Additional information if needed -->
                         </div>
+                        <p class="review-content-extract">{{ review.content | safe | slice:"50" }}{% if review.content|length > 50 %}...{% endif %}</p>
                     </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
+                </a>
             </div>
+            {% if forloop.counter|divisibleby:3 %}
         </div>
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -62,5 +115,6 @@
         </nav>
         {% endif %}
     </div>
+</section>
 
-    {% endblock %}
+{% endblock %}
