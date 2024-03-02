@@ -137,6 +137,18 @@ a {
     }
 }
 
+@media screen and (max-width: 428px) {
+    .card--gradient {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+    .card--gradient {
+        padding: 20px;
+    }
+}
+
 /* Forms */
 
 label {
