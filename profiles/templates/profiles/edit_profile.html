@@ -28,6 +28,10 @@
                         </div>
                     {% endfor %}
                 </div>
+                <div class="form-field text-center">
+                    <input type="checkbox" id="remove_picture" name="remove_picture">
+                    <label for="remove_picture">Remove Profile Picture</label>
+                </div>
                 <div class="btn-container d-flex justify-content-center m-0">
                     <button type="submit" class="blue-button">Save</button>
                     <a type="button" href="{% url 'profile_page' %}" class="red-button">Cancel</a>

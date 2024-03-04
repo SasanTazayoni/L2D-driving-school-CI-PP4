@@ -65,6 +65,10 @@ def edit_profile(request):
             user.email = request.POST.get('email')
             user.first_name = request.POST.get('first_name')
             user.save()
+
+            if 'remove_picture' in request.POST:
+                profile.profile_picture = None
+
             form.save()
             messages.success(request, 'Profile updated successfully.')
             return redirect('profile_page')
