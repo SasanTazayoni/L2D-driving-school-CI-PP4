@@ -135,17 +135,21 @@ a {
     .card {
         box-shadow: 0 0 5px #acacac;
     }
-}
 
-@media screen and (max-width: 428px) {
     .card--gradient {
         padding: 30px;
     }
 }
 
-@media screen and (max-width: 324px) {
+@media screen and (max-width: 428px) {
     .card--gradient {
         padding: 20px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+    .card--gradient {
+        padding: 15px;
     }
 }
 
@@ -1056,7 +1060,7 @@ footer i {
 }
 
 @media screen and (max-width: 1200px) {
-    .review-header {
+    .review-card-header {
         font-size: 24px;
     }
 
@@ -1082,7 +1086,7 @@ footer i {
 }
 
 @media screen and (max-width: 992px) {
-    .review-header, .author-date {
+    .review-card-header {
         font-size: 18px;
     }
 
@@ -1112,6 +1116,7 @@ footer i {
     .review-card-header {
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     .header-text {
@@ -1153,8 +1158,14 @@ footer i {
 }
 
 @media screen and (max-width: 428px) {
-    .header-text, .author-date {
-        margin-left: 5px;
+    .review-card-header {
+        flex-direction: column;
+        font-size: 16px;
+    }
+
+    .header-text {
+        margin-top: 15px;
+        margin-left: 0;
     }
 
     .icon-container,
@@ -1192,11 +1203,17 @@ footer i {
     }
 }
 
-@media screen and (max-width: 324px) {
+@media screen and (max-width: 376px) {
+    .review-card-header {
+        font-size: 14px;
+    }
+
     .author-date {
         font-size: 12px;
     }
+}
 
+@media screen and (max-width: 324px) {
     .review-content {
         font-size: 14px;
         padding: 5px 10px;
