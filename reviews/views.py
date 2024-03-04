@@ -4,7 +4,7 @@ from django.views.generic import ListView
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.db.models import Count, Q
+from django.db.models import Count, Q, Avg
 from .models import Review, Comment
 from .forms import ReviewForm
 from .forms import CommentForm
@@ -18,6 +18,12 @@ class ReviewList(generic.ListView):
     queryset = queryset.annotate(like_count=Count('likes', distinct=True))
     template_name = "reviews/reviews.html"
     paginate_by = 6
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        average_rating = Review.objects.filter(approved=True).aggregate(avg_rating=Avg('rating'))['avg_rating']
+        context['average_rating'] = round(average_rating, 2) if average_rating else None
+        return context
 
 
 def review_detail(request, review_id):
