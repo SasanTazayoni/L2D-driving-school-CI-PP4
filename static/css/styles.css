@@ -805,6 +805,7 @@ footer i {
    object-fit: cover;
    object-position: center;
    position: relative;
+   min-height: 90vh;
 }
 
 .overlay {
