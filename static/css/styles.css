@@ -1267,6 +1267,10 @@ footer i {
     color: rgb(170, 170, 170);
 }
 
+#remove_picture + label {
+    display: inline-block;
+}
+
 @media screen and (max-width: 428px) {
     .profile-image {
         width: 200px;
