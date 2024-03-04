@@ -858,7 +858,7 @@ footer i {
     }
 }
 
-/* Reviews and review details template */
+/* Reviews, review form and review details template */
 
 .about-picture {
     border-radius: var(--border-radius);
@@ -909,8 +909,12 @@ footer i {
     font-size: 16px;
 }
 
-.small-author-date--faded {
+.small-author-date {
     color: rgba(0, 0, 0, 0.6);
+}
+
+.small-author-date--faded {
+    color: rgba(0, 0, 0, 0.2);
 }
 
 .icon-container-small {
@@ -933,15 +937,21 @@ footer i {
     object-position: center;
 }
 
-.header-text {
+.review-header-text {
     display: inline-block;
     margin-left: 10px;
 }
 
 .author-date {
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.8);
     font-size: 24px;
+}
+
+.author-date--faded {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 18px;
 }
 
 .review-detail-stars {
@@ -1049,6 +1059,10 @@ footer i {
     .author-date {
         font-size: 18px;
     }
+
+    .author-date--faded {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -1076,6 +1090,10 @@ footer i {
         font-size: 14px;
     }
 
+    .author-date--faded {
+        font-size: 12px;
+    }
+
     .comment-container, #commentForm {
         margin: 15px 30px;
     }
@@ -1101,7 +1119,7 @@ footer i {
         justify-content: space-between;
     }
 
-    .header-text {
+    .review-header-text {
         display: inline-flex;
         flex-direction: column;
         align-items: center;
@@ -1140,12 +1158,38 @@ footer i {
 }
 
 @media screen and (max-width: 428px) {
+    .average-rating {
+        font-size: 18px;
+    }
+
+    .review-card {
+        height: 340px;
+    }
+
+    .review-card-header--small {
+        flex-direction: column;
+    }
+
+    .review-header-text-small {
+        margin-top: 15px;
+    }
+
+    .review-author {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .small-author-date--faded,
+    .small-author-date {
+        font-size: 12px;
+    }
+
     .review-card-header {
         flex-direction: column;
         font-size: 16px;
     }
 
-    .header-text {
+    .review-header-text {
         margin-top: 15px;
         margin-left: 0;
     }
@@ -1156,7 +1200,7 @@ footer i {
     }
 
     .icon-container-small {
-        margin: 0 0 20px 0;
+        margin: 0 0 10px 0;
     }
 
     .review-detail-stars {
@@ -1190,9 +1234,9 @@ footer i {
         font-size: 14px;
     }
 
-    .author-date {
+    /* .author-date {
         font-size: 12px;
-    }
+    } */
 }
 
 @media screen and (max-width: 324px) {
