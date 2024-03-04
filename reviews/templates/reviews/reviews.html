@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<section class="block--grey d-flex justify-content-center align-items-center flex-column reviews-block">
+<section class="block--grey d-flex justify-content-center align-items-center flex-column full-page-block">
     <div class="container my-2">
         <header class="page-header">
             <h1>About Me</h1>
@@ -49,13 +49,23 @@
         <header>
             <h2 class="text-center mb-4">Reviews</h2>
         </header>
+        <p>
+            L2D Driving School is more than just any driving school; it's a place where learners receive
+            personalised and tailored instruction to develop their driving skills. With an emphasis on quality
+            over quantity, students can expect individualised attention, expert guidance and a supportive
+            learning environment. At L2D Driving School, you're not just another student — you're a valued member
+            of our driving community, embarking on a journey to become a confident and responsible driver under
+            the guidance of a passionate instructor. As you explore the reviews below, you'll discover firsthand
+            accounts of our commitment to excellence and the transformative impact of our driver education program.
+            <br>
+        </p>
+        <p class="text-center mb-4 bold average-rating">Average rating: {{ average_rating }} / 5</p>
         <div class="row">
             {% for review in review_list %}
-            <div class="col-md-4">
-                <a href="{% url 'review_detail' review.id %}">
-                    <div class="card review-card mb-4">
-                        <div class="image-container">
-                            <div class="d-flex align-items-center justify-content-between">
+                <div class="col-md-4 review-card-container">
+                    <a href="{% url 'review_detail' review.id %}">
+                        <div class="card review-card mb-4">
+                            <div class="d-flex align-items-center justify-content-between review-card-header--small">
                                 {% if review.author.profile_picture %}
                                 <img src="{{ review.author.profile_picture.url }}" alt="A picture of {{ review.author.username }}"
                                     class="review-image">
@@ -63,42 +73,32 @@
                                 <img src="{% static 'images/defaultpicture.png' %}" alt="A default user picture"
                                     class="review-image">
                                 {% endif %}
-                                <p class="text-center px-2">
-                                    <span class="bold review-author">{{ review.author }}</span>
-                                    <br> <span class="small-author-date--faded">({{ review.created_on }})</span>
-                                    <!-- {% if review.updated_on %}
-                                    <br> <span class="small-author-date--faded italic">Edited: {{ review.updated_on }}</span>
-                                    {% endif %} -->
+                                <p class="text-center px-2 review-header-text-small">
+                                    <span class="bold review-author">{{ review.author|truncatechars:16 }}</span>
+                                    <br> <span class="small-author-date">({{ review.created_on }})</span>
                                 </p>
                             </div>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-around icon-container">
-                            <p class="my-3" data-rating>{{ review.rating }}</p>
-                            <div class="d-flex">
-                                <div class="comment-icon-container-small bold">
-                                    <i class="far fa-comments"></i> {{ review.comment_count }}
-                                </div>
-                                <div class="like-icon-container-small bold">
-                                    {% if review.like_count > 0 %}
-                                        <i class="fa-solid fa-heart"></i>
-                                    {% else %}
-                                        <i class="fa-regular fa-heart"></i>
-                                    {% endif %}
-                                    {{ review.like_count }}
+                            <div class="d-flex align-items-center justify-content-around icon-container-small">
+                                <p class="d-flex m-0" data-rating>{{ review.rating }}</p>
+                                <div class="d-flex">
+                                    <div class="comment-icon-container-small bold">
+                                        <i class="far fa-comments"></i> {{ review.comment_count }}
+                                    </div>
+                                    <div class="like-icon-container-small bold">
+                                        {% if review.like_count > 0 %}
+                                            <i class="fa-solid fa-heart"></i>
+                                        {% else %}
+                                            <i class="fa-regular fa-heart"></i>
+                                        {% endif %}
+                                        {{ review.like_count }}
+                                    </div>
                                 </div>
                             </div>
+                            <p class="review-content-extract">{{ review.content | safe | slice:"50" }}{% if review.content|length > 50 %}...{% endif %}</p>
                         </div>
-                        <p class="review-content-extract">{{ review.content | safe | slice:"50" }}{% if review.content|length > 50 %}...{% endif %}</p>
-                    </div>
-                </a>
-            </div>
-            {% if forloop.counter|divisibleby:3 %}
-        </div>
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-            </div>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
         {% if is_paginated %}
         <nav aria-label="Page navigation">
