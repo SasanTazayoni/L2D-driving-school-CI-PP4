@@ -24,9 +24,9 @@
                 <div class="header-text">
                     <span class="review-header">
                         {% if request.user.is_authenticated and review.author.user == request.user %}  
-                            <a class="link" href="{% url 'profile_page' %}">{{ review.author }}</a>
+                            <a class="link" href="{% url 'profile_page' %}">{{ review.author|truncatechars:20 }}</a>
                         {% else %}
-                            <a class="link" href="{% url 'profile_detail' review.author.user.id %}">{{ review.author }}</a>
+                            <a class="link" href="{% url 'profile_detail' review.author.user.id %}">{{ review.author|truncatechars:20 }}</a>
                         {% endif %}
                     </span>
                     <span class="author-date">- {{ review.created_on }}</span>
@@ -96,7 +96,7 @@
         </div>
         </div>
     </div>
-    <div class="container mt-5">
+    <div class="container mt-3">
         <div class="card card--gradient">
         <!-- Displaying Comments -->
         {% if not is_edit_comment_view %}
@@ -116,7 +116,7 @@
                     <div id="comment{{ comment.id }}" class="comment-content">
                         {{ comment.content | safe }}
                         {% if request.user.is_authenticated and comment.author.user == request.user %}
-                            <div class="btn-container d-flex justify-content-center mt-5">
+                            <div class="btn-container d-flex justify-content-center mt-4">
                                 <a href="{% url 'edit_comment' review_id=comment.review.id comment_id=comment.id %}"
                                     class="blue-button">Edit</a>
                                 <button type="button" class="red-button" data-bs-toggle="modal"
