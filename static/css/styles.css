@@ -860,12 +860,23 @@ footer i {
 
 /* Reviews and review details template */
 
+.about-picture {
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    object-position: center;
+}
+
 .reviews-block {
     min-height: 90vh;
 }
 
+.average-rating {
+    font-size: 24px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
 .review-card {
-    background: linear-gradient(to bottom right, rgba(130, 130, 133, 0.5), white 30%, white 70%, rgba(130, 130, 133, 0.5));
+    background: linear-gradient(to bottom right, rgba(125, 174, 248, 0.3) 10%, white, rgba(125, 174, 248, 0.3) 90%);
     height: 280px;
     position: relative;
     overflow: hidden;
@@ -891,12 +902,6 @@ footer i {
     left: 100%;
 }
 
-.about-picture {
-    border-radius: var(--border-radius);
-    object-fit: cover;
-    object-position: center;
-}
-
 .review-author {
     font-size: 20px;
     color: #000;
@@ -909,6 +914,10 @@ footer i {
 
 .small-author-date--faded {
     color: rgba(0, 0, 0, 0.6);
+}
+
+.icon-container-small {
+    margin: 20px 0;
 }
 
 .review-content-extract {
@@ -1057,6 +1066,11 @@ footer i {
 }
 
 @media screen and (max-width: 1024px) {
+    .review-card-container.col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
     .comment-icon-container,
     .like-icon-container {
         font-size: 18px;
@@ -1076,11 +1090,6 @@ footer i {
         font-size: 14px;
     }
 
-    .review-image {
-        width: 60px;
-        height: 60px;
-    }
-
     .comment-container, #commentForm {
         margin: 15px 30px;
     }
@@ -1095,6 +1104,11 @@ footer i {
 }
 
 @media screen and (max-width: 768px) {
+    .review-card-container.col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
     .review-card-header {
         display: flex;
         align-items: center;
@@ -1139,17 +1153,17 @@ footer i {
 }
 
 @media screen and (max-width: 428px) {
-    .review-image {
-        width: 50px;
-        height: 50px;
-    }
-
     .header-text, .author-date {
         margin-left: 5px;
     }
 
-    .icon-container {
+    .icon-container,
+    .icon-container-small {
         flex-direction: column;
+    }
+
+    .icon-container-small {
+        margin: 0 0 20px 0;
     }
 
     .review-detail-stars {
@@ -1179,11 +1193,6 @@ footer i {
 }
 
 @media screen and (max-width: 324px) {
-    .review-image {
-        width: 40px;
-        height: 40px;
-    }
-
     .author-date {
         font-size: 12px;
     }
