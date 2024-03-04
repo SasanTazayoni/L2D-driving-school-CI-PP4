@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.db.models import Count, Q, Avg
+from django.utils import timezone
 from .models import Review, Comment
 from .forms import ReviewForm
 from .forms import CommentForm
@@ -175,6 +176,8 @@ def update_review(request, review_id):
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=existing_review)
         if form.is_valid():
+            review = form.save(commit=False)
+            review.updated_on = timezone.now()
             form.save()
             messages.success(request, 'Your review has been updated.')
             return redirect('profile_page')

@@ -21,7 +21,7 @@
                 {% else %}
                     <img src="{% static 'images/defaultpicture.png' %}" alt="{{ profile.user.username }}" class="review-image" />
                 {% endif %}
-                <div class="header-text">
+                <div class="review-header-text">
                     <span class="review-header">
                         {% if request.user.is_authenticated and review.author.user == request.user %}  
                             <a class="link" href="{% url 'profile_page' %}">{{ review.author|truncatechars:20 }}</a>
@@ -30,6 +30,9 @@
                         {% endif %}
                     </span>
                     <span class="author-date">- {{ review.created_on }}</span>
+                    {% if review.updated_on %}
+                    <span class="author-date--faded italic">Edited: {{ review.updated_on }}</span>
+                    {% endif %}
                 </div>
             </h2>
             <div class="d-flex align-items-center icon-container">

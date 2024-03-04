@@ -10,7 +10,7 @@ class Review(models.Model):
     content = models.TextField(max_length=800, null=False, blank=False)
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    updated_on = models.DateTimeField(null=True, blank=True)
     likes = models.ManyToManyField(UserProfile, related_name="user_reviews", blank=True)
 
     class Meta:
