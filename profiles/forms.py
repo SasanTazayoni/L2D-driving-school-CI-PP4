@@ -8,7 +8,7 @@ from allauth.account.forms import SignupForm
 
 
 class CustomSignupForm(SignupForm):
-    first_name = forms.CharField(label="Name", max_length=30)
+    first_name = forms.CharField(label="Name", max_length=40)
 
     def __init__(self, *args, **kwargs):
         super(CustomSignupForm, self).__init__(*args, **kwargs)
@@ -42,7 +42,7 @@ class UserProfileForm(forms.ModelForm):
     email = forms.EmailField(
         widget=forms.TextInput(attrs={'readonly': 'readonly'})
     )
-    first_name = forms.CharField(label="Name", max_length=30)
+    first_name = forms.CharField(label="Name", max_length=40)
 
     class Meta:
         model = UserProfile
