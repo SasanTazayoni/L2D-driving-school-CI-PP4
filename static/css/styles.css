@@ -85,14 +85,11 @@ a {
     background-image: url('../images/road.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 85vh;
     padding: 20px 0;
 }
 
-@media screen and (max-width: 1024px) {
-    .block--background {
-        min-height: 90vh;
-    }
+.full-page-block {
+    min-height: 90vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -796,17 +793,15 @@ footer i {
 
 /* Home page template */
 
-.block--background-home {
+.block--home {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    
 }
 
-.fallback-image {
-   min-height: 90vh;
+.home-background {
    object-fit: cover;
    object-position: center;
    position: relative;
@@ -870,10 +865,6 @@ footer i {
     object-position: center;
 }
 
-.reviews-block {
-    min-height: 90vh;
-}
-
 .average-rating {
     font-size: 24px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -930,17 +921,6 @@ footer i {
     border-radius: 10px;
     padding: 10px 20px;
     color: #000;
-}
-
-.review-form-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
-}
-
-.review-detail-block {
-    min-height: 90vh;
 }
 
 .review-image {
@@ -1222,10 +1202,6 @@ footer i {
 
 /* Appointments template */
 
-.appointments-block {
-    min-height: 90vh;
-}
-
 [data-url] {
     height: 720px;
     min-width: 320px;
@@ -1233,7 +1209,6 @@ footer i {
 
 .small-screen-container {
     display: none;
-    height: 90vh;
     padding: 20px;
 }
 
@@ -1309,10 +1284,6 @@ footer i {
 
 /* User profiles template for all users */
 
-.user-profiles-block {
-    min-height: 90vh;
-}
-
 .search-form-container {
     width: 500px;
     margin: 0 auto;
@@ -1380,13 +1351,6 @@ footer i {
     background-color: var(--color-secondary);
 }
 
-.user-profile-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-}
-
 @media screen and (max-width: 1399px) {
     .profile-image-container {
         height: 280px;
@@ -1448,13 +1412,6 @@ footer i {
 }
 
 /* Contact page template */
-
-.contact-form-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
-}
 
 .contact-form h1 {
     font-size: 24px;
