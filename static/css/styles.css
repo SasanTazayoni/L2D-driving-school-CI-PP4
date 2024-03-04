@@ -868,6 +868,7 @@ footer i {
 .average-rating {
     font-size: 24px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--color-secondary);
 }
 
 .review-card {
