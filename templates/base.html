@@ -58,7 +58,7 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'reviews' %}active{% endif %}" aria-current="page"
                             href="{% url 'reviews' %}">Reviews</a>
                     </li>
-                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_authenticated and request.user.profile.approved %}
                     <li class="nav-item mx-2">
                         <a class="nav-link {% if request.resolver_match.url_name == 'appointments' %}active{% endif %}"
                             aria-current="page" href="{% url 'appointments' %}">Appointments</a>
