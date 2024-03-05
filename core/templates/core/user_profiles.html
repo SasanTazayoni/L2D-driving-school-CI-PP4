@@ -25,21 +25,25 @@
         <header class="page-header">
             <h1 class="text-center">User Profiles</h1>
         </header>
-        <div class="row">
-            {% for user_profile in user_profiles %}
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 profile-image-container">
-                    <a href="{% if user_profile.user == request.user %}{% url 'profile_page' %}{% else %}{% url 'profile_detail' user_profile.user.id %}{% endif %}"
-                        class="card h-100 profile-card">
-                        {% if user_profile.profile_picture %}
-                            <img src="{{ user_profile.profile_picture.url }}" alt="picture of a user:{{ user_profile.user.first_name }}" class="profile-images">
-                        {% else %}
-                            <img src="{% static 'images/defaultpicture.png' %}" alt="default user picture" class="profile-images">
-                        {% endif %}
-                        <h5 class="card-text text-center">{{ user_profile.user.first_name }}</h5>
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
+        {% if user_profiles %}
+            <div class="row">
+                {% for user_profile in user_profiles %}
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4 profile-image-container">
+                        <a href="{% if user_profile.user == request.user %}{% url 'profile_page' %}{% else %}{% url 'profile_detail' user_profile.user.id %}{% endif %}"
+                            class="card h-100 profile-card">
+                            {% if user_profile.profile_picture %}
+                                <img src="{{ user_profile.profile_picture.url }}" alt="picture of a user:{{ user_profile.user.first_name }}" class="profile-images">
+                            {% else %}
+                                <img src="{% static 'images/defaultpicture.png' %}" alt="default user picture" class="profile-images">
+                            {% endif %}
+                            <h5 class="card-text text-center">{{ user_profile.user.first_name }}</h5>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-center italic">Your search returned no results. Please try something else.</p>
+        {% endif %}
     </div>
     {% if user_profiles.has_other_pages %}
         <div class="pagination mt-5">
