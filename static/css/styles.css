@@ -532,16 +532,17 @@ a.red-button,
     color: var(--color-secondary);
     transition: 0.3s;
     padding: 5px;
+
 }
 
 #navbarText .navbar-nav .nav-link.active {
     border: 2px solid rgba(125, 174, 248, 0.5);
     border-radius: 5px;
-    color: var(--color-primary);
+    font-weight: bold;
 }
 
 #navbarText .navbar-nav .nav-link:hover {
-    color: var(--color-primary);
+    filter: drop-shadow(0 0 0 rgb(17, 70, 245));
 }
 
 #navbarText .nav-item .auth-link {
