@@ -575,7 +575,7 @@ a.red-button,
 }
 
 @media screen and (max-width: 768px) {
-    .logo {
+    .brand-logo {
         width: 80px;
     }
 
@@ -586,7 +586,7 @@ a.red-button,
 }
 
 @media screen and (max-width: 428px) {
-    .logo {
+    .brand-logo {
         width: 70px;
     }
 
@@ -605,7 +605,7 @@ a.red-button,
 }
 
 @media screen and (max-width: 324px) {
-    .logo {
+    .brand-logo {
         width: 60px;
     }
 
