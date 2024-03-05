@@ -10,6 +10,7 @@ class UserProfile(models.Model):
     occupation = models.CharField(max_length=100, blank=True, null=True)
     about_me = models.TextField(max_length=400, blank=True, null=True)
     approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.user.first_name
