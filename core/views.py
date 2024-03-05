@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Count
+from django.contrib import messages
 from profiles.models import UserProfile
 from reviews.models import Review, Comment
 
@@ -19,7 +20,11 @@ def appointments(request):
     Renders the appointments page if the user is authenticated,
     otherwise redirects to the login page.
     """
-    return render(request, 'core/appointments.html')
+    if request.user.profile.approved:
+        return render(request, 'core/appointments.html')
+    else:
+        messages.error(request, "You are not currently authorised to book reviews. Please contact your driving instructor.")
+        return render(request, 'core/contact.html')
 
 
 def contact(request):
