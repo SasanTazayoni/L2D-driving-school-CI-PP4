@@ -9,6 +9,11 @@ class ReviewAdmin(SummernoteModelAdmin):
     search_fields = ['author', 'content']
     list_filter = ('approved', 'created_on', 'updated_on')
     summernote_fields = ('content')
+    actions = ['approve_reviews']
+
+    def approve_reviews(self, request, queryset):
+        updated_count = queryset.update(approved=True)
+        self.message_user(request, f'{updated_count} reviews have been approved.')
 
 
 @admin.register(Comment)
@@ -17,3 +22,8 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ['author', 'content']
     list_filter = ('approved', 'replied_on', 'updated_on')
     summernote_fields = ('content')
+    actions = ['approve_comments']
+
+    def approve_comments(self, request, queryset):
+        updated_count = queryset.update(approved=True)
+        self.message_user(request, f'{updated_count} comments have been approved.')
