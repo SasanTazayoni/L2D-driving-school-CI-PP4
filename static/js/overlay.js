@@ -1,8 +1,7 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.querySelector('.overlay')
-
     if (overlay) {
-        setTimeout(function() {
+        setTimeout(() => {
             overlay.classList.add('active')
         }, 3000)
     }
