@@ -486,23 +486,14 @@ a.red-button,
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-brand {
-    color: var(--color-primary);
-    transition: all 0.3s;
-}
-
-.navbar-brand:hover {
-    color: var(--color-secondary);
-}
-
-.logo {
+.brand-logo {
     width: 100px;
     height: auto;
-    transition: 0.3s;
+    transition: opacity 0.3s;
 }
 
-.logo:hover {
-    opacity: 0.6;
+.brand-logo:hover {
+   opacity: 0.5;
 }
 
 .navbar-brand {
@@ -521,15 +512,15 @@ a.red-button,
 .brand-text p {
     margin: 0;
     font-size: 20px;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-weight: bold;
     line-height: 1.3;
-    transition: opacity 0.3s;
+    transition: color 0.3s;
 }
 
 .brand-text p:hover {
-    opacity: 0.6;
+    color: var(--color-primary);
 }
 
 #navbarText .navbar-nav {
