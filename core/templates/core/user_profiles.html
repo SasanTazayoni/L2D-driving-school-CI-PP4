@@ -47,8 +47,8 @@
                 {% for page in paginator.page_range %}
                     {% if page == user_profiles.number %}
                         <li class="d-inline-block">
-                            <a href="?page={{ page }}" class="blue-button pagination-button active d-flex align-items-center justify-content-center" data-page="{{ page }}">
-                                {{ page }}
+                            <a href="?page={{ page }}" class="blue-button pagination-button active d-flex align-items-center justify-content-center" aria-current="page"
+                                data-page="{{ page }}">{{ page }}
                             </a>
                         </li>
                     {% else %}
