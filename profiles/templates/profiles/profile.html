@@ -56,7 +56,7 @@
               {% if profile.review.approved %}
                 <div class="profile-content">
                   	<div class="fs-4 mb-2">
-						{% with rating=user_profile.review.rating %}
+						{% with rating=profile.review.rating %}
 							{% include "includes/stars.html" %}
 						{% endwith %}
                 	</div>
@@ -190,11 +190,11 @@
   {% for comment in profile.commenter.all %}
   <!-- Delete Comment Modal -->
     <div class="modal fade" id="deleteCommentModal{{ comment.id }}" tabindex="-1"
-      aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+      aria-labelledby="deleteCommentModalLabel{{ comment.id }}" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title" id="deleteCommentModalLabel">Delete Comment Confirmation</h5>
+            <h5 class="modal-title" id="deleteCommentModalLabel{{ comment.id }}">Delete Comment Confirmation</h5>
           </div>
           <div class="modal-body d-flex justify-content-center">
             Are you sure you want to delete your comment?
