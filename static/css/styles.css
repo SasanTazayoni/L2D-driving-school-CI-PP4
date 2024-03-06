@@ -41,12 +41,12 @@ a {
 }
 
 .link {
-    color: var(--color-primary);
+    color: var(--color-secondary);
     transition: color 0.3s;
 }
 
 .link:hover {
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .page-header {
