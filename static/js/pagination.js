@@ -8,7 +8,7 @@ if (searchForm) {
             
             if (!this.classList.contains('active')) {
                 const page = this.dataset.page
-                searchForm.innerHTML += `<input value="${page}" name="page" hidden/>`
+                searchForm.innerHTML += `<input value="${page}" name="page" hidden>`
                 searchForm.submit()
             }
         })
