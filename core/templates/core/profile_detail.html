@@ -22,9 +22,9 @@
                     <div class="col-12 text-center">
                         <h2>{{ user_profile.user.first_name }}</h2>
                         {% if user_profile.profile_picture.url %}
-                            <img src="{{ user_profile.profile_picture.url }}" class="profile-image" />
+                            <img src="{{ user_profile.profile_picture.url }}" alt="Picture of a user:{{ user_profile.user.first_name }}" class="profile-image" />
                         {% else %}
-                            <img src="{% static 'images/defaultpicture.png' %}" class="profile-image" />
+                            <img src="{% static 'images/defaultpicture.png' %}" alt="Default user picture" class="profile-image" />
                         {% endif %}
                         {% if user_profile.age %}
                             <p class="profile-info py-1">Age: {{ user_profile.age }}</p>
