@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const imgElement = document.createElement('img')
         imgElement.src = hrefValue
-
+        imgElement.alt = 'Your current picture'
         imgElement.style.borderRadius = '20px'
         imgElement.style.objectFit = 'cover'
         imgElement.style.objectPosition = 'center'
