@@ -17,9 +17,9 @@
             </header>
             <h2 class="review-card-header">
                 {% if review.author.profile_picture %}
-                    <img src="{{ review.author.profile_picture.url }}" alt="{{ review.author.user.username }}" class="review-image">
+                    <img src="{{ review.author.profile_picture.url }}" alt="Picture of a user:{{ review.author.user.username }}" class="review-image">
                 {% else %}
-                    <img src="{% static 'images/defaultpicture.png' %}" alt="{{ profile.user.username }}" class="review-image" />
+                    <img src="{% static 'images/defaultpicture.png' %}" alt="Default user picture" class="review-image" />
                 {% endif %}
                 <div class="review-header-text">
                     <span class="review-header">
@@ -157,11 +157,11 @@
     {% for comment in comments %}
     <!-- Delete Comment Modal -->
     <div class="modal fade" id="deleteCommentModal{{ comment.id }}" tabindex="-1"
-      aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+      aria-labelledby="deleteCommentModalLabel{{ comment.id }}" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header d-flex justify-content-center">
-            <h5 class="modal-title" id="deleteCommentModalLabel">Delete Comment Confirmation</h5>
+            <h5 class="modal-title" id="deleteCommentModalLabel{{ comment.id }}">Delete Comment Confirmation</h5>
           </div>
           <div class="modal-body d-flex justify-content-center">
             Are you sure you want to delete your comment?
