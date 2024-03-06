@@ -1,5 +1,4 @@
 from . import views
-from .views import profile_page, edit_profile
 from django.urls import path
 
 urlpatterns = [
