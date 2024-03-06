@@ -87,16 +87,16 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item mx-2">
-                        <a class="btn nav-link auth-link" data-bs-toggle="modal"
+                        <button class="btn nav-link auth-link" data-bs-toggle="modal"
                             data-bs-target="#logoutConfirmationModal">
                             Log out
-                        </a>
+                        </button>
                     </li>
                     {% else %}
                     <li class="nav-item mx-2">
-                        <a class="btn nav-link auth-link" aria-current="page" href="{% url 'account_login' %}">
+                        <button class="btn nav-link auth-link" aria-current="page" href="{% url 'account_login' %}">
                             Log in/Sign up
-                        </a>
+                        </button>
                     </li>
                     {% endif %}
                 </ul>
