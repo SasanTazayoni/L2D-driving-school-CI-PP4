@@ -4580,7 +4580,7 @@ var slice = [].slice,
    * @param {string}
    */
   CloudinaryJQuery.prototype.unsigned_upload_tag = function(upload_preset, upload_params, options) {
-    return jQuery('<input/>').attr({
+    return jQuery('<input>').attr({
       type: 'file',
       name: 'file'
     }).unsigned_cloudinary_upload(upload_preset, upload_params, options);
@@ -4619,7 +4619,7 @@ var slice = [].slice,
           upload_info = [data.result.resource_type, data.result.type, data.result.path].join('/') + '#' + data.result.signature;
           multiple = jQuery(e.target).prop('multiple');
           add_field = function() {
-            return jQuery('<input/>').attr({
+            return jQuery('<input>').attr({
               type: 'hidden',
               name: data.cloudinaryField
             }).val(upload_info).appendTo(data.form);

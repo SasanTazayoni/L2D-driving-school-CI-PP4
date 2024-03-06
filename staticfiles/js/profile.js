@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const imageSrc = imageDiv.querySelector('a')
 
         // change the image src div to show the image
-        imageSrcDiv.innerHTML = `<div class="col-12">Current Image:<img style="display: block;" src="${imageSrc.href}" /></div>`
+        imageSrcDiv.innerHTML = `<div class="col-12">Current Image:<img style="display: block;" src="${imageSrc.href}"></div>`
     }
 })
