@@ -4,10 +4,6 @@
 
 {% block head_title %}{% trans "L2D - Your Profile" %}{% endblock head_title %}
 
-{% block head_scripts %}
-<script src="{% static 'js/profileStars.js' %}" defer></script>
-{% endblock head_scripts %}
-
 {% block content %}
 <section class="block--grey full-page-block d-flex justify-content-center align-items-center">
   <div class="container mt-5 mb-2">
@@ -21,9 +17,9 @@
           <div class="col-12 text-center">
             <h2>{{ profile.user.first_name }}</h2>
             {% if profile.profile_picture.url %}
-              <img src="{{ profile.profile_picture.url }}" alt="Your current uploaded image" class="profile-image" />
+              <img src="{{ profile.profile_picture.url }}" alt="Your current uploaded image" class="profile-image">
             {% else %}
-              <img src="{% static 'images/defaultpicture.png' %}" alt="Default user picture" class="profile-image" />
+              <img src="{% static 'images/defaultpicture.png' %}" alt="Default user picture" class="profile-image">
             {% endif %}
             {% if profile.age %}
               <p class="profile-info py-1">Age: {{ profile.age }}</p>
@@ -59,25 +55,29 @@
             {% if profile.review %}
               {% if profile.review.approved %}
                 <div class="profile-content">
-                  <div data-rating>{{ profile.review.rating }}</div>
-                  <p>{{ profile.review.created_on }} - <a class="link"
-                    href="{% url 'review_detail' profile.review.id %}">View comments</a>
-                  </p>
-                  <div class="col-12 text-center mb-3">
-                    <div class="comment-icon-container bold">
-                      <i class="far fa-comments"></i> {{ comment_count }}
-                    </div>
-                    <div class="like-icon-container bold">
-                      {% if like_count > 0 %}
-                        <i class="fa-solid fa-heart"></i>
-                      {% else %}
-                        <i class="fa-regular fa-heart"></i>
-                      {% endif %}
-                      {{ like_count }}
-                    </div>
-                  </div>
-                  <p>{{ profile.review.content }}</p>
-                </div>
+                  	<div class="fs-4 mb-2">
+						{% with rating=user_profile.review.rating %}
+							{% include "includes/stars.html" %}
+						{% endwith %}
+                	</div>
+					<p>{{ profile.review.created_on }} - <a class="link"
+						href="{% url 'review_detail' profile.review.id %}">View comments</a>
+					</p>
+					<div class="col-12 text-center mb-3">
+						<div class="comment-icon-container bold">
+							<i class="far fa-comments"></i> {{ comment_count }}
+						</div>
+						<div class="like-icon-container bold">
+						{% if like_count > 0 %}
+							<i class="fa-solid fa-heart"></i>
+						{% else %}
+							<i class="fa-regular fa-heart"></i>
+						{% endif %}
+						{{ like_count }}
+						</div>
+					</div>
+					<p>{{ profile.review.content }}</p>
+				</div>
               {% else %}
                 <div class="profile-content">
                   <div data-rating>{{ profile.review.rating }}</div>

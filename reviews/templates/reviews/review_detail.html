@@ -4,10 +4,6 @@
 
 {% block head_title %}{% trans "L2D - Review Detail" %}{% endblock head_title %}
 
-{% block head_scripts %}
-<script src="{% static 'js/reviewDetailStars.js' %}" defer></script>
-{% endblock head_scripts %}
-
 {% block content %}
 <section class="block--grey full-page-block d-flex justify-content-center align-items-center flex-column">
     <div class="container mt-5 mb-2">
@@ -19,7 +15,7 @@
                 {% if review.author.profile_picture %}
                     <img src="{{ review.author.profile_picture.url }}" alt="Picture of a user:{{ review.author.user.username }}" class="review-image">
                 {% else %}
-                    <img src="{% static 'images/defaultpicture.png' %}" alt="Default user picture" class="review-image" />
+                    <img src="{% static 'images/defaultpicture.png' %}" alt="Default user picture" class="review-image">
                 {% endif %}
                 <div class="review-header-text">
                     <span class="review-header">
@@ -36,7 +32,11 @@
                 </div>
             </h2>
             <div class="d-flex align-items-center icon-container">
-                <div class="review-detail-stars" data-rating>{{ review.rating }}</div>
+                <div class="fs-4 mb-2">
+                    {% with rating=review.rating %}
+                        {% include "includes/stars.html" %}
+                    {% endwith %}
+                </div>
                 <div class="d-flex">
                     <div class="comment-icon-container bold">
                         <i class="far fa-comments"></i> {{ comment_count }}

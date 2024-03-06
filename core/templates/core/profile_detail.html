@@ -4,10 +4,6 @@
 
 {% block head_title %}{% trans "L2D - User Profile" %}{% endblock head_title %}
 
-{% block head_scripts %}
-<script src="{% static 'js/userProfileStars.js' %}" defer></script>
-{% endblock head_scripts %}
-
 {% block content %}
 
 <section class="block--grey full-page-block d-flex justify-content-center align-items-center">
@@ -22,9 +18,9 @@
                     <div class="col-12 text-center">
                         <h2>{{ user_profile.user.first_name }}</h2>
                         {% if user_profile.profile_picture.url %}
-                            <img src="{{ user_profile.profile_picture.url }}" alt="Picture of a user:{{ user_profile.user.first_name }}" class="profile-image" />
+                            <img src="{{ user_profile.profile_picture.url }}" alt="Picture of a user:{{ user_profile.user.first_name }}" class="profile-image">
                         {% else %}
-                            <img src="{% static 'images/defaultpicture.png' %}" alt="Default user picture" class="profile-image" />
+                            <img src="{% static 'images/defaultpicture.png' %}" alt="Default user picture" class="profile-image">
                         {% endif %}
                         {% if user_profile.age %}
                             <p class="profile-info py-1">Age: {{ user_profile.age }}</p>
@@ -57,7 +53,11 @@
                         {% if user_profile.review %}
                             {% if user_profile.review.approved %}
                                 <div class="profile-content">
-                                    <div data-rating>{{ user_profile.review.rating }}</div>
+                                    <div class="fs-4 mb-2">
+                                        {% with rating=user_profile.review.rating %}
+                                            {% include "includes/stars.html" %}
+                                        {% endwith %}
+                                    </div>
                                     <p>{{ user_profile.review.created_on }} - <a class="link"
                                         href="{% url 'review_detail' user_profile.review.id %}">View comments</a>
                                     </p>

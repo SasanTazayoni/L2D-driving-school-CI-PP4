@@ -4,10 +4,6 @@
 
 {% block head_title %}{% trans "L2D - Reviews" %}{% endblock head_title %}
 
-{% block head_scripts %}
-<script src="{% static 'js/reviewStars.js' %}" defer></script>
-{% endblock head_scripts %}
-
 {% block content %}
 
 <section class="block--grey d-flex justify-content-center align-items-center flex-column full-page-block">
@@ -79,7 +75,11 @@
                                 </p>
                             </div>
                             <div class="d-flex align-items-center justify-content-around icon-container-small">
-                                <p class="d-flex m-0" data-rating>{{ review.rating }}</p>
+                                <div class="fs-5 mb-2">
+                                    {% with rating=review.rating %}
+                                        {% include "includes/stars.html" %}
+                                    {% endwith %}
+                                </div>
                                 <div class="d-flex">
                                     <div class="comment-icon-container-small bold">
                                         <i class="far fa-comments"></i> {{ review.comment_count }}
