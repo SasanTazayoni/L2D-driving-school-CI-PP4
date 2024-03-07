@@ -1,6 +1,4 @@
-# L2D Driving School
-
-# Introduction
+# L2D Driving School - Introduction
 
 Introducing L2D Driving School — a groundbreaking prototype set to revolutionise the driving education landscape. The website is aptly named 'L2D Driving School,' with 'L2D' representing the abbreviation for 'learn-to-drive.' This concise moniker encapsulates the platform's primary mission — to facilitate the journey of learners as they master the art of driving.
 
