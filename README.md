@@ -1,3 +1,17 @@
+# L2D Driving School
+
+# Introduction
+
+Introducing L2D Driving School — a groundbreaking prototype set to revolutionise the driving education landscape. The website is aptly named 'L2D Driving School,' with 'L2D' representing the abbreviation for 'learn-to-drive.' This concise moniker encapsulates the platform's primary mission — to facilitate the journey of learners as they master the art of driving.
+
+This innovative full-stack website serves as a digital platform for a freelance driving instructor to showcase her services, while offering students a seamless experience to find, book and review driving lessons. L2D Driving School not only streamlines the process of booking driving lessons but also fosters community engagement through its interactive platform, where students can share experiences, exchange insights and potentially build connections with fellow learners. This interactive element enhances the learning process and also creates a sense of camaraderie among users, fostering a supportive environment for skill development.
+
+With its sleek design and intuitive interface, the website offers users a glimpse into what a fully established version could offer. From the moment users land on the home page, they are greeted with a seamless browsing experience, navigating effortlessly through authentication pages, profile creation and appointment scheduling.
+
+In future iterations, L2D Driving School plans to further enhance community engagement and accessibility by integrating social media links. These additions will enable users to connect with the platform's vibrant community across various social channels, further fostering discussions, sharing experiences and expanding the reach of the driving education ecosystem.
+
+![L2D home page shown on various devices](documentation/amiresponsive.png)
+
 # User Experience
 
 ## User Stories
