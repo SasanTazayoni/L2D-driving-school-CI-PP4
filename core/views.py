@@ -74,7 +74,7 @@ def user_profiles(request):
 
 def profile_detail(request, user_id):
     """
-    Renders the profile page for a user.
+    Renders the profile page for a particular user.
     """
     user_profile = get_object_or_404(UserProfile, user_id=user_id)
     comment_count = Comment.objects.filter(review__author=user_profile, approved=True).count()
