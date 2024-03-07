@@ -9,7 +9,7 @@ from reviews.models import Review, Comment
 
 def home(request):
     """
-    Renders the home page
+    Renders the home page.
     """
     return render(request, 'core/index.html')
 
@@ -19,24 +19,29 @@ def appointments(request):
     """
     Renders the appointments page if the user is authenticated,
     otherwise redirects to the login page.
+
+    User profiles must also be approved by the admin to access this page.
     """
     if request.user.profile.approved:
         return render(request, 'core/appointments.html')
     else:
-        messages.error(request, "You are not currently authorised to book reviews. Please contact your driving instructor.")
+        messages.error(
+            request,
+            "You are not currently authorised to book reviews. Please contact your driving instructor."
+        )
         return render(request, 'core/contact.html')
 
 
 def contact(request):
     """
-    Renders the contact page
+    Renders the contact page.
     """
     return render(request, 'core/contact.html')
 
 
 def user_profiles(request):
     """
-    Renders the user profiles page
+    Renders the user profiles page which consists of a paginated gallery of all users.
     """
     search_query = ''
 
@@ -68,6 +73,9 @@ def user_profiles(request):
 
 
 def profile_detail(request, user_id):
+    """
+    Renders the profile page for a user.
+    """
     user_profile = get_object_or_404(UserProfile, user_id=user_id)
     comment_count = Comment.objects.filter(review__author=user_profile, approved=True).count()
     like_count = Review.objects.filter(author=user_profile).aggregate(total_likes=Count('likes'))['total_likes'] or 0
