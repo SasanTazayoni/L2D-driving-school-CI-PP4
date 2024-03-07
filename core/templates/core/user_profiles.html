@@ -10,7 +10,9 @@
 
 {% block content %}
 
+
 <section class="block--grey full-page-block">
+    <!-- Search bar -->
     <div class="search-form-container text-center">
         <form action="{% url 'user_profiles' %}" data-search-form method="GET">
             <div class="form-field">
@@ -21,6 +23,7 @@
             <button type="submit" class="blue-button">Search</button>
         </form>
     </div>
+    <!-- User profile gallery -->
     <div class="container mt-5">
         <header class="page-header">
             <h1 class="text-center">User Profiles</h1>
@@ -45,6 +48,7 @@
             <p class="text-center italic">Your search returned no results. Please try something else.</p>
         {% endif %}
     </div>
+    <!-- Pagination -->
     {% if user_profiles.has_other_pages %}
         <div class="pagination mt-5">
             <ul class="container text-center">
