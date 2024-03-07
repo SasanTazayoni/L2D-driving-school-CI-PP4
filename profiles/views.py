@@ -12,7 +12,7 @@ from .forms import UserProfileForm
 @login_required(login_url='/accounts/login/')
 def profile_page(request):
     """
-    Renders the profile page
+    Renders the profile page of the current logged in user.
     """
 
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -47,7 +47,7 @@ def profile_page(request):
 @login_required(login_url='/accounts/login/')
 def edit_profile(request):
     """
-    Renders the edit profile page and handles form submission
+    Renders the edit profile form and handles form submission.
     """
 
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -90,6 +90,9 @@ def edit_profile(request):
 
 @login_required(login_url='/accounts/login/')
 def delete_profile(request):
+    """
+    Deletes the profile of the currently logged in user.
+    """
     if request.method == 'POST':
         request.user.delete()
         logout(request)

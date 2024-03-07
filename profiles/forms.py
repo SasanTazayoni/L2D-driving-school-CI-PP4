@@ -8,6 +8,9 @@ from allauth.account.forms import SignupForm
 
 
 class CustomSignupForm(SignupForm):
+    """
+    Creates a custom sign up form for new users signing up.
+    """
     first_name = forms.CharField(label="Name", max_length=40)
 
     def __init__(self, *args, **kwargs):
@@ -39,6 +42,10 @@ class CustomSignupForm(SignupForm):
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    Establishes a user profile form for editing various details of an authenticated
+    user.
+    """
     email = forms.EmailField(
         widget=forms.TextInput(attrs={'readonly': 'readonly'})
     )

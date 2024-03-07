@@ -5,6 +5,9 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(UserProfile)
 class UserProfileAdmin(SummernoteModelAdmin):
+    """
+    Custom admin panel for managing user profiles.
+    """
     list_display = ('get_name', 'created_on', 'approved')
     search_fields = ['user__first_name', 'about_me']
     summernote_fields = ('about_me',)
