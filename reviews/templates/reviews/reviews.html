@@ -8,6 +8,7 @@
 
 <section class="block--grey d-flex justify-content-center align-items-center flex-column full-page-block">
     <div class="container my-2">
+        <!-- About me for the driving instructor -->
         <header class="page-header">
             <h1>About Me</h1>
         </header>
@@ -42,6 +43,7 @@
         <hr>
     </div>
     <div class="container">
+        <!-- Reviews section -->
         <header>
             <h2 class="text-center mb-4">Reviews</h2>
         </header>
@@ -55,8 +57,10 @@
             accounts of our commitment to excellence and the transformative impact of our driver education program.
             <br>
         </p>
+        <!-- Average rating of all reviews -->
         <p class="text-center mb-4 bold average-rating">Average rating: {{ average_rating }} / 5</p>
         <div class="row">
+            <!-- Review cards -->
             {% for review in review_list %}
                 <div class="col-md-4 review-card-container">
                     <a href="{% url 'review_detail' review.id %}">
@@ -100,6 +104,7 @@
                 </div>
             {% endfor %}
         </div>
+        <!-- Pagination of reviews -->
         {% if is_paginated %}
             <nav aria-label="Page navigation">
                 <ul class="pagination justify-content-center">
