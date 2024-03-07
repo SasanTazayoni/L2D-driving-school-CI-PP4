@@ -5,6 +5,9 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Review)
 class ReviewAdmin(SummernoteModelAdmin):
+    """
+    Custom admin panel for managing user reviews.
+    """
     list_display = ('author', 'rating', 'approved', 'created_on', 'updated_on')
     search_fields = ['author', 'content']
     list_filter = ('approved', 'created_on', 'updated_on')
@@ -18,6 +21,9 @@ class ReviewAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    """
+    Custom admin panel for managing user comments.
+    """
     list_display = ('author', 'review', 'approved', 'replied_on', 'updated_on')
     search_fields = ['author', 'content']
     list_filter = ('approved', 'replied_on', 'updated_on')

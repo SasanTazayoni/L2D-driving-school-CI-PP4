@@ -14,6 +14,9 @@ from django.contrib.auth.decorators import login_required
 
 
 class ReviewList(generic.ListView):
+    """
+    Render a paginated list of reviews (6 per page) with an average rating.
+    """
     queryset = Review.objects.filter(approved=True).order_by("-created_on").select_related('author')
     queryset = queryset.annotate(comment_count=Count('comments', filter=Q(comments__approved=True), distinct=True))
     queryset = queryset.annotate(like_count=Count('likes', distinct=True))
@@ -29,16 +32,7 @@ class ReviewList(generic.ListView):
 
 def review_detail(request, review_id):
     """
-    Display an individual :model:`blog.Post`.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`reviews.Review`.
-
-    **Template:**
-
-    :template:`reviews/review_detail.html`
+    Display the details of an individual review provided by a user.
     """
 
     queryset = Review.objects.filter(approved=True)
@@ -81,7 +75,7 @@ def review_detail(request, review_id):
 
 def edit_comment(request, review_id, comment_id):
     """
-    View to edit comments.
+    Edit a comment authored by the current user on a review.
     """
     review = get_object_or_404(Review, id=review_id)
     comment = get_object_or_404(Comment, id=comment_id)
@@ -122,7 +116,7 @@ def edit_comment(request, review_id, comment_id):
 @login_required(login_url='/accounts/login/')
 def delete_comment(request, review_id, comment_id):
     """
-    View to delete a comment.
+    Delete a comment authored by the current user on a review.
     """
     comment = get_object_or_404(Comment, id=comment_id)
     review_id = comment.review.id
@@ -140,6 +134,9 @@ def delete_comment(request, review_id, comment_id):
 
 @login_required(login_url='/accounts/login/')
 def create_review(request):
+    """
+    Create a review authored by the current user.
+    """
     profile = UserProfile.objects.get(user=request.user)
     existing_review = Review.objects.filter(author=profile).first()
 
@@ -164,6 +161,9 @@ def create_review(request):
 
 @login_required(login_url='/accounts/login/')
 def update_review(request, review_id):
+    """
+    Update a review authored by the current user.
+    """
     profile = UserProfile.objects.get(user=request.user)
     existing_review = Review.objects.filter(author=profile, id=review_id).first()
 
@@ -188,6 +188,9 @@ def update_review(request, review_id):
 
 @login_required(login_url='/accounts/login/')
 def delete_review(request, review_id):
+    """
+    Delete a review authored by the current user.
+    """
     profile = UserProfile.objects.get(user=request.user)
     existing_review = Review.objects.filter(author=profile, id=review_id).first()
 
@@ -205,6 +208,9 @@ def delete_review(request, review_id):
 
 @login_required(login_url='/accounts/login/')
 def like_toggle(request, review_id):
+    """
+    Toggles the like status for a review.
+    """
     review = get_object_or_404(Review, id=request.POST.get('like_id'))
     user_profile = UserProfile.objects.get(user=request.user)
     liked = False
