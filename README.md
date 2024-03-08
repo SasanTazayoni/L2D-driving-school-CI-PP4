@@ -150,21 +150,9 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 </details>
 <details>	
-<summary> Click here to see the REVIEW FORM page and EDIT REVIEW page wireframes </summary>
+<summary> Click here to see the APPOINTMENTS page wireframes </summary>
 
-  - ![screenshot](documentation/wireframes/reviewform.png)
-
-</details>
-<details>	
-<summary> Click here to see the REVIEW DETAILS page (contains comment form) and EDIT COMMENTS page wireframes </summary>
-
-  - ![screenshot](documentation/wireframes/reviewdetails.png)
-
-</details>
-<details>	
-<summary> Click here to see the SIGN UP page, LOGIN page and various password reset page wireframes </summary>
-
-  - ![screenshot](documentation/wireframes/signupform.png)
+  - ![screenshot](documentation/wireframes/appointments.png)
 
 </details>
 <details>	
@@ -174,9 +162,9 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 </details>
 <details>	
-<summary> Click here to see the EDIT PROFILE page wireframes </summary>
+<summary> Click here to see the ALL USERS page wireframes </summary>
 
-  - ![screenshot](documentation/wireframes/editprofile.png)
+  - ![screenshot](documentation/wireframes/userprofiles.png)
 
 </details>
 <details>	
@@ -186,9 +174,27 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 </details>
 <details>	
-<summary> Click here to see the APPOINTMENTS page wireframes </summary>
+<summary> Click here to see the SIGN UP page, LOGIN page and various password reset page wireframes </summary>
 
-  - ![screenshot](documentation/wireframes/appointments.png)
+  - ![screenshot](documentation/wireframes/signupform.png)
+
+</details>
+<details>	
+<summary> Click here to see the EDIT PROFILE page wireframes </summary>
+
+  - ![screenshot](documentation/wireframes/editprofile.png)
+
+</details>
+<details>	
+<summary> Click here to see the REVIEW FORM page and EDIT REVIEW page wireframes </summary>
+
+  - ![screenshot](documentation/wireframes/reviewform.png)
+
+</details>
+<details>	
+<summary> Click here to see the REVIEW DETAILS page (contains comment form) and EDIT COMMENTS page wireframes </summary>
+
+  - ![screenshot](documentation/wireframes/reviewdetails.png)
 
 </details>
 
