@@ -14,6 +14,7 @@ You can access the application [here](https://l2d-driving-school-6f23811ec0fb.he
 
 ![L2D home page shown on various devices](documentation/amiresponsive.png)
 
+
 ## User Experience
 
 The genesis of this project stemmed from the ambition of a driving instructor, currently affiliated with an agency, who aspires to transition into a freelance role, managing her own clientele. The inception of the website began with an extensive brainstorming session to delineate the essential information required to captivate potential clients. Subsequently, wireframes were crafted to provide a preliminary visualisation of the website's layout and structure. It's important to note that these wireframes serve as a blueprint and are subject to refinement and adaptation as the project progresses.
@@ -109,33 +110,7 @@ This epic is dedicated to creating an intuitive and visually appealing user expe
 These epics collectively represent the core functionalities and user experiences that your platform offers. They provide a high-level overview of the different aspects users and administrators can interact with on the platform.
 
 
-
-
-
 ## Wireframes
-
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-In this section, display your wireframe screenshots using a Markdown `table`.
-Instructions on how to do Markdown `tables` start on line #213 on this site: https://pandao.github.io/editor.md/en.html
-
-Alternatively, dropdowns are a way to condense several wireframes into a collapsible menu to save space.
-Dropdowns in Markdown are considered some of the only acceptable HTML components that are allowed for assessment purposes.
-
-**IMPORTANT**! **IMPORTANT**! **IMPORTANT**!
-The example below uses the `details` and `summary` code elements.
-However, for these scripts to work, I've had to add spaces within the `< >` elements.
-
-You MUST remove these spaces for it to work properly on your own README/TESTING files.
-Remove the spaces within the `< >` brackets for the `details` and `summary` code elements,
-for the Mobile, Tablet, and Desktop wireframes.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
-I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
-
-### Home page
 
 <details>
 <summary> Click here to see the HOME page wireframes </summary>
