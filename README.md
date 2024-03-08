@@ -135,16 +135,23 @@ for the Mobile, Tablet, and Desktop wireframes.
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
 
-### Mobile Wireframes
+### Home page
 
-< details >
-< summary > Click here to see the Mobile Wireframes < / summary >
+<details>
+<summary> Click here to see the home page wireframes </summary>
 
 Home
-  - ![screenshot](documentation/wireframes/mobile-home.png)
+  - ![screenshot](documentation/wireframes/home.png)
+
+</details>
+
+<details>	
+<summary> Click here to see the reviews page wireframes </summary>
 
 About
-  - ![screenshot](documentation/wireframes/mobile-about.png)
+  - ![screenshot](documentation/wireframes/reviews.png)
+
+</details>
 
 Contact
   - ![screenshot](documentation/wireframes/mobile-contact.png)
@@ -155,7 +162,6 @@ Gallery
 etc.
   - repeat for any remaining mobile wireframes
 
-< / details >
 
 ### Tablet Wireframes
 
