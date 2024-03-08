@@ -45,7 +45,7 @@ The combination of Montserrat for headings and Noto Sans for body text offers a 
 
 This epic focuses on the foundational aspects of user management and authentication, ensuring users can securely access the platform. It includes functionalities such as logging in, logging out, password reset and user registration.
 
-* Sign up - As a new site user I can register and establish an account on the site so that I can create a personalised profile. ***(MUST HAVE)***
+* Sign up - As a new site user I can register and establish an account on the site so that I can create a personalised profile. | ***(MUST HAVE)*** |
 * Log in - As a registered user I can log in to my account to actively participate in the site's community, engaging with reviews and managing my appointments so that I can enhance my user experience and stay organised with scheduled appointments. ***(MUST HAVE)***
 * Log out - As a registered user I can log out of my account so that I can end my session on my current device. ***(MUST HAVE)***
 * Password reset - As a registered user/site admin I can reset my password if I forget it so that I can regain access to my account. ***(COULD HAVE)***
