@@ -22,6 +22,14 @@ One of the primary considerations was the establishment of a colour scheme that 
 
 This iterative process underscores the dynamic nature of the project, allowing for the exploration of new ideas and the possibility of discarding existing ones as the development journey unfolds.
 
+### Colour Scheme
+
+![Colour Scheme](documentation/colourscheme.png)
+
+The carefully curated color scheme for this website has been meticulously selected to convey an aura of professionalism and authenticity. The predominant use of pristine white (#fff) exudes cleanliness and clarity, making it ideal for elements such as cards, forms, and the navbar, ensuring that essential information is easily discernible. The subtle shade of #e6e6e9 serves as a backdrop, enhancing readability and providing a sense of coherence across backgrounds, form fields, and text areas. Bold black (#000) is employed for text and headings, instilling a sense of authority and clarity in communication, while judiciously applied opacity imbues date stamps and pending reviews/comments with a hint of gravitas. Striking shades of #7DAEF8 and #1146F5 are strategically utilised for buttons, logos, navigation links and contact information, injecting vibrancy and professionalism into the interface. Finally, the assertive hue of #ff8f8f serves as a visual cue for actions involving deletions, cancellations, or clearances, ensuring intuitive user interactions. Collectively, these colors harmonise to create a visually appealing and trustworthy platform for both clients and the driving instructor alike.
+
+![CSS root variables](documentation/rootvariables.png)
+
 ### User Stories
 
 **User Account Management and Authentication:**
