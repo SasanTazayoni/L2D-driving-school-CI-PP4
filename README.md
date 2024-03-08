@@ -138,72 +138,59 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 ### Home page
 
 <details>
-<summary> Click here to see the **home page** wireframes </summary>
+<summary> Click here to see the HOME page wireframes </summary>
 
   - ![screenshot](documentation/wireframes/home.png)
 
 </details>
-
 <details>	
-<summary> Click here to see the **reviews page** wireframes </summary>
+<summary> Click here to see the REVIEWS page wireframes </summary>
 
   - ![screenshot](documentation/wireframes/reviews.png)
 
 </details>
+<details>	
+<summary> Click here to see the REVIEW FORM page and EDIT REVIEW page wireframes </summary>
 
-Contact
-  - ![screenshot](documentation/wireframes/mobile-contact.png)
+  - ![screenshot](documentation/wireframes/reviewform.png)
 
-Gallery
-  - ![screenshot](documentation/wireframes/mobile-gallery.png)
+</details>
+<details>	
+<summary> Click here to see the REVIEW DETAILS page (contains comment form) and EDIT COMMENTS page wireframes </summary>
 
-etc.
-  - repeat for any remaining mobile wireframes
+  - ![screenshot](documentation/wireframes/reviewdetails.png)
 
+</details>
+<details>	
+<summary> Click here to see the SIGN UP page, LOGIN page and various password reset page wireframes </summary>
 
-### Tablet Wireframes
+  - ![screenshot](documentation/wireframes/signupform.png)
 
-< details >
-< summary > Click here to see the Tablet Wireframes < / summary >
+</details>
+<details>	
+<summary> Click here to see the PROFILE page and USER PROFILE page wireframes </summary>
 
-Home
-  - ![screenshot](documentation/wireframes/tablet-home.png)
+  - ![screenshot](documentation/wireframes/profile.png)
 
-About
-  - ![screenshot](documentation/wireframes/tablet-about.png)
+</details>
+<details>	
+<summary> Click here to see the EDIT PROFILE page wireframes </summary>
 
-Contact
-  - ![screenshot](documentation/wireframes/tablet-contact.png)
+  - ![screenshot](documentation/wireframes/editprofile.png)
 
-Gallery
-  - ![screenshot](documentation/wireframes/tablet-gallery.png)
+</details>
+<details>	
+<summary> Click here to see the CONTACT page wireframes </summary>
 
-etc.
-  - repeat for any remaining tablet wireframes
+  - ![screenshot](documentation/wireframes/contact.png)
 
-< / details >
+</details>
+<details>	
+<summary> Click here to see the APPOINTMENTS page wireframes </summary>
 
-### Desktop Wireframes
+  - ![screenshot](documentation/wireframes/appointments.png)
 
-< details >
-< summary > Click here to see the Desktop Wireframes < / summary >
-
-Home
-  - ![screenshot](documentation/wireframes/desktop-home.png)
-
-About
-  - ![screenshot](documentation/wireframes/desktop-about.png)
-
-Contact
-  - ![screenshot](documentation/wireframes/desktop-contact.png)
-
-Gallery
-  - ![screenshot](documentation/wireframes/desktop-gallery.png)
-
-etc.
-  - repeat for any remaining desktop wireframes
-
-< / details >
+</details>
 
 ## Features
 
