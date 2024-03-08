@@ -138,17 +138,15 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 ### Home page
 
 <details>
-<summary> Click here to see the home page wireframes </summary>
+<summary> Click here to see the **home page** wireframes </summary>
 
-Home
   - ![screenshot](documentation/wireframes/home.png)
 
 </details>
 
 <details>	
-<summary> Click here to see the reviews page wireframes </summary>
+<summary> Click here to see the **reviews page** wireframes </summary>
 
-About
   - ![screenshot](documentation/wireframes/reviews.png)
 
 </details>
