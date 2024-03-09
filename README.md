@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Introducing L2D Driving School — a groundbreaking prototype within the driving education landscape. The website is aptly named 'L2D Driving School,' with 'L2D' representing the abbreviation for 'learn-to-drive.' This concise moniker encapsulates the platform's primary mission — to facilitate the journey of learners as they master the art of driving.
+Introducing L2D Driving School — a groundbreaking prototype within the driving education landscape. The website is aptly named "L2D Driving School", with "L2D" representing the abbreviation for "learn-to-drive." This concise moniker encapsulates the platform's primary mission — to facilitate the journey of learners as they master the art of driving.
 
 This innovative full-stack website serves as a digital platform for a freelance driving instructor to showcase her services, while offering students a seamless experience to find, book and review driving lessons. L2D Driving School not only streamlines the process of booking driving lessons but also fosters community engagement through its interactive platform, where students can share experiences, exchange insights and potentially build connections with fellow learners. This interactive element enhances the learning process and also creates a sense of camaraderie among users, fostering a supportive environment for skill development.
 
@@ -33,8 +33,8 @@ The carefully curated colour scheme for this website has been meticulously selec
 
 ### Typography
 
-* ['Montserrat'](https://fonts.google.com/specimen/Montserrat) is the font used for headings with a fallback of the font-stack 'Arial, Helvetica, sans-serif'. Montserrat is a modern and clean sans-serif font that offers a professional and easy-to-read appearance. Its versatility and geometric design make it suitable for headings and titles.
-* ['Noto Sans'](https://fonts.google.com/noto/specimen/Noto+Sans) is the font used for the body text with a fallback of the font-stack 'Arial, Helvetica, sans-serif'. Noto Sans is a clean and neutral sans-serif font that provides good readability for body text. Its simplicity and wide character support make it suitable for conveying information in a clear and professional manner.
+* ["Montserrat"](https://fonts.google.com/specimen/Montserrat) is the font used for headings with a fallback of the font-stack 'Arial, Helvetica, sans-serif'. Montserrat is a modern and clean sans-serif font that offers a professional and easy-to-read appearance. Its versatility and geometric design make it suitable for headings and titles.
+* ["Noto Sans"](https://fonts.google.com/noto/specimen/Noto+Sans) is the font used for the body text with a fallback of the font-stack 'Arial, Helvetica, sans-serif'. Noto Sans is a clean and neutral sans-serif font that provides good readability for body text. Its simplicity and wide character support make it suitable for conveying information in a clear and professional manner.
 
 The combination of Montserrat for headings and Noto Sans for body text offers a well-balanced and professional aesthetic for a driving school website. The pairing achieves a harmonious contrast, with Montserrat's bold and modern design providing distinction for headings, while Noto Sans ensures optimal readability in body text. The fonts share a clean and contemporary style, fostering consistency and a unified look throughout the website. Their versatility allows for adaptability in different design elements, while Noto Sans' extensive character support promotes accessibility for a diverse audience. Overall, this font pairing creates a visually appealing and credible online presence for the driving school.
 
@@ -178,10 +178,10 @@ These epics collectively represent the core functionalities and user experiences
 ### Current features
 
 * Navbar
-  	* The navigation bar on all pages features a collapsible menu for smaller screens and includes the platform's logo with clickable text to return to the home page. Clickable links are provided for easy access to different pages, while the authentication button 	dynamically displays options based on the user's authentication status: 'Login/Sign up' for unauthenticated users and 'Logout' for authenticated ones.
+  	* The navigation bar on all pages features a collapsible menu for smaller screens and includes the platform's logo with clickable text to return to the home page. Clickable links are provided for easy access to different pages, while the authentication button 	dynamically displays options based on the user's authentication status: "Login/Sign up" for unauthenticated users and "Logout" for authenticated ones.
   	* Active links are visually distinguished on the website to indicate the current page. They are highlighted by emboldening the text and adding a border around the particular link (this border is not present on smaller screens), ensuring clear navigation and 	providing users with a visual cue of their current location within the site.
   	* The navigation bar items on the website feature hover effects to enhance user interaction and UX. When hovered over, the logo, logo text, and links lighten to provide visual feedback. Additionally, the authentication button exhibits a glow effect upon hover, 	further enhancing the interactive experience and guiding user actions.
-  	* Authenticated users gain access to additional navigation links, while the 'Appointments' link is dynamically included once their profile is approved by the admin. This not only provides users with a personalised experience but also safeguards against misuse 	by ensuring that appointment booking privileges are granted only to verified users.
+  	* Authenticated users gain access to additional navigation links, while the "Appointments" link is dynamically included once their profile is approved by the admin. This not only provides users with a personalised experience but also safeguards against misuse 	by ensuring that appointment booking privileges are granted only to verified users.
 
 ![Navbar link hover demonstration](documentation/navbarlinkhover.png)
 
@@ -243,6 +243,28 @@ These epics collectively represent the core functionalities and user experiences
 
 ![Contact page](documentation/contactpage.png)
 
+* Authentication page
+  * Log in page
+	* When accessing the login page, users who are not authenticated can do so by clicking the authentication button labeled "Login/Sign up" located within the navbar.
+	* The login page features essential form fields for entering a username and password. Users must accurately input their credentials to successfully access their account.
+	* When users interact with the form fields, they become highlighted with a dark blue color, indicating that the field is currently in focus. Highlighting form fields when focused provides clear visual feedback to users, making it easier for them to identify the 	active field and input their information accurately.
+	* The "Forgot your password?" link serves as a valuable feature by offering users a means to reset their password in case they forget it. This functionality prevents users from being permanently locked out of their accounts due to forgotten passwords, enhancing 	the overall user experience by providing a solution to a common issue encountered during login processes.
+	* The "Login" button facilitates user authentication, granting access to their account upon successful verification of credentials. Meanwhile, the "Reset" button conveniently clears the form, allowing users to swiftly start anew if they wish to input different 	login details or cancel the login process altogether. These functionalities are crucial for providing users with a seamless and intuitive login experience, ensuring efficiency and ease of use when accessing their accounts.
+	* The "Sign up here" link conveniently toggles the sign-up page, enabling users to transition to the registration process when they are not yet registered. This functionality is useful as it offers users a straightforward way to access the sign-up page 		directly from the login page, facilitating the process of creating a new account for those who have not yet registered.
+
+![Authentication button](documentation/authbtn.png)
+
+![Login form on authentication page](documentation/loginform.png)
+
+![Focused form field vs non-focused](documentation/highlightedfield.png)
+
+* Red buttons
+	* There are several red buttons strategically placed throughout the website, serving specific purposes such as canceling an action, confirming a deletion, or clearing a form. These buttons are intentionally colored red to signify their critical functions and 	encourage cautious interaction. Similar to the blue buttons, they also feature a hover effect that darkens the color, providing visual feedback to users upon interaction. This design choice ensures clarity and consistency in button behavior across the platform, 	enhancing the overall user experience.
+
+![Red button and red button with hover](documentation/redbutton.png)
+
+
+
 🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 In this section, you should go over the different parts of your project,
@@ -263,9 +285,9 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
-Do you have additional ideas that you'd like to include on your project in the future?
+Do you have additional ideas that youd like to include on your project in the future?
 Fantastic! List them here!
-It's always great to have plans for future improvements!
+Its always great to have plans for future improvements!
 Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
 
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
@@ -283,7 +305,7 @@ Consider adding any helpful links or notes to help remind you in the future, if 
 
 In this section, you should explain the various tools and technologies used to develop the project.
 Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
+Some examples have been provided, but this is just a sample only, your project mightve used others.
 Feel free to delete any unused items below as necessary.
 
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
