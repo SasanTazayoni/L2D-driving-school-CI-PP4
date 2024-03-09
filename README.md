@@ -49,7 +49,7 @@ This epic focuses on the foundational aspects of user management and authenticat
 * Sign up - As a new site user I can register and establish an account on the site so that I can create a personalised profile. ***(MUST HAVE)***
 * Log in - As a registered user I can log in to my account to actively participate in the site's community, engaging with reviews and managing my appointments so that I can enhance my user experience and stay organised with scheduled appointments. ***(MUST HAVE)***
 * Log out - As a registered user I can log out of my account so that I can end my session on my current device. ***(MUST HAVE)***
-* Password reset - As a registered user/site admin I can reset my password if I forget it so that I can regain access to my account. ***(COULD HAVE)***
+* Password reset - As a registered user/site admin I can reset my password if I forget it so that I can regain access to my account. ***(MUST HAVE)***
 * View my profile details - As a registered user I can view my profile details so that I can see the personal information I have provided. ***(MUST HAVE)***
 * Update my profile - As a registered user I can customise my profile settings so that I can tailor my online experience to reflect my personality. ***(MUST HAVE)***
 * Delete my account - As a registered user I can delete my account so that my personal information and account data are permanently removed from the system. ***(COULD HAVE)***
