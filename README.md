@@ -27,7 +27,7 @@ The project's journey further delved into the realm of database management and u
 
 ![Colour Scheme](documentation/colourscheme.png)
 
-The carefully curated color scheme for this website has been meticulously selected to convey an aura of professionalism and authenticity. The predominant use of pristine white (#fff) exudes cleanliness and clarity, making it ideal for elements such as cards, forms, and the navbar, ensuring that essential information is easily discernible. The subtle shade of #e6e6e9 serves as a backdrop, enhancing readability and providing a sense of coherence across backgrounds, form fields, and text areas. Bold black (#000) is employed for text and headings, instilling a sense of authority and clarity in communication, while judiciously applied opacity imbues date stamps and pending reviews/comments with a hint of gravitas. Striking shades of #7DAEF8 and #1146F5 are strategically utilised for buttons, logos, navigation links and contact information, injecting vibrancy and professionalism into the interface. Finally, the assertive hue of #ff8f8f serves as a visual cue for actions involving deletions, cancellations, or clearances, ensuring intuitive user interactions. Collectively, these colors harmonise to create a visually appealing and trustworthy platform for both clients and the driving instructor alike.
+The carefully curated colour scheme for this website has been meticulously selected to convey an aura of professionalism and authenticity. The predominant use of pristine white (#fff) exudes cleanliness and clarity, making it ideal for elements such as cards, forms, and the navbar, ensuring that essential information is easily discernible. The subtle shade of #e6e6e9 serves as a backdrop, enhancing readability and providing a sense of coherence across backgrounds, form fields, and text areas. Bold black (#000) is employed for text and headings, instilling a sense of authority and clarity in communication, while judiciously applied opacity imbues date stamps and pending reviews/comments with a hint of gravitas. Striking shades of #7DAEF8 and #1146F5 are strategically utilised for buttons, logos, navigation links and contact information, injecting vibrancy and professionalism into the interface. Finally, the assertive hue of #ff8f8f serves as a visual cue for actions involving deletions, cancellations, or clearances, ensuring intuitive user interactions. Collectively, these colours harmonise to create a visually appealing and trustworthy platform for both clients and the driving instructor alike.
 
 ![CSS root variables](documentation/rootvariables.png)
 
@@ -181,6 +181,7 @@ These epics collectively represent the core functionalities and user experiences
   	* The navigation bar on all pages features a collapsible menu for smaller screens and includes the platform's logo with clickable text to return to the home page. Clickable links are provided for easy access to different pages, while the authentication button 	dynamically displays options based on the user's authentication status: 'Login/Sign up' for unauthenticated users and 'Logout' for authenticated ones.
   	* Active links are visually distinguished on the website to indicate the current page. They are highlighted by emboldening the text and adding a border around the particular link (this border is not present on smaller screens), ensuring clear navigation and 	providing users with a visual cue of their current location within the site.
   	* The navigation bar items on the website feature hover effects to enhance user interaction and UX. When hovered over, the logo, logo text, and links lighten to provide visual feedback. Additionally, the authentication button exhibits a glow effect upon hover, 	further enhancing the interactive experience and guiding user actions.
+  	* Authenticated users gain access to additional navigation links, while the 'Appointments' link is dynamically included once their profile is approved by the admin. This not only provides users with a personalised experience but also safeguards against misuse 	by ensuring that appointment booking privileges are granted only to verified users.
 
 ![Navbar link hover demonstration](documentation/navbarlinkhover.png)
 
@@ -190,6 +191,57 @@ These epics collectively represent the core functionalities and user experiences
 
 ![Navbar dropdown menu](documentation/navmenudropdown.png)
 
+* Footer
+	* The footer block appears on all pages, displaying copyright information for the website and its author. Additionally, it features a distinctive spinning animation applied to the GitHub logo, inviting users to explore the project's repository on GitHub.
+
+![Footer block](documentation/footer.png)
+
+* Home page
+	* The home page features a captivating first-person view from the driver's seat, depicting a car journey on a bustling motorway. This immersive visual immediately communicates the central theme of the website: driving.
+	* After 3 seconds, an overlay gracefully emerges atop the image, presenting a user-friendly prompt box with a title (the website brand) designed to engage the visitor. Depending on the user's authentication status, distinct call-to-action buttons are displayed. 	If the user is not authenticated, the left button prompts them to sign up. If the user is authenticated, the button directs them to explore reviews. For authenticated users whose profiles are approved, the button facilitates scheduling appointments. This 		feature is useful because it provides a clear and concise call to action tailored to the user's authentication status. By presenting different options based on whether the user is authenticated and if their profile is approved, the website streamlines the user 	experience and guides them towards relevant actions. This personalised approach helps users easily navigate the site and encourages them to take specific actions based on their current status, ultimately improving user engagement and conversion rates.
+
+![Home page](documentation/homepage.png)
+
+![Home page with overlay](documentation/homepageoverlay.png)
+
+* Blue buttons
+	* The website predominantly uses blue-coloured buttons, which feature an aesthetically pleasing hover effect causing them to darken when interacted with. Having a consistent colour scheme and hover effect for buttons enhances the visual appeal of the website 	and provides a cohesive user experience. When users interact with buttons, the subtle change in colour helps indicate that the button is interactive, improving usability and guiding user behavior. This visual feedback can contribute to a more intuitive and 	engaging interface, ultimately enhancing the overall user experience.
+
+![Blue button and blue button with hover](documentation/bluebutton.png)
+
+* Django messages
+	* Django messages are displayed prominently at the top of the page following user actions, such as logging in or submitting content. This feature ensures that users receive immediate feedback regarding the success/failure of their interactions with the 		website, contributing to a seamless and intuitive user experience.
+    	* The Django messages have been tailored to enhance user experience by employing a customised design. These messages gracefully fade out after 5 seconds, ensuring a non-intrusive display. Positioned directly beneath the navigation bar using absolute 		positioning, they seamlessly integrate into the page layout without disrupting the user's browsing flow. This approach not only prioritizes aesthetics but also maintains the page's overall cohesion and usability.
+   
+![Django message example](documentation/messages.png)
+
+* Reviews page
+	* The reviews page is structured into two main sections: an "about me" segment introducing the driving instructor and a reviews section. The "about me" section utilises a 2-column grid layout, which seamlessly transitions to a single column on screens 1024px 	and below, ensuring optimal readability across devices. The "about me" section serves as a vital introduction to the driving instructor, providing potential clients with essential information about their background, experience, teaching approach and any other 	pertinent details. Additionally, the "about me" segment can help establish trust and rapport between the instructor and prospective clients, fostering a sense of connection and confidence in their abilities. Overall, including an "about me" section enhances 	transparency, allows for better informed decision-making, and contributes to a positive user experience on the website. In the reviews section, users are greeted with an introductory paragraph followed by the average rating derived from all reviews. A paginated 	list of reviews is then presented where each review is presented in a card format, featuring key details such as the review author, rating, number of likes and comments on the review, along with a snippet of the review content. This layout offers users a 		comprehensive overview of the driving instructor's profile and feedback from previous clients.
+ 	* The hover effect on the review cards adds a visually appealing touch to the user interface, enhancing the interactivity and engagement of the reviews section. When users hover over a review card, the subtle shine effect creates the illusion the card's surface 	catching light, drawing attention to it and signaling interactivity. This effect not only adds a touch of realism and dynamism to the design but also provides users with visual feedback, indicating that the card is interactive and inviting them to explore 	further. Overall, the hover effect contributes to a more immersive and enjoyable user experience on the website.
+	* The pagination buttons are designed to resemble blue buttons, with a consistent hover effect that signals their interactivity. When clicked, active pagination buttons retain their dark blue colour, ensuring clarity in user navigation and interaction.
+
+![About me card](documentation/aboutmecard.png)
+
+![Introduction to the reviews section](documentation/reviewsintro.png)
+
+![Review cards with one card hovered](documentation/reviewcardhover.png)
+
+![Pagination for the reviews with page 3 hovered](documentation/pagination.png)
+
+* All users page
+	* The "All Users" page features a search bar at the top, allowing users to easily search for specific users. Below the search bar, there is a paginated gallery displaying users, with 12 users shown per page for optimal browsing experience.
+ 	* The user gallery thumbnails exhibit a hover effect that enhances their opacity and slightly enlarges the thumbnail, providing a visual indication of interactivity when users hover over them.
+ 
+![User search bar](documentation/searchbar.png)
+
+![Gallery for users](documentation/gallery.png)
+
+![Pagination for the gallery](documentation/gallerypagination.png)
+
+* Contact page
+	* The contact page is composed of a user-friendly contact form designed for inquiries, accompanied by a concise contact information card. This card contains essential details such as the venue address, contact number, email address, and a Google Maps image 	providing users with clear and accessible means of communication. The layout of the contact page features a two-column grid design, which seamlessly transitions into a single-column layout when viewed on tablet-sized screens or smaller devices. This responsive 	design ensures optimal viewing and usability across various screen sizes, enhancing the user experience.
+
+![Contact page](documentation/contactpage.png)
 
 🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
@@ -206,33 +258,6 @@ IMPORTANT: Remember to always include a screenshot of each individual feature!
 
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
-### Existing Features
-
-- **Title for feature #1**
-
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
-
-![screenshot](documentation/feature01.png)
-
-- **Title for feature #2**
-
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
-
-![screenshot](documentation/feature02.png)
-
-- **Title for feature #3**
-
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
-
-![screenshot](documentation/feature03.png)
-
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Repeat as necessary for as many features as your site contains.
-
-Hint: the more, the merrier!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ### Future Features
 
