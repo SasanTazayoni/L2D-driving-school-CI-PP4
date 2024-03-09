@@ -1,5 +1,3 @@
-![image](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/assets/80260775/e68d09c3-5382-42a3-8318-59eeea7f31b6)![image](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/assets/80260775/d8c29e95-caf4-4661-a455-95bc15da906d)# [L2D DRIVING SCHOOL CI PP4](https://l2d-driving-school-6f23811ec0fb.herokuapp.com)
-
 ## Introduction
 
 Introducing L2D Driving School — a groundbreaking prototype within the driving education landscape. The website is aptly named "L2D Driving School", with "L2D" representing the abbreviation for "learn-to-drive." This concise moniker encapsulates the platform's primary mission — to facilitate the journey of learners as they master the art of driving.
