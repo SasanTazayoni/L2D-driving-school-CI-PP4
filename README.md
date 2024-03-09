@@ -211,7 +211,7 @@ These epics collectively represent the core functionalities and user experiences
 
 * Django messages
 	* Django messages are displayed prominently at the top of the page following user actions, such as logging in or submitting content. This feature ensures that users receive immediate feedback regarding the success/failure of their interactions with the 		website, contributing to a seamless and intuitive user experience.
-    	* The Django messages have been tailored to enhance user experience by employing a customised design. These messages gracefully fade out after 5 seconds, ensuring a non-intrusive display. Positioned directly beneath the navigation bar using absolute 		positioning, they seamlessly integrate into the page layout without disrupting the user's browsing flow. This approach not only prioritizes aesthetics but also maintains the page's overall cohesion and usability.
+	* The Django messages have been tailored to enhance user experience by employing a customised design. These messages gracefully fade out after 5 seconds, ensuring a non-intrusive display. Positioned directly beneath the navigation bar using absolute 		positioning, they seamlessly integrate into the page layout without disrupting the user's browsing flow. This approach not only prioritizes aesthetics but also maintains the page's overall cohesion and usability.
    
 ![Django message example](documentation/messages.png)
 
