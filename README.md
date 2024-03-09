@@ -272,7 +272,7 @@ These epics collectively represent the core functionalities and user experiences
 	* The "Log in here" link conveniently toggles the login page, allowing users to transition to the login process when they are already registered. This functionality is useful as it provides users with a direct and accessible way to access the login page from 	other parts of the website, facilitating seamless access to their accounts for those who are already registered.
 	* Similar to the login form, error messages are displayed if the criteria are not met during the sign-up process. Error messages during the sign-up process are useful as they provide feedback to users about the criteria they need to meet in order to 		successfully create an account. This helps users understand why their sign-up attempt failed and how they can rectify the issues to proceed with the sign-up process.
 
-![Sign up form on authentication page](documentation/signupform.png)
+![Sign up form on authentication page](documentation/registrationform.png)
 
 ![Sign up form error](documentation/signuperror.png)
 
