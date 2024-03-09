@@ -1,4 +1,4 @@
-# [L2D DRIVING SCHOOL CI PP4](https://l2d-driving-school-6f23811ec0fb.herokuapp.com)
+![image](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/assets/80260775/e68d09c3-5382-42a3-8318-59eeea7f31b6)![image](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/assets/80260775/d8c29e95-caf4-4661-a455-95bc15da906d)# [L2D DRIVING SCHOOL CI PP4](https://l2d-driving-school-6f23811ec0fb.herokuapp.com)
 
 ## Introduction
 
@@ -10,7 +10,7 @@ With its sleek design and intuitive interface, the website offers users a glimps
 
 In future iterations, L2D Driving School plans to further enhance community engagement and accessibility by integrating social media links. These additions will enable users to connect with the platform's vibrant community across various social channels, further fostering discussions, sharing experiences and expanding the reach of the driving education ecosystem.
 
-You can access the application [here](https://l2d-driving-school-6f23811ec0fb.herokuapp.com). <br>
+You can access the application [here](https://l2d-driving-school-6f23811ec0fb.herokuapp.com).
 
 ![L2D home page shown on various devices](documentation/amiresponsive.png)
 
@@ -216,7 +216,7 @@ These epics collectively represent the core functionalities and user experiences
 ![Django message example](documentation/messages.png)
 
 * Reviews page
-	* The reviews page is structured into two main sections: an "about me" segment introducing the driving instructor and a reviews section. The "about me" section utilises a 2-column grid layout, which seamlessly transitions to a single column on screens 1024px 	and below, ensuring optimal readability across devices. The "about me" section serves as a vital introduction to the driving instructor, providing potential clients with essential information about their background, experience, teaching approach and any other 	pertinent details. Additionally, the "about me" segment can help establish trust and rapport between the instructor and prospective clients, fostering a sense of connection and confidence in their abilities. Overall, including an "about me" section enhances 	transparency, allows for better informed decision-making, and contributes to a positive user experience on the website. In the reviews section, users are greeted with an introductory paragraph followed by the average rating derived from all reviews. A paginated 	list of reviews is then presented where each review is presented in a card format, featuring key details such as the review author, rating, number of likes and comments on the review, along with a snippet of the review content. This layout offers users a 		comprehensive overview of the driving instructor's profile and feedback from previous clients.
+	* The reviews page is structured into two main sections: an "about me" segment introducing the driving instructor and a reviews section. The "about me" section serves as a vital introduction to the driving instructor, providing potential clients with essential 	information about their background, experience, teaching approach and any other pertinent details. Additionally, the "about me" segment can help establish trust and rapport between the instructor and prospective clients, fostering a sense of connection and 	confidence in their abilities. Overall, including an "about me" section enhances transparency, allows for better informed decision-making, and contributes to a positive user experience on the website. In the reviews section, users are greeted with an 		introductory paragraph followed by the average rating derived from all reviews. A paginated list of reviews is then presented where each review is presented in a card format, featuring key details such as the review author, rating, number of likes and comments 	on the review, along with a snippet of the review content. This layout offers users a comprehensive overview of the driving instructor's profile and feedback from previous clients.
  	* The hover effect on the review cards adds a visually appealing touch to the user interface, enhancing the interactivity and engagement of the reviews section. When users hover over a review card, the subtle shine effect creates the illusion the card's surface 	catching light, drawing attention to it and signaling interactivity. This effect not only adds a touch of realism and dynamism to the design but also provides users with visual feedback, indicating that the card is interactive and inviting them to explore 	further. Overall, the hover effect contributes to a more immersive and enjoyable user experience on the website.
 	* The pagination buttons are designed to resemble blue buttons, with a consistent hover effect that signals their interactivity. When clicked, active pagination buttons retain their dark blue colour, ensuring clarity in user navigation and interaction.
 
@@ -239,47 +239,149 @@ These epics collectively represent the core functionalities and user experiences
 ![Pagination for the gallery](documentation/gallerypagination.png)
 
 * Contact page
-	* The contact page is composed of a user-friendly contact form designed for inquiries, accompanied by a concise contact information card. This card contains essential details such as the venue address, contact number, email address, and a Google Maps image 	providing users with clear and accessible means of communication. The layout of the contact page features a two-column grid design, which seamlessly transitions into a single-column layout when viewed on tablet-sized screens or smaller devices. This responsive 	design ensures optimal viewing and usability across various screen sizes, enhancing the user experience.
+	* The contact page is composed of a user-friendly contact form designed for inquiries, accompanied by a concise contact information card. This card contains essential details such as the venue address, contact number, email address, and a Google Maps image 	providing users with clear and accessible means of communication.
 
 ![Contact page](documentation/contactpage.png)
 
+* All forms
+	* When users interact with the form fields throughout the website, they become highlighted with a dark blue color, indicating that the field is currently in focus. Highlighting form fields when focused provides clear visual feedback to users, making it easier 	for them to identify the active field and input their information accurately.
+
+![Focused form field vs non-focused](documentation/highlightedfield.png)
+
 * Authentication page
-  * Log in page
-	* When accessing the login page, users who are not authenticated can do so by clicking the authentication button labeled "Login/Sign up" located within the navbar.
+	* The template background depicts a scenic landscape featuring a lengthy road winding through mountainous terrain. This imagery is metaphorically intended to symbolize the journey of learning to drive and the progression towards mastering the skill. The 		expansive road stretching into the distance evokes a sense of exploration and adventure, mirroring the experience of embarking on the road to becoming a confident driver. This thematic backdrop not only adds visual appeal to the website but also conveys the 	essence of the driving experience, creating a cohesive and immersive environment for visitors.
+	* Upon successful login or signup, users are redirected to the home page, ensuring a smooth transition and immediate access to the platform's content and features. This functionality enhances user experience by eliminating unnecessary steps and providing quick 	access to the main interface, thereby improving usability and user satisfaction.
+
+* Authentication page - Log in form
+    	* When accessing the login page, users who are not authenticated can do so by clicking the authentication button labeled "Login/Sign up" located within the navbar.
 	* The login page features essential form fields for entering a username and password. Users must accurately input their credentials to successfully access their account.
-	* When users interact with the form fields, they become highlighted with a dark blue color, indicating that the field is currently in focus. Highlighting form fields when focused provides clear visual feedback to users, making it easier for them to identify the 	active field and input their information accurately.
 	* The "Forgot your password?" link serves as a valuable feature by offering users a means to reset their password in case they forget it. This functionality prevents users from being permanently locked out of their accounts due to forgotten passwords, enhancing 	the overall user experience by providing a solution to a common issue encountered during login processes.
 	* The "Login" button facilitates user authentication, granting access to their account upon successful verification of credentials. Meanwhile, the "Reset" button conveniently clears the form, allowing users to swiftly start anew if they wish to input different 	login details or cancel the login process altogether. These functionalities are crucial for providing users with a seamless and intuitive login experience, ensuring efficiency and ease of use when accessing their accounts.
 	* The "Sign up here" link conveniently toggles the sign-up page, enabling users to transition to the registration process when they are not yet registered. This functionality is useful as it offers users a straightforward way to access the sign-up page 		directly from the login page, facilitating the process of creating a new account for those who have not yet registered.
+	* Error messages are displayed directly on the form if users enter incorrect details. This immediate feedback mechanism allows users to quickly identify and rectify any mistakes, enhancing the overall usability of the form. By presenting errors in context, 	users can easily understand what went wrong and take corrective actions without the need for additional navigation or guesswork. This approach streamlines the user experience and promotes efficient form submission, ultimately reducing frustration and improving 	user satisfaction.
 
 ![Authentication button](documentation/authbtn.png)
 
 ![Login form on authentication page](documentation/loginform.png)
 
-![Focused form field vs non-focused](documentation/highlightedfield.png)
+![Login form error](documentation/loginerror.png)
+
+* Authentication page - Sign up form
+	* The sign-up process includes validations to ensure data accuracy and security. It checks that the email address is unique, passwords match, and the chosen username is available. Additionally, all fields must be filled out to prevent incomplete submissions. 	These measures ensure a smooth and secure registration experience.
+	* The "Sign up" button initiates the process of registering a new user and creating a new account in the database, enabling users to access more of the platform's features and services. Conversely, the "Reset" button provides a convenient way for users to clear 	the form, allowing them to start over if they need to revise their input or if they accidentally enter incorrect information. These features are useful as they streamline the user experience, facilitating smooth sign-up processes and reducing frustration 		associated with form errors or unwanted inputs.
+	* The "Log in here" link conveniently toggles the login page, allowing users to transition to the login process when they are already registered. This functionality is useful as it provides users with a direct and accessible way to access the login page from 	other parts of the website, facilitating seamless access to their accounts for those who are already registered.
+	* Similar to the login form, error messages are displayed if the criteria are not met during the sign-up process. Error messages during the sign-up process are useful as they provide feedback to users about the criteria they need to meet in order to 		successfully create an account. This helps users understand why their sign-up attempt failed and how they can rectify the issues to proceed with the sign-up process.
+
+![Sign up form on authentication page](documentation/signupform.png)
+
+![Sign up form error](documentation/signuperror.png)
+
+* Authentication page - Password reset request form
+	* The password reset request form provides users with the ability to reset their password, contingent upon having a registered account. When an incorrect email is entered, no email is dispatched. Conversely, upon entering the correct email, an email containing 	a secure token for password reset is promptly dispatched to the user. For security measures, the token is only accessible during the current session. Additionally, feedback regarding the validity of an email is intentionally withheld to prevent potential 		security breaches.
+
+![Password reset request form](documentation/passwordresetrequest.png)
+
+* Authentication page - Password reset request confirmation
+	* Upon entering an email, a message appears prompting the user to check their email for further instructions. This serves as a helpful reminder, ensuring users are aware of the next steps required to complete the password reset process. This guidance reduces 	confusion and streamlines the user experience, ultimately leading to a smoother password reset process.
+	* After submitting the email, the user is instructed to check their email inbox for further instructions. This step ensures that users can securely verify their identity and proceed with the password reset process.
+
+![Password reset request confirmation](documentation/passwordresetrequestconfirm.png)
+
+![Email to reset password](documentation/email.png)
+
+* Authentication page - Password reset form
+	* Once the user clicks the link provided in the email, they are directed to the password reset form, which is connected with their registered account. This transition ensures a secure and streamlined process for users to reset their password without the need 	for manual input, enhancing user experience and minimising potential errors.
+ 	* The form includes a submit button, allowing users to finalise their password reset, and a clear button to remove any entered information. The submit button allows users to complete the password reset process, while the clear button enables them to easily 	remove entered information if needed, enhancing user control and flexibility.
+	* The form also incorporates error messages to aid users in resolving any issues encountered during the password reset process. Error messages are integrated into the form to assist users in identifying and addressing any issues that may arise during the 		password reset process, thereby facilitating a smoother and more efficient user experience.
+
+![Password reset form](documentation/passwordresetform.png)
+
+![Password reset form error](documentation/passwordresetformerror.png)
+
+* Authentication page - Password reset complete
+	* Upon successfully changing their password, users receive a confirmation message along with a direct link to log back into their account. This ensures users are promptly informed of the password change's success and provides convenient access to their account.
+
+![Password reset complete](documentation/passwordresetcomplete.png)
+
+* Log out button
+	* When users click the logout button, a modal dialog box appears, presenting them with options to either confirm or cancel the logout action. This approach enhances user experience by adding an extra layer of confirmation, reducing the likelihood of accidental 	logouts and ensuring users have control over their actions. By providing a clear and explicit confirmation step, users can make informed decisions and avoid unintended disruptions to their browsing experience.
+
+![Log out button](documentation/logoutbtn.png)
+
+![Log out modal](documentation/logoutmodal.png)
 
 * Red buttons
 	* There are several red buttons strategically placed throughout the website, serving specific purposes such as canceling an action, confirming a deletion, or clearing a form. These buttons are intentionally colored red to signify their critical functions and 	encourage cautious interaction. Similar to the blue buttons, they also feature a hover effect that darkens the color, providing visual feedback to users upon interaction. This design choice ensures clarity and consistency in button behavior across the platform, 	enhancing the overall user experience.
 
 ![Red button and red button with hover](documentation/redbutton.png)
 
+* Appointments page
+	* As reiterated, access to this section of the website is restricted to authenticated and approved users. This restriction ensures that only verified users can engage with privileged content. By limiting access to authenticated and approved users, the website 	can prevent unauthorised use.
+	* Users can conveniently manage their appointments through an integrated Calendly application. This feature streamlines the scheduling process by providing users with a user-friendly interface to view, book, and manage their appointments directly on the 		website. By leveraging Calendly's functionality, users can easily find available time slots, schedule appointments, and receive automated reminders, enhancing the overall user experience and ensuring efficient appointment management.
 
+![Appointments page](documentation/appointmentspage.png)
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+* Profile page
+	* The profile page provides users with a comprehensive overview of their account details and activities. Here, authenticated users can easily access and manage their profile information, including the option to edit or delete their profile. Additionally, users 	can conveniently add a review if they haven't already done so, or interact with their existing reviews by viewing, editing, or deleting them as needed. Furthermore, users have the ability to engage with comments on other users' reviews, allowing for seamless 	interaction and moderation within the platform. This centralised hub empowers users to control their online presence and contribute to the community in a meaningful way.
+	* When users choose to edit their profile, they are directed to the user profile form, where they can update their personal information and preferences (email is read-only) with the option to save or cancel. This streamlined process ensures that users can 	easily make changes to their profiles without navigating through multiple pages or complex interfaces. By providing a user-friendly editing interface, the platform enhances user experience and encourages active engagement with profile customisation.
+	* Upon selecting the option to delete their profile, users are presented with a modal dialog box that requests confirmation before proceeding with the deletion. This approach serves as a safeguard against accidental deletions, allowing users to reconsider their 	decision and providing an additional layer of security for account management. By incorporating this confirmation step, the platform mitigates the risk of unintentional profile deletions, ensuring that users have a chance to confirm their actions before 		permanent changes are made to their accounts.
+ 	* Users who haven't submitted a review yet are granted the option to provide feedback on the service. However, to prevent misuse or spamming, each user is limited to submitting only one review. This approach ensures that reviews are genuine and relevant, 		maintaining the integrity of the feedback system. By offering users the opportunity to share their experiences while implementing restrictions to prevent abuse, the platform fosters a trustworthy environment where genuine feedback is valued and meaningful.
+	* Before approval by the admin, reviews remain unpublished and are displayed in a greyed-out format on the reviews page. These pending reviews are only accessible to the user who submitted them, viewable solely on their profile page. This approach ensures that 	only verified and appropriate reviews are showcased on the public reviews page, maintaining the quality and reliability of the content visible to other users. By subjecting reviews to admin approval before publication, the platform upholds standards of 		authenticity and relevance, fostering trust and credibility among users.
+	* Displayed approved reviews feature comprehensive details including the review content, date of the review, the number of comments, likes and rating. Users are provided with convenient options to edit or delete their reviews directly from the profile page. 	This functionality enhances user engagement by offering an efficient way for users to manage their reviews, ensuring they can maintain the accuracy and relevance of their contributions over time. Additionally, it empowers users to maintain control over their 	content and fosters a sense of ownership within the platform community.
+	* Users who have submitted reviews have the ability to access their reviews in detail, along with any associated comments, by selecting the "View details" option. This action redirects them to the review details page, offering a comprehensive overview of their 	contribution and any ensuing discussions. This functionality proves beneficial as it empowers users to monitor interactions and engage with feedback on their reviews, fostering a sense of ownership and accountability for their contributions to the platform's 	community.
+	* When users choose to edit their reviews, they are presented with the review form, facilitating the process of refining and updating their feedback with the option to save or cancel. This functionality is valuable as it enables users to maintain the accuracy 	and relevance of their contributions over time. Additionally, it empowers users to reflect on their experiences and make necessary adjustments to their reviews, ensuring that their feedback remains informative and helpful to others in the community.
+	* When users opt to delete their reviews, a modal window appears, offering them the choice to confirm or cancel the action. This feature serves as a safeguard, providing users with an opportunity to reconsider their decision before permanently removing their 	review. Additionally, it helps prevent accidental deletions and encourages users to take deliberate actions, ensuring the integrity and reliability of the content on the platform.
+	* Initially, comments made by users are displayed in a greyed-out state and are only visible on the profile page of the respective user. This setup ensures that comments undergo moderation by an administrator before being publicly accessible, maintaining the 	quality and appropriateness of content across the platform. Additionally, comments awaiting approval do not appear on review details pages until they are vetted by an admin. If a user has not made any comments, their profile page remains unaltered, contributing 	to a streamlined and clutter-free user experience.
+	* Approved comments prominently display essential information such as the author of the review being commented on, the date of the comment and the comment content. Users are provided with convenient buttons to edit or delete their comments directly from their 	profile page, offering them control over their contributions and fostering a sense of ownership within the platform community. This functionality enhances user engagement by facilitating seamless interaction with comments, allowing users to ensure the accuracy 	and relevance of their contributions over time.
+	* Users have the option to edit their comments by utilising the "Edit Comment" button, which redirects them to the review details page housing the comment form with the option to save or cancel. This functionality empowers users to modify their comments as 	needed, enhancing their ability to accurately express their opinions and thoughts on the platform.
+	* Selecting the "Delete Comment" button triggers a modal that provides users with the choice to either proceed with deleting their comment or cancel the action. This feature serves as a safeguard, ensuring users have the opportunity to confirm their decision 	before permanently removing their comment from the platform. It enhances user control over their contributions and fosters a sense of ownership and responsibility for their interactions within the community.
 
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
+![User profile page](documentation/profilepage.png)
 
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
+![Edit profile form](documentation/editprofileform.png)
 
-For some/all of your features, you may choose to reference the specific project files that implement them.
+![Delete profile modal](documentation/deleteprofilemodal.png)
 
-IMPORTANT: Remember to always include a screenshot of each individual feature!
+![User which has not made a review](documentation/noreview.png)
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+![Review pending approval](documentation/reviewpending.png)
 
+![Approved review](documentation/approvedreview.png)
+
+![Edit review form](documentation/editreviewform.png)
+
+![Delete review modal](documentation/deletereviewmodal.png)
+
+![Comment pending approval](documentation/commentpending.png)
+
+![Approved comment](documentation/approvedcomment.png)
+
+![Edit comment form](documentation/editcommentform.png)
+
+![Delete comment modal](documentation/deletecommentmodal.png)
+
+* User profile page
+	* When viewing another user's profile, the layout mirrors the structure of the user's own profile page, ensuring familiarity and consistency across the platform. However, comments are not displayed, maintaining privacy and focusing on essential user details and 	reviews if available. The presence of navigation buttons facilitates exploration, enabling users to effortlessly transition between profiles or return to their own profile. This functionality enhances user experience by providing a streamlined interface for 	discovering and interacting with other users, promoting engagement within the platform community.
+
+![Profile of another user](documentation/userprofile.png)
+
+* Review detail page
+	* The review detail page offers a comprehensive view of a specific review, providing key details such as the author's name, the date of submission, the latest edit date if applicable, the given rating and the review description. Users can also see the total 	number of comments and likes associated with the review. Additionally, authenticated users have the option to like the review themselves. The page displays all approved comments along with their respective authors, allowing for in-depth discussions within the 	community about the review and the related experiences. This detailed information fosters engagement and facilitates meaningful interactions among users, enriching the overall user experience on the platform.
+	* For authenticated users, the heart icon on this page serves as an interactive feature, enhancing user engagement and feedback. When hovered over, the heart pulsates, drawing attention to its functionality. Users have the ability to add a like to the review by 	clicking the heart icon, and if they have already liked the review, they can remove their like with a simple click. The colour of the heart icon indicates the user's like status: red if the review is liked and outlined if it is not. This intuitive design 		provides immediate visual feedback to users, allowing them to easily track their interactions with reviews. Additionally, the restriction of only allowing one like per review ensures fairness and prevents any potential misuse or spamming of likes, maintaining 	the integrity of the like system. For non-authenticated users, the heart icon serves as a visual indicator of the review's popularity, appearing as read-only. It displays an outline if there are no likes and turns red when there is at least one like, offering 	immediate feedback on the review's reception even without interaction.
+	* On the review detail page, users who are authors of reviews or comments have the privilege to manage their own content. This includes the ability to delete any reviews or comments they have made. The edit and delete buttons on this page function similarly to 	those on the user's profile page, providing a consistent and intuitive experience across the platform. This feature empowers users to maintain control over their contributions to the community discussion, ensuring they can manage and update their content as 	needed.
+ 	* Authenticated users can contribute their comments in the comments section of the review detail page. These comments undergo an approval process before being displayed, ensuring that only relevant and appropriate contributions are visible to the community. 	This approach helps maintain the quality and integrity of the discussions by preventing spam or inappropriate content from being immediately visible.
+
+![Review details page](documentation/reviewdetailspage.png)
+
+![Review that has been liked by the current user](documentation/heartlike.png)
+
+![Review that has not been liked by the current user](documentation/heartunlike.png)
+
+![Heart hover effect](documentation/hearthover.png)
+
+![Comments section on review details page](documentation/commentsection.png)
+
+![User managing own comments](documentation/managecomments.png)
 
 ### Future Features
 
