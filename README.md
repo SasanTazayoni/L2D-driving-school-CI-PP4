@@ -182,12 +182,14 @@ These epics collectively represent the core functionalities and user experiences
   	* Active links are visually distinguished on the website to indicate the current page. They are highlighted by emboldening the text and adding a border around the particular link (this border is not present on smaller screens), ensuring clear navigation and 	providing users with a visual cue of their current location within the site.
   	* The navigation bar items on the website feature hover effects to enhance user interaction and UX. When hovered over, the logo, logo text, and links lighten to provide visual feedback. Additionally, the authentication button exhibits a glow effect upon hover, 	further enhancing the interactive experience and guiding user actions.
 
-<br>
 ![Navbar link hover demonstration](documentation/navbarlinkhover.png)
+
 ![Navbar logo hover demonstration](documentation/navbarlogohover.png)
+
 ![Navbar authentication button hover demonstration](documentation/navbarauthbtnhover.png)
+
 ![Navbar dropdown menu](documentation/navmenudropdown.png)
-<br>
+
 
 🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
