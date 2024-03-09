@@ -81,7 +81,7 @@
 				</div>
               {% else %}
                 <div class="profile-content">
-                  <div data-rating>{{ profile.review.rating }}</div>
+                  <div data-rating>Review rating: {{ profile.review.rating }}</div>
                   <p class="mb-3">{{ profile.review.created_on }}</p>
                   <p class="pending-approval">{{ profile.review.content | safe }} (pending approval)</p>
                 </div>
