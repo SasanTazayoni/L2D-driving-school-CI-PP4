@@ -147,7 +147,7 @@
                 <div class="btn-container d-flex justify-content-center">
                     <button id="submitButton" type="submit" class="blue-button">Submit</button>
                     {% if is_edit_comment_view %}
-                        <a type="button" href="{% url 'review_detail' review_id=review_id %}" class="red-button">Cancel</a>
+                        <a href="{% url 'review_detail' review_id=review_id %}" class="red-button">Cancel</a>
                     {% endif %}
                 </div>
             </form>
