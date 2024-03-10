@@ -939,6 +939,10 @@ footer i {
     color: #000;
 }
 
+.review-card-header {
+    font-size: 32px;
+}
+
 .review-image {
     width: 80px;
     height: 80px;
