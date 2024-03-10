@@ -143,7 +143,12 @@
             {% endif %}
             <form id="commentForm" method="POST">
                 {% csrf_token %}
-                {{ comment_form }}
+                {% for field in comment_form %}
+                    <div class="form-field">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
                 <div class="btn-container d-flex justify-content-center">
                     <button id="submitButton" type="submit" class="blue-button">Submit</button>
                     {% if is_edit_comment_view %}
