@@ -433,66 +433,65 @@ In future updates, expect to see additional features enhancing user interaction 
 - [Favicon.io](https://favicon.io/) used to generate favicon.
 - [Calendly](https://calendly.com/) used to establish appointments.
 - [Fake name generator](https://www.fakenamegenerator.com/) used to create user names.
+- [Draw.io](https://app.diagrams.net/) used to generate ERD.
 
 
 ## Database Design
 
-Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
+### Entity Relationship Diagrams (ERD)
+
+Entity Relationship Diagrams (ERD) help to visualise database architecture before creating models.
 Understanding the relationships between different tables can save time later in the project.
+Initially an ERD was established using draw.io as follows:
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+![screenshot](documentation/initialerd.png)
 
-Using your defined models (one example below), create an ERD with the relationships identified.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-```python
-class Product(models.Model):
-    category = models.ForeignKey(
-        "Category", null=True, blank=True, on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
-    description = models.TextField()
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-```
-
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-A couple recommendations for building free ERDs:
-- [Draw.io](https://draw.io)
-- [Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+This ERD was later updated using GraphViz:
 
 ![screenshot](documentation/erd.png)
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+### Models
 
-Using Markdown formatting to represent an example ERD table using the Product model above:
+The following are the models created for L2D:
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+* User
+	* This is a built-in django model.
+	* When a user is created they are automatically assigned a profile through the UserProfile model.
 
-- Table: **Product**
+* Table: **UserProfile**
 
-    | **PK** | **id** (unique) | Type | Notes |
-    | --- | --- | --- | --- |
-    | **FK** | category | ForeignKey | FK to **Category** model |
-    | | sku | CharField | |
-    | | name | CharField | |
-    | | description | TextField | |
-    | | has_sizes | BooleanField | |
-    | | price | DecimalField | |
-    | | rating | DecimalField | |
-    | | image_url | URLField | |
-    | | image | ImageField | |
+| **PK** | **id** (unique) | Type | Notes |
+| --- | --- | --- | --- |
+| **FK** | user | OneToOneField | FK to **User** model |
+| | profile_picture | CloudinaryField | |
+| | age | PositiveIntegerField | |
+| | occupation | CharField | |
+| | about_me | TextField | |
+| | approved | BooleanField | |
+| | created_on | DateTimeField | |
+
+* Table: **Review**
+
+| **PK** | **id** (unique) | Type | Notes |
+| --- | --- | --- | --- |
+| **FK** | author | OneToOneField | FK to **UserProfile** model |
+| | rating | IntegerField | |
+| | content | TextField | |
+| | approved | BooleanField | |
+| | created_on | DateTimeField | |
+| | updated_on | DateTimeField | |
+| | likes | ManyToManyField | M2M to UserProfile model |
+
+* Table: **Comment**
+
+| **PK** | **id** (unique) | Type | Notes |
+| --- | --- | --- | --- |
+| **FK** | review | ForeignKey | FK to **Review** model |
+| **FK** | author | ForeignKey | FK to **UserProfile** model |
+| | content | TextField | |
+| | approved | BooleanField | |
+| | replied_on | DateTimeField | |
+| | updated_on | DateTimeField | |
 
 ## Agile Development Process
 
