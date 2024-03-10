@@ -12,17 +12,17 @@
             <header class="page-header text-center">
                 <h1>Leave a Review</h1>
             </header>
-            <form method="POST" action="">
+            <form method="POST">
                 {% csrf_token %}
                 {% for field in form %}
                     <div class="form-field">
-                        <label for="form-input">{{ field.label }}:</label>
+                        <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
                         {{ field }}
                     </div>
                 {% endfor %}
                 <div class="btn-container d-flex justify-content-center mt-1">
                     <input type="submit" class="blue-button" value="Save">
-                    <a type="button" href="{% url 'profile_page' %}" class="red-button">Cancel</a>
+                    <a href="{% url 'profile_page' %}" class="red-button">Cancel</a>
                 </div>
             </form>
         </div>
