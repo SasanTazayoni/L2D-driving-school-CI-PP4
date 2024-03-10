@@ -96,9 +96,9 @@
                     </li>
                     {% else %}
                     <li class="nav-item mx-2">
-                        <button class="btn nav-link auth-link" aria-current="page" href="{% url 'account_login' %}">
+                        <a class="btn nav-link auth-link" aria-current="page" href="{% url 'account_login' %}">
                             Log in/Sign up
-                        </button>
+                        </a>
                     </li>
                     {% endif %}
                 </ul>
@@ -109,7 +109,7 @@
                         Log out
                     </button>
                     {% else %}
-                    <a id="loginBtn" class="btn auth-button" aria-current="page" href="{% url 'account_login' %}">
+                    <a class="btn auth-button" aria-current="page" href="{% url 'account_login' %}">
                         Log in/Sign up
                     </a>
                     {% endif %}
