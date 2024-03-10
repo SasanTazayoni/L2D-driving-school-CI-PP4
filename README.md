@@ -493,43 +493,26 @@ The following are the models created for L2D:
 | | replied_on | DateTimeField | |
 | | updated_on | DateTimeField | |
 
+
 ## Agile Development Process
 
 ### GitHub Projects
 
 [GitHub Projects](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/projects) served as an Agile tool for this project.
-It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
+It isn't a specialised tool, but with the right tags and project creation/issue assignments, it can be made to work.
 
 Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Consider adding a basic screenshot of your Projects Board.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-![screenshot](documentation/gh-projects.png)
+![screenshot](documentation/projectsboard.png)
 
 ### GitHub Issues
 
 [GitHub Issues](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/issues) served as an another Agile tool.
-There, I used my own **User Story Template** to manage user stories.
-
-It also helped with milestone iterations on a weekly basis.
-
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Consider adding a screenshot of your Open and Closed Issues.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+There, I used my own **User Story Template** to manage user stories. It also helped with milestone iterations on a weekly basis.
 
 - [Open Issues](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/issues)
 
-    ![screenshot](documentation/gh-issues-open.png)
-
 - [Closed Issues](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/issues?q=is%3Aissue+is%3Aclosed)
-
-    ![screenshot](documentation/gh-issues-closed.png)
 
 ### MoSCoW Prioritization
 
@@ -541,9 +524,11 @@ Using this approach, I was able to apply the MoSCow prioritization and labels to
 - **Could Have**: has small impact if left out (*20% of stories*)
 - **Won't Have**: not a priority for this iteration
 
+
 ## Testing
 
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
 
 ## Deployment
 
