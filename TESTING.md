@@ -36,7 +36,7 @@ Sample HTML code validation documentation (tables are extremely helpful!):
 
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2FSasanTazayoni.github.io%2FL2D-driving-school-CI-PP4%2Findex.html) | ![screenshot](documentation/html-validation-home.png) | Section lacks header h2-h6 warning |
+| Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2F) | ![screenshot](documentation/testing/html-validation-home.png) | Pass: No errors |
 | Contact | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2FSasanTazayoni.github.io%2FL2D-driving-school-CI-PP4%2Fcontact.html) | ![screenshot](documentation/html-validation-contact.png) | obsolete iframe warnings |
 | Quiz | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2FSasanTazayoni.github.io%2FL2D-driving-school-CI-PP4%2Fquiz.html) | ![screenshot](documentation/html-validation-quiz.png) | Pass: No Errors |
 | Add Blog | n/a | ![screenshot](documentation/html-validation-add-blog.png) | Duplicate IDs found, and fixed |
