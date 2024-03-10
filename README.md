@@ -512,7 +512,13 @@ There, I used my own **User Story Template** to manage user stories. It also hel
 
 - [Open Issues](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/issues)
 
+	* ![screenshot](documentation/openissues.png)
+
 - [Closed Issues](https://github.com/SasanTazayoni/L2D-driving-school-CI-PP4/issues?q=is%3Aissue+is%3Aclosed)
+
+	* ![screenshot](documentation/closedissuestophalf.png)
+	* ![screenshot](documentation/closedissuesbottomhalf.png)
+	* ![screenshot](documentation/closedissues2.png)
 
 ### MoSCoW Prioritization
 
