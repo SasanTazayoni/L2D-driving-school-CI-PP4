@@ -337,7 +337,7 @@ These epics collectively represent the core functionalities and user experiences
 	* Users have the option to edit their comments by utilising the "Edit Comment" button, which redirects them to the review details page housing the comment form with the option to save or cancel. This functionality empowers users to modify their comments as 	needed, enhancing their ability to accurately express their opinions and thoughts on the platform.
 	* Selecting the "Delete Comment" button triggers a modal that provides users with the choice to either proceed with deleting their comment or cancel the action. This feature serves as a safeguard, ensuring users have the opportunity to confirm their decision 	before permanently removing their comment from the platform. It enhances user control over their contributions and fosters a sense of ownership and responsibility for their interactions within the community.
 
-![User profile page](documentation/profilepage.png)
+![Profile page](documentation/profilepage.png)
 
 ![Edit profile form](documentation/editprofileform.png)
 
@@ -363,8 +363,11 @@ These epics collectively represent the core functionalities and user experiences
 
 * User profile page
 	* When viewing another user's profile, the layout mirrors the structure of the user's own profile page, ensuring familiarity and consistency across the platform. However, comments are not displayed, maintaining privacy and focusing on essential user details and 	reviews if available. The presence of navigation buttons facilitates exploration, enabling users to effortlessly transition between profiles or return to their own profile. This functionality enhances user experience by providing a streamlined interface for 	discovering and interacting with other users, promoting engagement within the platform community.
+ 	* When accessing another user's profile without being authenticated, the "My profile" button is hidden. This prevents unauthorised users from attempting to access their own profile from someone else's profile page. It helps maintain security and ensures that 	users can only interact with their own profile when authenticated.
 
-![Profile of another user](documentation/userprofile.png)
+![Profile of another user when authenticated](documentation/userprofileauth.png)
+
+![Profile of another user when not authenticated](documentation/userprofile.png)
 
 * Review detail page
 	* The review detail page offers a comprehensive view of a specific review, providing key details such as the author's name, the date of submission, the latest edit date if applicable, the given rating and the review description. Users can also see the total 	number of comments and likes associated with the review. Additionally, authenticated users have the option to like the review themselves. The page displays all approved comments along with their respective authors, allowing for in-depth discussions within the 	community about the review and the related experiences. This detailed information fosters engagement and facilitates meaningful interactions among users, enriching the overall user experience on the platform.
