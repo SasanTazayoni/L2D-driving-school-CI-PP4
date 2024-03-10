@@ -480,7 +480,7 @@ The following are the models created for L2D:
 | | approved | BooleanField | |
 | | created_on | DateTimeField | |
 | | updated_on | DateTimeField | |
-| | likes | ManyToManyField | M2M to UserProfile model |
+| | likes | ManyToManyField | M2M to **UserProfile** model |
 
 * Table: **Comment**
 
