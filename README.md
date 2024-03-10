@@ -171,6 +171,7 @@ These epics collectively represent the core functionalities and user experiences
 
 </details>
 
+
 ## Features
 
 ### Current features
@@ -383,21 +384,13 @@ These epics collectively represent the core functionalities and user experiences
 
 ### Future Features
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+In future updates, expect to see additional features enhancing user interaction and platform functionality:
 
-Do you have additional ideas that youd like to include on your project in the future?
-Fantastic! List them here!
-Its always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
+* Theme customisation - enabling users to effortlessly switch between light and dark modes for a pesonalised browsing experience.
+* Notification alerts for user interaction - ensuring users stay informed and engaged with community activity.
+* Integration of social media links - empowering users to connect and share across various platforms.
+* Installing Pillow into Django - managing the size of images supplied by users.
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- Title for future feature #1
-    - Any additional notes about this feature.
-- Title for future feature #2
-    - Any additional notes about this feature.
-- Title for future feature #3
-    - Any additional notes about this feature.
 
 ## Tools & Technologies Used
 
