@@ -22,10 +22,10 @@ Some of the pages on this site require a user to be logged-in and authenticated 
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
 | Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2F) | ![screenshot](documentation/testing/html-validation-home.png) | Pass: No errors |
-| Reviews | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Freviews%2F) | ![screenshot](documentation/html-validation-reviews.png) | Pass: No errors |
-| User Profiles | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Fuser-profiles%2F) | ![screenshot](documentation/html-validation-user-profiles.png) | Pass: No Errors |
-| Contact | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Fcontact%2F) | ![screenshot](documentation/html-validation-contact.png) | Pass: No Errors |
-| Review Details (not authenticated) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Freviews%2F111%2F) | ![screenshot](documentation/html-validation-review-detail.png) | Pass: No Errors |
+| Reviews | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Freviews%2F) | ![screenshot](documentation/testing/html-validation-reviews.png) | Pass: No errors |
+| User Profiles | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Fuser-profiles%2F) | ![screenshot](documentation/testing/html-validation-user-profiles.png) | Pass: No Errors |
+| Contact | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Fcontact%2F) | ![screenshot](documentation/testing/html-validation-contact.png) | Pass: No Errors |
+| Review Details (not authenticated) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Freviews%2F111%2F) | ![screenshot](documentation/testing/html-validation-review-detail.png) | Pass: No Errors |
 | User Profile (not authenticated) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Fuser-profiles%2F93%2F) | ![screenshot](documentation/testing/html-validation-user-profile.png) | Pass: No errors |
 | Log in | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Faccounts%2Flogin%2F) | ![screenshot](documentation/testing/html-validation-login.png) | Pass: No errors |
 | Sign up | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Faccounts%2Fsignup%2F) | ![screenshot](documentation/testing/html-validation-signup.png) | Pass: No errors |
