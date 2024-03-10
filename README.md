@@ -396,39 +396,44 @@ In future updates, expect to see additional features enhancing user interaction 
 
 ## Tools & Technologies Used
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project mightve used others.
-Feel free to delete any unused items below as necessary.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
 - [CSS :root variables](https://www.w3schools.com/css/css3_variables.asp) used for reusable styles throughout the site.
 - [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) used for an enhanced responsive layout.
 - [CSS Grid](https://www.w3schools.com/css/css_grid.asp) used for an enhanced responsive layout.
-- [JavaScript](https://www.javascript.com) used for user interaction on the site.
+- [JavaScript](https://www.javascript.com) used for user interaction on the site - to position the Django messages and remove them from the DOM after some time, to display the overlay on the home page after 3 seconds, for the hover effect on the buttons, for the pagination, to disable the password change submit button from being continuously clicked causing a malfunction and to display the previously uploaded image when editing a profile.
 - [Python](https://www.python.org) used as the back-end programming language.
 - [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [GitHub](https://github.com) used for secure online code storage.
 - [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
 - [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
-- [Codeanywhere](https://codeanywhere.com) used as a cloud-based IDE for development.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [Materialize](https://materializecss.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [Flask](https://flask.palletsprojects.com) used as the Python framework for the site.
 - [Django](https://www.djangoproject.com) used as the Python framework for the site.
-- [MongoDB](https://www.mongodb.com) used as the non-relational database management with Flask.
-- [SQLAlchemy](https://www.sqlalchemy.org) used as the relational database management with Flask.
 - [PostgreSQL](https://www.postgresql.org) used as the relational database management.
 - [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
 - [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
 - [Cloudinary](https://cloudinary.com) used for online static file storage.
-- [Stripe](https://stripe.com) used for online secure payments of ecommerce products/services.
-- [AWS S3](https://aws.amazon.com/s3) used for online static file storage.
+- [Gmail](https://www.google.com/gmail/about/) used to create an email address to send password reset emails from.
+- [Font Awesome](https://fontawesome.com/) used for icons.
+- [Coolors](https://coolors.co/) used to display colour palette used on the website.
+- [Looka](https://looka.com/) used to create brand logo.
+- [Google Fonts](https://fonts.google.com/) used to import "Montserrat" and "Noto Sans" fonts.
+- [Google Maps](https://www.google.co.uk/maps) used to display business location to the contact page.
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) used for performance review on each page.
+- [Caniuse](https://caniuse.com/) used to check compatibility of code syntax with other browsers.
+- [Amiresposive](https://amiresponsive.co.uk/) used to display website on the most common devices.
+- [Photoshop](https://www.adobe.com/uk/products/photoshop/) used to resize photos.
+- [Tinypng](https://tinypng.com/) used to compress image files for better performance.
+- [Cloudconvert](https://cloudconvert.com/) used to convert images to webp format.
+- [Formspree](https://formspree.io/) used in the contact form to provide a backend, enabling efficient routing of email enquiries directly to the business owner.
+- [ChatGPT](https://chat.openai.com/) used to generate placeholder text and to verify code.
+- [StackOverflow](https://stackoverflow.com/) used to problem solve and deal with queries.
+- [Unsplash](https://unsplash.com/) used to obtain user pictures.
+- [Pexels](https://www.pexels.com/) used to obtain background pictures.
+- [Favicon.io](https://favicon.io/) used to generate favicon.
+- [Calendly](https://calendly.com/) used to establish appointments.
+- [Fake name generator](https://www.fakenamegenerator.com/) used to create user names.
+
 
 ## Database Design
 
