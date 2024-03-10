@@ -532,16 +532,6 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 ## Deployment
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-**IMPORTANT:**
-
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-- ⚠️ DO NOT update the environment variables to your own! These should NOT be included in this file; just demo values! ⚠️
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 The live deployed application can be found deployed on [Heroku](https://l2d-driving-school-6f23811ec0fb.herokuapp.com).
 
 ### ElephantSQL Database
@@ -711,11 +701,24 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+In the local environment:
+* The SECRET_KEY variable is retrieved from the env.py file.
+* The DEBUG variable is retrieved from the env.py file and its status is set to "True".
+* The HOST variable provides the url of the local host and is retrieved from the env.py file. This is then added to the allowed hosts.
+* The local host url is also provided for the CSRF trusted origins.
+* The DEVELOPMENT variable is retrieved from the env.py file and its status is set to "True". This sets up the backend and sends the password reset token to the terminal. The email credentials are retrieved from the env.py file.
+* The CLOUDINARY_URL variable is retrieved from env.py file.
+* The DATABASE_URL variable is retrieved from env.py file.
 
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
+On Heroku
+* The SECRET_KEY variable is retrieved from the Config Vars in the settings.
+* The DEBUG variable is absent and therefore has its status set to "False".
+* The HOST variable is retrieved from the Config Vars in the settings.
+* The deployed url is also provided for CSRF trusted origins.
+* The DEVELOPMENT variable is absent therefore its status defaults to "False". There is a condition set up in this case so that the backend is setup to send the password reset token to the user's email (entered in the password reset request form). The email credentials are retrieved from the Config Vars in the settings.
+* The CLOUDINARY_URL variable is retrieved from the Config Vars in the settings.
+* The DATABASE_URL variable is retrieved from the Config Vars in the settings.
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ## Credits
 
