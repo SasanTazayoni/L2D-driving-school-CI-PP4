@@ -138,6 +138,25 @@ I've tested every page on my deployed project on multiple devices to check for r
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
+| Page | Mobile | Desktop | Notes |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/testing/lighthouse-home-mobile.png) | ![screenshot](documentation/testing/lighthouse-home-desktop.png) | Some minor warnings |
+| Reviews | ![screenshot](documentation/testing/lighthouse-reviews-mobile.png) | ![screenshot](documentation/testing/lighthouse-reviews-desktop.png) | Some minor warnings |
+| Review details | ![screenshot](documentation/testing/lighthouse-review-details-mobile.png) | ![screenshot](documentation/testing/lighthouse-review-details-desktop.png) | Slow response time due to large images |
+| Appointments | ![screenshot](documentation/testing/lighthouse-appointments-mobile.png) | ![screenshot](documentation/testing/lighthouse-appointments-desktop.png) | Slow response time due to large images |
+| Profile | ![screenshot](documentation/testing/lighthouse-profile-mobile.png) | ![screenshot](documentation/testing/lighthouse-profile-desktop.png) | Slow response time due to large images |
+| Edit profile | ![screenshot](documentation/testing/lighthouse-edit-profile-mobile.png) | ![screenshot](documentation/testing/lighthouse-edit-profile-desktop.png) | Slow response time due to large images |
+| Edit review | ![screenshot](documentation/testing/lighthouse-edit-review-mobile.png) | ![screenshot](documentation/testing/lighthouse-edit-review-desktop.png) | Slow response time due to large images |
+| User profiles | ![screenshot](documentation/testing/lighthouse-user-profiles-mobile.png) | ![screenshot](documentation/testing/lighthouse-user-profiles-desktop.png) | Slow response time due to large images |
+| User profile | ![screenshot](documentation/testing/lighthouse-user-profile-mobile.png) | ![screenshot](documentation/testing/lighthouse-user-profile-desktop.png) | Slow response time due to large images |
+| Contact | ![screenshot](documentation/testing/lighthouse-contact-mobile.png) | ![screenshot](documentation/testing/lighthouse-contact-desktop.png) | Slow response time due to large images |
+| Sign up | ![screenshot](documentation/testing/lighthouse-sign-up-mobile.png) | ![screenshot](documentation/testing/lighthouse-sign-up-desktop.png) | Slow response time due to large images |
+| Log in | ![screenshot](documentation/testing/lighthouse-log-in-mobile.png) | ![screenshot](documentation/testing/lighthouse-log-in-desktop.png) | Slow response time due to large images |
+| Password reset request | ![screenshot](documentation/lighthouse-password-reset-request-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-request-desktop.png) | Slow response time due to large images |
+| Password reset request confirmation | ![screenshot](documentation/lighthouse-password-reset-request-confirmation-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-request-confirmation-desktop.png) | Slow response time due to large images |
+| Password reset | ![screenshot](documentation/lighthouse-password-reset-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-desktop.png) | Slow response time due to large images |
+| Password reset confirmation | ![screenshot](documentation/lighthouse-password-reset-confirmation-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-confirmation-desktop.png) | Slow response time due to large images |
+
 
 ## Defensive Programming
 
