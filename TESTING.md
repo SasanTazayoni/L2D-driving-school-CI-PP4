@@ -111,6 +111,10 @@ I have also used PowerMapper as a tool to check the compatibility of the website
 
 ![screenshot](documentation/powermapper.png)
 
+* Click [PowerMapper](https://try.powermapper.com/Demo/Report/d05da195-b9dc-4ecc-bebe-d7f9ce883157).
+* Click the "Issues" button at the top.
+* Click the compatibility tab.
+
 
 ## Responsiveness
 
