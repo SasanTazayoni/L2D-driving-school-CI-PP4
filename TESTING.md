@@ -141,7 +141,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
 | Home | ![screenshot](documentation/testing/lighthouse-home-mobile.png) | ![screenshot](documentation/testing/lighthouse-home-desktop.png) | Some minor warnings |
-| Reviews | ![screenshot](documentation/testing/lighthouse-reviews-mobile.png) | ![screenshot](documentation/testing/lighthouse-reviews-desktop.png) | Some minor warnings |
+| Reviews | ![screenshot](documentation/testing/lighthouse-reviews-mobile.png) | ![screenshot](documentation/testing/lighthouse-reviews-desktop.png) | Warnings about the use of Cloudinary |
 | Review details | ![screenshot](documentation/testing/lighthouse-review-details-mobile.png) | ![screenshot](documentation/testing/lighthouse-review-details-desktop.png) | Slow response time due to large images |
 | Appointments | ![screenshot](documentation/testing/lighthouse-appointments-mobile.png) | ![screenshot](documentation/testing/lighthouse-appointments-desktop.png) | Slow response time due to large images |
 | Profile | ![screenshot](documentation/testing/lighthouse-profile-mobile.png) | ![screenshot](documentation/testing/lighthouse-profile-desktop.png) | Slow response time due to large images |
