@@ -92,13 +92,6 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Browser Compatibility
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time.
-If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
 | Browser | Screenshot | Notes |
@@ -111,7 +104,8 @@ I have also used PowerMapper as a tool to check the compatibility of the website
 
 ![screenshot](documentation/powermapper.png)
 
-* Click [PowerMapper](https://try.powermapper.com/Demo/Report/d05da195-b9dc-4ecc-bebe-d7f9ce883157).
+To access the report:
+* Click [this link](https://try.powermapper.com/Demo/Report/d05da195-b9dc-4ecc-bebe-d7f9ce883157).
 * Click the "Issues" button at the top.
 * Click the compatibility tab.
 
