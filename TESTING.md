@@ -33,6 +33,14 @@ Some of the pages on this site require a user to be logged-in and authenticated 
 | Password reset request confirmation | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Faccounts%2Fpassword%2Freset%2Fdone%2F) | ![screenshot](documentation/testing/html-validation-password-reset-request-confirmation.png) | Pass: No errors |
 | Password reset form | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Faccounts%2Fpassword%2Freset%2Fkey%2F1b-set-password%2F) | ![screenshot](documentation/testing/html-validation-password-reset-form.png) | Pass: No errors |
 | Password reset confirmation | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2Faccounts%2Fpassword%2Freset%2Fkey%2Fdone%2F) | ![screenshot](documentation/testing/html-validation-password-reset-confirmation.png) | Pass: No errors |
+| Review Details (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-review-detail-auth.png) | Pass: No Errors |
+| User Profile (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-user-profile-auth.png) | Pass: No errors |
+| Appointments (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-appointments-auth.png) | Pass: No Errors |
+| Profile (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-profile-auth.png) | Pass: No Errors |
+| Edit profile (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-edit-profile-auth.png) | Pass: No Errors |
+| Create review (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-create-review-auth.png) | Pass: No Errors |
+| Edit review (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-edit-review-auth.png) | Pass: No Errors |
+| Edit comment (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-edit-comment-auth.png) | Pass: No Errors |
 
 
 ### CSS
@@ -50,15 +58,6 @@ It makes it easier to return back to the page to validate it again in the future
 The URL will look something like this:
 
 - https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2FSasanTazayoni.github.io%2FL2D-driving-school-CI-PP4
-
-If you have multiple CSS files, then individual [validation by input](https://jigsaw.w3.org/css-validator/#validate_by_input)
-is recommended for the additional CSS files.
-
-**IMPORTANT**: Third-Party tools
-
-If you're using extras like Bootstrap, Materialize, Font Awesome, then sometimes the validator
-will attempt to also validate this code, even if it's not part of your own actual code.
-You are not required to validate the external libraries or frameworks!
 
 Sample CSS code validation documentation (tables are extremely helpful!):
 
