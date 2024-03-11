@@ -94,13 +94,13 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 | Browser | Screenshot | Notes |
 | --- | --- | --- |
-| Chrome | ![screenshot](documentation/browser-test-chrome.png) | Works as expected |
-| Edge | ![screenshot](documentation/browser-test-edge.png) | Works as expected |
-| Firefox | ![screenshot](documentation/browser-test-firefox.png) | Works as expected |
+| Chrome | ![screenshot](documentation/testing/browser-test-chrome.png) | Works as expected |
+| Edge | ![screenshot](documentation/testing/browser-test-edge.png) | Works as expected |
+| Firefox | ![screenshot](documentation/testing/browser-test-firefox.png) | Works as expected |
 
 I have also used PowerMapper as a tool to check the compatibility of the website on multiple browsers and it has proven that it works on all of the most commonly used devices:
 
-![screenshot](documentation/powermapper.png)
+![screenshot](documentation/testing/powermapper.png)
 
 To access the report:
 * Click [this link](https://try.powermapper.com/Demo/Report/d05da195-b9dc-4ecc-bebe-d7f9ce883157).
@@ -114,48 +114,29 @@ I've tested every page on my deployed project on multiple devices to check for r
 
 | Device | Screenshot | Notes |
 | --- | --- | --- |
-| desktop | ![screenshot](documentation/desktop.png) | Works as expected |
-| iPhone-SE | ![screenshot](documentation/iPhone-SE.png) | Works as expected |
-| iPhone-XR | ![screenshot](documentation/iPhone-XR.png) | Works as expected |
-| iPhone-12-Pro | ![screenshot](documentation/iPhone-12-Pro.png) | Works as expected |
-| iPhone-14-Pro-Max | ![screenshot](documentation/iPhone-14-Pro-Max.png) | Works as expected |
-| Pixel-7 | ![screenshot](documentation/Pixel-7.png) | Works as expected |
-| Samsung-Galaxy-S8+ | ![screenshot](documentation/Samsung-Galaxy-S8+.png) | Works as expected |
-| Samsung-Galaxy-S20-Ultra | ![screenshot](documentation/Samsung-Galaxy-S20-Ultra.png) | Works as expected |
-| iPad-Mini | ![screenshot](documentation/iPad-Mini.png) | Works as expected |
-| iPad-Air | ![screenshot](documentation/iPad-Air.png) | Works as expected |
-| iPad-Pro | ![screenshot](documentation/iPad-Pro.png) | Works as expected |
-| Surface-Pro-7 | ![screenshot](documentation/Surface-Pro-7.png) | Works as expected |
-| Surface-Duo | ![screenshot](documentation/Surface-Duo.png) | Works as expected |
-| Galaxy-Fold | ![screenshot](documentation/Galaxy-Fold.png) | Works as expected |
-| Asus-Zenbook-Fold | ![screenshot](documentation/Asus-Zenbook-Fold.png) | Works as expected |
-| Samsung-Galaxy-A51-71 | ![screenshot](documentation/Samsung-Galaxy-A51-71.png) | Works as expected |
-| Nest-Hub | ![screenshot](documentation/Nest-Hub.png) | Works as expected |
-| Nest-Hub-Max | ![screenshot](documentation/Nest-Hub-Max.png) | Works as expected |
+| desktop | ![screenshot](documentation/testing/desktop.png) | Works as expected |
+| iPhone-SE | ![screenshot](documentation/testing/iPhone-SE.png) | Works as expected |
+| iPhone-XR | ![screenshot](documentation/testing/iPhone-XR.png) | Works as expected |
+| iPhone-12-Pro | ![screenshot](documentation/testing/iPhone-12-Pro.png) | Works as expected |
+| iPhone-14-Pro-Max | ![screenshot](documentation/testing/iPhone-14-Pro-Max.png) | Works as expected |
+| Pixel-7 | ![screenshot](documentation/testing/Pixel-7.png) | Works as expected |
+| Samsung-Galaxy-S8+ | ![screenshot](documentation/testing/Samsung-Galaxy-S8+.png) | Works as expected |
+| Samsung-Galaxy-S20-Ultra | ![screenshot](documentation/testing/Samsung-Galaxy-S20-Ultra.png) | Works as expected |
+| iPad-Mini | ![screenshot](documentation/testing/iPad-Mini.png) | Works as expected |
+| iPad-Air | ![screenshot](documentation/testing/iPad-Air.png) | Works as expected |
+| iPad-Pro | ![screenshot](documentation/testing/iPad-Pro.png) | Works as expected |
+| Surface-Pro-7 | ![screenshot](documentation/testing/Surface-Pro-7.png) | Works as expected |
+| Surface-Duo | ![screenshot](documentation/testing/Surface-Duo.png) | Works as expected |
+| Galaxy-Fold | ![screenshot](documentation/testing/Galaxy-Fold.png) | Works as expected |
+| Asus-Zenbook-Fold | ![screenshot](documentation/testing/Asus-Zenbook-Fold.png) | Works as expected |
+| Samsung-Galaxy-A51-71 | ![screenshot](documentation/testing/Samsung-Galaxy-A51-71.png) | Works as expected |
+| Nest-Hub | ![screenshot](documentation/testing/Nest-Hub.png) | Works as expected |
+| Nest-Hub-Max | ![screenshot](documentation/testing/Nest-Hub-Max.png) | Works as expected |
 
 
 ## Lighthouse Audit
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
-
-| Page | Mobile | Desktop | Notes |
-| --- | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse-home-desktop.png) | Some minor warnings |
-| Reviews | ![screenshot](documentation/lighthouse-reviews-mobile.png) | ![screenshot](documentation/lighthouse-reviews-desktop.png) | Some minor warnings |
-| Review details | ![screenshot](documentation/lighthouse-review-details-mobile.png) | ![screenshot](documentation/lighthouse-review-details-desktop.png) | Slow response time due to large images |
-| Appointments | ![screenshot](documentation/lighthouse-appointments-mobile.png) | ![screenshot](documentation/lighthouse-appointments-desktop.png) | Slow response time due to large images |
-| Profile | ![screenshot](documentation/lighthouse-profile-mobile.png) | ![screenshot](documentation/lighthouse-profile-desktop.png) | Slow response time due to large images |
-| Edit profile | ![screenshot](documentation/lighthouse-edit-profile-mobile.png) | ![screenshot](documentation/lighthouse-edit-profile-desktop.png) | Slow response time due to large images |
-| Edit review | ![screenshot](documentation/lighthouse-edit-review-mobile.png) | ![screenshot](documentation/lighthouse-edit-review-desktop.png) | Slow response time due to large images |
-| User profiles | ![screenshot](documentation/lighthouse-user-profiles-mobile.png) | ![screenshot](documentation/lighthouse-user-profiles-desktop.png) | Slow response time due to large images |
-| User profile | ![screenshot](documentation/lighthouse-user-profile-mobile.png) | ![screenshot](documentation/lighthouse-user-profile-desktop.png) | Slow response time due to large images |
-| Contact | ![screenshot](documentation/lighthouse-contact-mobile.png) | ![screenshot](documentation/lighthouse-contact-desktop.png) | Slow response time due to large images |
-| Sign up | ![screenshot](documentation/lighthouse-sign-up-mobile.png) | ![screenshot](documentation/lighthouse-sign-up-desktop.png) | Slow response time due to large images |
-| Log in | ![screenshot](documentation/lighthouse-log-in-mobile.png) | ![screenshot](documentation/lighthouse-log-in-desktop.png) | Slow response time due to large images |
-| Password reset request | ![screenshot](documentation/lighthouse-password-reset-request-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-request-desktop.png) | Slow response time due to large images |
-| Password reset request confirmation | ![screenshot](documentation/lighthouse-password-reset-request-confirmation-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-request-confirmation-desktop.png) | Slow response time due to large images |
-| Password reset | ![screenshot](documentation/lighthouse-password-reset-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-desktop.png) | Slow response time due to large images |
-| Password reset confirmation | ![screenshot](documentation/lighthouse-password-reset-confirmation-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-confirmation-desktop.png) | Slow response time due to large images |
 
 
 ## Defensive Programming
