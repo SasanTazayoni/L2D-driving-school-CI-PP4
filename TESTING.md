@@ -112,39 +112,29 @@ To access the report:
 
 ## Responsiveness
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+I've tested every page on my deployed project on multiple devices to check for responsiveness issues. The reviews page will be used as an example to demonstrate the responsiveness.
 
-Use this space to discuss testing the live/deployed site on various device sizes.
+| Device | Screenshot | Notes |
+| --- | --- | --- |
+| desktop | ![screenshot](documentation/desktop.png) | Works as expected |
+| iPhone-SE | ![screenshot](documentation/iPhone-SE.png) | Works as expected |
+| iPhone-XR | ![screenshot](documentation/iPhone-XR.png) | Works as expected |
+| iPhone-12-Pro | ![screenshot](documentation/iPhone-12-Pro.png) | Works as expected |
+| iPhone-14-Pro-Max | ![screenshot](documentation/iPhone-14-Pro-Max.png) | Works as expected |
+| Pixel-7 | ![screenshot](documentation/Pixel-7.png) | Works as expected |
+| Samsung-Galaxy-S8+ | ![screenshot](documentation/Samsung-Galaxy-S8+.png) | Works as expected |
+| Samsung-Galaxy-S20-Ultra | ![screenshot](documentation/Samsung-Galaxy-S20-Ultra.png) | Works as expected |
+| iPad-Mini | ![screenshot](documentation/iPad-Mini.png) | Works as expected |
+| iPad-Air | ![screenshot](documentation/iPad-Air.png) | Works as expected |
+| iPad-Pro | ![screenshot](documentation/iPad-Pro.png) | Works as expected |
+| Surface-Pro-7 | ![screenshot](documentation/Surface-Pro-7.png) | Works as expected |
+| Surface-Duo | ![screenshot](documentation/Surface-Duo.png) | Works as expected |
+| Galaxy-Fold | ![screenshot](documentation/Galaxy-Fold.png) | Works as expected |
+| Asus-Zenbook-Fold | ![screenshot](documentation/Asus-Zenbook-Fold.png) | Works as expected |
+| Samsung-Galaxy-A51-71 | ![screenshot](documentation/Samsung-Galaxy-A51-71.png) | Works as expected |
+| Nest-Hub | ![screenshot](documentation/Nest-Hub.png) | Works as expected |
+| Nest-Hub-Max | ![screenshot](documentation/Nest-Hub-Max.png) | Works as expected |
 
-The minimum requirement is for the following 3 tests:
-- Mobile
-- Tablet
-- Desktop
-
-**IMPORTANT**: You must provide screenshots of the tested responsiveness, to "prove" that you've actually tested them.
-
-Using the "amiresponsive" mockup image (or similar) does not suffice the requirements.
-Consider using some of the built-in device sizes in the Developer Tools.
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well.
-It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-Sample responsiveness testing documentation:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-I've tested my deployed project on multiple devices to check for responsiveness issues.
-
-| Device | Home | About | Contact | etc | Notes |
-| --- | --- | --- | --- | --- | --- |
-| Mobile (DevTools) | ![screenshot](documentation/responsive-mobile-home.png) | ![screenshot](documentation/responsive-mobile-about.png) | ![screenshot](documentation/responsive-mobile-contact.png) | ![screenshot](documentation/responsive-mobile-etc.png) | Works as expected |
-| Tablet (DevTools) | ![screenshot](documentation/responsive-tablet-home.png) | ![screenshot](documentation/responsive-tablet-about.png) | ![screenshot](documentation/responsive-tablet-contact.png) | ![screenshot](documentation/responsive-tablet-etc.png) | Works as expected |
-| Desktop | ![screenshot](documentation/responsive-desktop-home.png) | ![screenshot](documentation/responsive-desktop-about.png) | ![screenshot](documentation/responsive-desktop-contact.png) | ![screenshot](documentation/responsive-desktop-etc.png) | Works as expected |
-| XL Monitor | ![screenshot](documentation/responsive-xl-home.png) | ![screenshot](documentation/responsive-xl-about.png) | ![screenshot](documentation/responsive-xl-contact.png) | ![screenshot](documentation/responsive-xl-etc.png) | Scaling starts to have minor issues |
-| 4K Monitor | ![screenshot](documentation/responsive-4k-home.png) | ![screenshot](documentation/responsive-4k-about.png) | ![screenshot](documentation/responsive-4k-contact.png) | ![screenshot](documentation/responsive-4k-etc.png) | Noticeable scaling issues |
-| Google Pixel 7 Pro | ![screenshot](documentation/responsive-pixel-home.png) | ![screenshot](documentation/responsive-pixel-about.png) | ![screenshot](documentation/responsive-pixel-contact.png) | ![screenshot](documentation/responsive-pixel-etc.png) | Works as expected |
-| iPhone 14 | ![screenshot](documentation/responsive-iphone-home.png) | ![screenshot](documentation/responsive-iphone-about.png) | ![screenshot](documentation/responsive-iphone-contact.png) | ![screenshot](documentation/responsive-iphone-etc.png) | Works as expected |
-| repeat for any other tested browsers | x | x | x | x | x |
 
 ## Lighthouse Audit
 
