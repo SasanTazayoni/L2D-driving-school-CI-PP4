@@ -15,7 +15,7 @@
             </header>
             <div class="row">
                 <div class="col-md-4 d-flex justify-content-center mb-2">
-                    <img src="{% static 'images/bestplaceholder.jpg' %}" alt="Instructor's Picture"
+                    <img src="{% static 'images/bestplaceholder.jpg' %}" alt="Instructor portrait"
                         class="img-fluid about-picture">
                 </div>
                 <div class="col-md-8 mb-2">
@@ -72,11 +72,11 @@
                                 <img src="{{ review.author.profile_picture.url }}" alt="User:{{ review.author.username }}"
                                     class="review-image">
                                 {% else %}
-                                <img src="{% static 'images/defaultpicture.png' %}" alt="Default user"
+                                <img src="{% static 'images/defaultpicture.png' %}" alt="Default user image"
                                     class="review-image">
                                 {% endif %}
                                 <p class="text-center px-2 review-header-text-small">
-                                    <span class="bold review-author">{{ review.author|truncatechars:16 }}</span>
+                                    <strong class="review-author">{{ review.author|truncatechars:16 }}</strong>
                                     <br> <span class="small-author-date">({{ review.created_on }})</span>
                                 </p>
                             </div>
