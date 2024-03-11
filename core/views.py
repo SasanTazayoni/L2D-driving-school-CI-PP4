@@ -27,8 +27,10 @@ def appointments(request):
     else:
         messages.error(
             request,
-            ("You are not currently authorised to book appointments. "
-            "Please contact your driving instructor.")
+            (
+                "You are not currently authorised to book appointments. "
+                "Please contact your driving instructor."
+            )
         )
         return render(request, 'core/contact.html')
 
@@ -50,9 +52,11 @@ def user_profiles(request):
     if request.GET.get('search_query'):
         search_query = request.GET.get('search_query')
 
-    user_profiles = (UserProfile.objects
+    user_profiles = (
+        UserProfile.objects
         .filter(user__first_name__icontains=search_query)
-        .order_by('user__first_name'))
+        .order_by('user__first_name')
+    )
 
     page = request.GET.get('page')
     results = 12
@@ -80,11 +84,15 @@ def profile_detail(request, user_id):
     Renders the profile page for a particular user.
     """
     user_profile = get_object_or_404(UserProfile, user_id=user_id)
-    comment_count = (Comment.objects
-        .filter(review__author=user_profile, approved=True).count())
-    like_count = (Review.objects
+    comment_count = (
+        Comment.objects
+        .filter(review__author=user_profile, approved=True).count()
+    )
+    like_count = (
+        Review.objects
         .filter(author=user_profile)
-        .aggregate(total_likes=Count('likes'))['total_likes'] or 0)
+        .aggregate(total_likes=Count('likes'))['total_likes'] or 0
+    )
 
     context = {
         'user_profile': user_profile,
