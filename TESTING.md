@@ -68,18 +68,11 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
-The CI Python Linter can be used two different ways.
-- Copy/Paste your Python code directly into the linter.
 - As an API, using the "raw" URL appended to the linter URL.
     - To find the "raw" URL, navigate to your file directly on the GitHub repo.
     - On that page, GitHub provides a button on the right called "Raw" that you can click on.
     - From that new page, copy the full URL, and paste it after the CI Python Linter URL (with a `/` separator).
     - Check the example table below for a live demo.
-
-It's recommended to validate each file using the API URL.
-This will give you a custom URL which you can use on your testing documentation.
-It makes it easier to return back to a file to validate it again in the future.
-Use the steps above to generate your own custom URLs for each Python file.
 
 **IMPORTANT**: `E501 line too long` errors
 
@@ -115,43 +108,17 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 | File | CI URL | Screenshot | Notes |
 | --- | --- | --- | --- |
-| run.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/l2d-driving-school-ci-pp4/main/run.py) | ![screenshot](documentation/py-validation-run.png) | W291 trailing whitespace |
-| settings.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/l2d-driving-school-ci-pp4/main/boutique-ado/settings.py) | ![screenshot](documentation/py-validation-settings.png) | E501 line too long |
-| Blog views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/l2d-driving-school-ci-pp4/main/blog/views.py) | ![screenshot](documentation/py-validation-blog-views.png) | Pass: No Errors |
-| Checkout urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/l2d-driving-school-ci-pp4/main/checkout/urls.py) | ![screenshot](documentation/py-validation-checkout-urls.png) | W292 no newline at end of file |
-| Profiles models.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/l2d-driving-school-ci-pp4/main/profiles/models.py) | ![screenshot](documentation/py-validation-profiles-models.png) | Pass: No Errors |
-| x | x | x | repeat for all remaining Python files |
+| apps.py (core) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/core/apps.py) | ![screenshot](documentation/testing/python-validation-core-apps.png) | Pass: No Errors |
+| urls.py (core) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/core/urls.py) | ![screenshot](documentation/testing/python-validation-core-urls.png) | Pass: No Errors |
+| views.py (core) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/core/views.py) | ![screenshot](documentation/testing/python-validation-core-views.png) | Pass: No Errors |
+| admin.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/admin.py) | ![screenshot](documentation/testing/python-validation-profiles-admin.png) | Pass: No Errors |
+| apps.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/apps.py) | ![screenshot](documentation/testing/python-validation-profiles-apps.png) | Pass: No Errors |
+| forms.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/forms.py) | ![screenshot](documentation/testing/python-validation-profiles-forms.png) | Pass: No Errors |
+| models.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/models.py) | ![screenshot](documentation/testing/python-validation-profiles-models.png) | Pass: No Errors |
+| signals.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/signals.py) | ![screenshot](documentation/testing/python-validation-profiles-signals.png) | Pass: No Errors |
+| urls.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/urls.py) | ![screenshot](documentation/testing/python-validation-profiles-urls.png) | Pass: No Errors |
+| views.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/views.py) | ![screenshot](documentation/testing/python-validation-profiles-views.png) | Pass: No Errors |
 
-**IMPORTANT**: Django settings.py
-
-The Django settings.py file comes with 4 lines that are quite long, and will throw the `E501 line too long` error.
-This is default behavior, but can be fixed by adding `# noqa` to the end of those lines.
-
-Example:
-
-```python
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",  # noqa
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",  # noqa
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",  # noqa
-    },
-]
-```
-
-**IMPORTANT**: migration and pycache files
-
-You do not have to ever validate files from the `migrations/` or `pycache/` folders!
-Ignore these `.py` files, and validate just the files that you've created or modified.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ## Browser Compatibility
 
