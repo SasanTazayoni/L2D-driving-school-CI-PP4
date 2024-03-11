@@ -31,7 +31,7 @@
                         <div class="btn-container d-flex justify-content-center mt-3">
                             <a href="{% url 'user_profiles' %}" class="blue-button">All users</a>
                             {% if user.is_authenticated %}
-                            <a href="{% url 'profile_page' %}" class="blue-button">My profile</a>
+                                <a href="{% url 'profile_page' %}" class="blue-button">My profile</a>
                             {% endif %}
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                     </p>
                                     <div class="col-12 text-center mb-3">
                                         <div class="comment-icon-container bold">
-                                        <i class="far fa-comments"></i> {{ comment_count }}
+                                            <i class="far fa-comments"></i> {{ comment_count }}
                                         </div>
                                         <div class="like-icon-container bold">
                                         {% if like_count > 0 %}
