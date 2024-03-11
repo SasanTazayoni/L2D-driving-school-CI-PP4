@@ -57,10 +57,10 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
-| alertPositioning.js | ![screenshot](documentation/testing/javascript-validation-alertPositioning.png) | Pass: No Errors |
+| alertPositioning.js | ![screenshot](documentation/testing/javascript-validation-alert-positioning.png) | Pass: No Errors |
 | buttons.js | ![screenshot](documentation/testing/javascript-validation-buttons.png) | Pass: No Errors |
-| disableSubmitButton.js | ![screenshot](documentation/testing/javascript-validation-disableSubmitButton.png) | Pass: No Errors |
-| editProfile.js | ![screenshot](documentation/testing/javascript-validation-editProfile.png) | Pass: No Errors |
+| disableSubmitButton.js | ![screenshot](documentation/testing/javascript-validation-disable-submit-button.png) | Pass: No Errors |
+| editProfile.js | ![screenshot](documentation/testing/javascript-validation-edit-profile.png) | Pass: No Errors |
 | overlay.js | ![screenshot](documentation/testing/javascript-validation-overlay.png) | Pass: No Errors |
 | pagination.js | ![screenshot](documentation/testing/javascript-validation-pagination.png) | Pass: No Errors |
 
