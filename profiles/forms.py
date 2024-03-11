@@ -43,8 +43,8 @@ class CustomSignupForm(SignupForm):
 
 class UserProfileForm(forms.ModelForm):
     """
-    Establishes a user profile form for editing various details of an authenticated
-    user.
+    Establishes a user profile form for editing various details of
+    an authenticated user.
     """
     email = forms.EmailField(
         widget=forms.TextInput(attrs={'readonly': 'readonly'})
@@ -53,4 +53,11 @@ class UserProfileForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        fields = ['email', 'first_name', 'age', 'occupation', 'about_me', 'profile_picture']
+        fields = [
+            'email',
+            'first_name',
+            'age',
+            'occupation',
+            'about_me',
+            'profile_picture'
+        ]

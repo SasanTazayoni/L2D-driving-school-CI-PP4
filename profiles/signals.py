@@ -17,7 +17,7 @@ def update_user_profile(sender, instance, created, **kwargs):
     user = instance.user
     profile = instance
 
-    if created == False:
+    if not created:
         user.save()
 
 

@@ -19,4 +19,6 @@ class UserProfileAdmin(SummernoteModelAdmin):
 
     def approve_profiles(self, request, queryset):
         updated_count = queryset.update(approved=True)
-        self.message_user(request, f'{updated_count} profiles have been approved.')
+        self.message_user(
+            request, f'{updated_count} profiles have been approved.'
+            )
