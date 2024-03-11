@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 document.addEventListener('DOMContentLoaded', () => {
     const positionAlertContainer = () => {
         const navbarHeight = document.querySelector('.navbar').offsetHeight

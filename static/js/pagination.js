@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 const searchForm = document.querySelector('[data-search-form]')
 const pageButtons = document.querySelectorAll('.pagination-button')
 

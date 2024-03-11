@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 const authBtns = document.querySelectorAll('.auth-button')
 const blueBtns = document.querySelectorAll('.blue-button')
 const redBtns = document.querySelectorAll('.red-button')

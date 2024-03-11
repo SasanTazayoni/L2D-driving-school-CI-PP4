@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 document.addEventListener('DOMContentLoaded', function () {
     if (window.location.pathname.endsWith('/profile/edit/')) {  
         const imageDiv = document.querySelector('#profile_picture-clear_id')
