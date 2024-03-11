@@ -715,7 +715,7 @@ In the local environment:
 * The DEBUG variable is retrieved from the env.py file and its status is set to "True".
 * The HOST variable provides the url of the local host and is retrieved from the env.py file. This is then added to the allowed hosts.
 * The local host url is also provided for the CSRF trusted origins.
-* The DEVELOPMENT variable is retrieved from the env.py file and its status is set to "True". This sets up the backend and sends the password reset token to the terminal. The email credentials are retrieved from the env.py file.
+* The DEVELOPMENT variable is retrieved from the env.py file and its status is set to "True". This sets up the backend and sends the password reset token to the terminal. The email credentials, for the email that sends the token to the terminal, are retrieved from the env.py file.
 * The CLOUDINARY_URL variable is retrieved from env.py file.
 * The DATABASE_URL variable is retrieved from env.py file.
 
@@ -724,7 +724,7 @@ On Heroku:
 * The DEBUG variable is absent and therefore has its status set to "False".
 * The HOST variable is retrieved from the Config Vars in the settings.
 * The deployed url is also provided for CSRF trusted origins.
-* The DEVELOPMENT variable is absent therefore its status defaults to "False". There is a condition set up in this case so that the backend is setup to send the password reset token to the user's email (entered in the password reset request form). The email credentials are retrieved from the Config Vars in the settings.
+* The DEVELOPMENT variable is absent therefore its status defaults to "False". There is a condition set up in this case so that the backend is setup to send the password reset token to the user's email (entered in the password reset request form). The email credentials, for the email that mails the user, are retrieved from the Config Vars in the settings.
 * The CLOUDINARY_URL variable is retrieved from the Config Vars in the settings.
 * The DATABASE_URL variable is retrieved from the Config Vars in the settings.
 
