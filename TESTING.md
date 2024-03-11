@@ -18,7 +18,6 @@ Some of the pages on this site require a user to be logged-in and authenticated 
 * Copy everything, and use the [validate by input](https://validator.w3.org/#validate_by_input) method.
 * Repeat this process for every page that requires a user to be logged-in/authenticated.
 
-
 | Page | W3C URL | Screenshot | Notes |
 | --- | --- | --- | --- |
 | Home | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fl2d-driving-school-6f23811ec0fb.herokuapp.com%2F) | ![screenshot](documentation/testing/html-validation-home.png) | Pass: No errors |
@@ -41,7 +40,6 @@ Some of the pages on this site require a user to be logged-in and authenticated 
 | Create review (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-create-review-auth.png) | Pass: No Errors |
 | Edit review (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-edit-review-auth.png) | Pass: No Errors |
 | Edit comment (authenticated) | n/a | ![screenshot](documentation/testing/html-validation-edit-comment-auth.png) | Pass: No Errors |
-
 
 ### CSS
 
@@ -138,31 +136,27 @@ I've tested every page on my deployed project on multiple devices to check for r
 
 ## Lighthouse Audit
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports.
-Avoid testing the local version (especially if developing in Gitpod), as this can have knock-on effects of performance.
-
-If you don't have Lighthouse in your Developer Tools,
-it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Don't just test the home page (unless it's a single-page application).
-Make sure to test the Lighthouse Audit results for all of your pages.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-Sample Lighthouse testing documentation:
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
 | Page | Mobile | Desktop | Notes |
 | --- | --- | --- | --- |
 | Home | ![screenshot](documentation/lighthouse-home-mobile.png) | ![screenshot](documentation/lighthouse-home-desktop.png) | Some minor warnings |
-| About | ![screenshot](documentation/lighthouse-about-mobile.png) | ![screenshot](documentation/lighthouse-about-desktop.png) | Some minor warnings |
-| Gallery | ![screenshot](documentation/lighthouse-gallery-mobile.png) | ![screenshot](documentation/lighthouse-gallery-desktop.png) | Slow response time due to large images |
-| x | x | x | repeat for any other tested pages/sizes |
+| Reviews | ![screenshot](documentation/lighthouse-reviews-mobile.png) | ![screenshot](documentation/lighthouse-reviews-desktop.png) | Some minor warnings |
+| Review details | ![screenshot](documentation/lighthouse-review-details-mobile.png) | ![screenshot](documentation/lighthouse-review-details-desktop.png) | Slow response time due to large images |
+| Appointments | ![screenshot](documentation/lighthouse-appointments-mobile.png) | ![screenshot](documentation/lighthouse-appointments-desktop.png) | Slow response time due to large images |
+| Profile | ![screenshot](documentation/lighthouse-profile-mobile.png) | ![screenshot](documentation/lighthouse-profile-desktop.png) | Slow response time due to large images |
+| Edit profile | ![screenshot](documentation/lighthouse-edit-profile-mobile.png) | ![screenshot](documentation/lighthouse-edit-profile-desktop.png) | Slow response time due to large images |
+| Edit review | ![screenshot](documentation/lighthouse-edit-review-mobile.png) | ![screenshot](documentation/lighthouse-edit-review-desktop.png) | Slow response time due to large images |
+| User profiles | ![screenshot](documentation/lighthouse-user-profiles-mobile.png) | ![screenshot](documentation/lighthouse-user-profiles-desktop.png) | Slow response time due to large images |
+| User profile | ![screenshot](documentation/lighthouse-user-profile-mobile.png) | ![screenshot](documentation/lighthouse-user-profile-desktop.png) | Slow response time due to large images |
+| Contact | ![screenshot](documentation/lighthouse-contact-mobile.png) | ![screenshot](documentation/lighthouse-contact-desktop.png) | Slow response time due to large images |
+| Sign up | ![screenshot](documentation/lighthouse-sign-up-mobile.png) | ![screenshot](documentation/lighthouse-sign-up-desktop.png) | Slow response time due to large images |
+| Log in | ![screenshot](documentation/lighthouse-log-in-mobile.png) | ![screenshot](documentation/lighthouse-log-in-desktop.png) | Slow response time due to large images |
+| Password reset request | ![screenshot](documentation/lighthouse-password-reset-request-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-request-desktop.png) | Slow response time due to large images |
+| Password reset request confirmation | ![screenshot](documentation/lighthouse-password-reset-request-confirmation-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-request-confirmation-desktop.png) | Slow response time due to large images |
+| Password reset | ![screenshot](documentation/lighthouse-password-reset-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-desktop.png) | Slow response time due to large images |
+| Password reset confirmation | ![screenshot](documentation/lighthouse-password-reset-confirmation-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-confirmation-desktop.png) | Slow response time due to large images |
+
 
 ## Defensive Programming
 
