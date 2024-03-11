@@ -115,7 +115,7 @@
             {% if comment.approved %}
                 <div class="comment-container">
                     <p class="comment-author">
-                        <span class="bold">{{ comment.author }}</span> wrote ({{ comment.replied_on }}):
+                        <strong>{{ comment.author }}</strong> wrote ({{ comment.replied_on }}):
                     </p>
                     <div id="comment{{ comment.id }}" class="comment-content">
                         {{ comment.content | safe }}
@@ -139,7 +139,7 @@
                 <h3 class="comment-prompt">Leave a comment:</h3>
             {% endif %}
             {% if not is_edit_comment_view %}
-                <p class="post-author">Posting as <span class="bold">{{ user.first_name }}</span></p>
+                <p class="post-author">Posting as <strong>{{ user.first_name }}</strong></p>
             {% endif %}
             <form id="commentForm" method="POST">
                 {% csrf_token %}
