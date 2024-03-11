@@ -22,7 +22,7 @@
                     {% for field in form %}
                         <div class="col-md-6">
                             <div class="form-field">
-                                <label for="form-input">{{ field.label }}:</label>
+                                <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
                                 {{ field }}
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="btn-container d-flex justify-content-center m-0">
                     <button type="submit" class="blue-button">Save</button>
-                    <a type="button" href="{% url 'profile_page' %}" class="red-button">Cancel</a>
+                    <a href="{% url 'profile_page' %}" class="red-button">Cancel</a>
                 </div>
             </form>
         </div>
