@@ -66,44 +66,6 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 
 ### Python
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- As an API, using the "raw" URL appended to the linter URL.
-    - To find the "raw" URL, navigate to your file directly on the GitHub repo.
-    - On that page, GitHub provides a button on the right called "Raw" that you can click on.
-    - From that new page, copy the full URL, and paste it after the CI Python Linter URL (with a `/` separator).
-    - Check the example table below for a live demo.
-
-**IMPORTANT**: `E501 line too long` errors
-
-You must strive to fix any Python lines that are too long ( >80 characters ).
-In rare cases where you cannot break the lines [without breaking the functionality],
-then by adding `# noqa` to the end of those lines will ignore linting validation.
-
-`# noqa` = **NO Quality Assurance**
-
-**NOTE**: You must include 2 *spaces* before the `#`, and 1 *space* after the `#`.
-
-Do not use `# noqa` all over your project just to clear down validation errors!
-This can still cause a project to fail, for failing to fix actual PEP8 validation errors.
-
-Sometimes strings or variables get too long, or long `if` conditional statements.
-These are acceptable instances to use the `# noqa`.
-
-When trying to fix "line too long" errors, try to avoid using `/` to split lines.
-A better approach would be to use any type of opening bracket, and hit Enter just after that.
-
-Any opening bracket type will work: `(`, `[`, `{`.
-
-By using an opening bracket, Python knows where to appropriately indent the next line of code,
-without having to "guess" yourself and attempt to tab to the correct indentation level.
-
-Sample Python code validation documentation below (tables are extremely helpful!).
-
-**Note**: This gives examples of PP3 (Python-only), and Flask/Django files, so eliminate the ones not applicable to your own project.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
 
 | File | CI URL | Screenshot | Notes |
@@ -118,6 +80,14 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | signals.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/signals.py) | ![screenshot](documentation/testing/python-validation-profiles-signals.png) | Pass: No Errors |
 | urls.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/urls.py) | ![screenshot](documentation/testing/python-validation-profiles-urls.png) | Pass: No Errors |
 | views.py (profiles) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/profiles/views.py) | ![screenshot](documentation/testing/python-validation-profiles-views.png) | Pass: No Errors |
+| admin.py (reviews) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/reviews/admin.py) | ![screenshot](documentation/testing/python-validation-reviews-admin.png) | Pass: No Errors |
+| apps.py (reviews) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/reviews/apps.py) | ![screenshot](documentation/testing/python-validation-reviews-apps.png) | Pass: No Errors |
+| forms.py (reviews) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/reviews/forms.py) | ![screenshot](documentation/testing/python-validation-reviews-forms.png) | Pass: No Errors |
+| models.py (reviews) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/reviews/models.py) | ![screenshot](documentation/testing/python-validation-reviews-models.png) | Pass: No Errors |
+| urls.py (reviews) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/reviews/urls.py) | ![screenshot](documentation/testing/python-validation-reviews-urls.png) | Pass: No Errors |
+| views.py (reviews) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/reviews/views.py) | ![screenshot](documentation/testing/python-validation-reviews-views.png) | Pass: No Errors |
+| settings.py (l2d) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/l2d/settings.py) | ![screenshot](documentation/testing/python-validation-l2d-settings.png) | Pass: No Errors |
+| urls.py (l2d) | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/SasanTazayoni/L2D-driving-school-CI-PP4/main/l2d/urls.py) | ![screenshot](documentation/testing/python-validation-l2d-urls.png) | Pass: No Errors |
 
 
 ## Browser Compatibility
