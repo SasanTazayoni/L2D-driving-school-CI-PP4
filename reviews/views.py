@@ -17,16 +17,31 @@ class ReviewList(generic.ListView):
     """
     Render a paginated list of reviews (6 per page) with an average rating.
     """
-    queryset = Review.objects.filter(approved=True).order_by("-created_on").select_related('author')
-    queryset = queryset.annotate(comment_count=Count('comments', filter=Q(comments__approved=True), distinct=True))
+    queryset = (
+        Review.objects
+        .filter(approved=True)
+        .order_by("-created_on")
+        .select_related('author')
+    )
+    queryset = queryset.annotate(
+        comment_count=Count('comments',
+                            filter=Q(comments__approved=True),
+                            distinct=True)
+    )
     queryset = queryset.annotate(like_count=Count('likes', distinct=True))
     template_name = "reviews/reviews.html"
     paginate_by = 6
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        average_rating = Review.objects.filter(approved=True).aggregate(avg_rating=Avg('rating'))['avg_rating']
-        context['average_rating'] = round(average_rating, 2) if average_rating else None
+        average_rating = (
+            Review.objects
+            .filter(approved=True)
+            .aggregate(avg_rating=Avg('rating'))['avg_rating']
+        )
+        context['average_rating'] = (
+            round(average_rating, 2) if average_rating else None
+        )
         return context
 
 
@@ -36,7 +51,10 @@ def review_detail(request, review_id):
     """
 
     queryset = Review.objects.filter(approved=True)
-    review = get_object_or_404(Review.objects.select_related('author'), id=review_id)
+    review = get_object_or_404(
+        Review.objects.select_related('author'),
+        id=review_id
+    )
     comments = review.comments.all().order_by("-replied_on")
     comment_count = review.comments.filter(approved=True).count()
     like_count = review.likes.count()
@@ -54,9 +72,9 @@ def review_detail(request, review_id):
             comment.review = review
             comment.save()
             messages.add_message(
-            request, messages.SUCCESS,
-            'Your comment was submitted and is now pending admin approval.'
-        )
+                request, messages.SUCCESS,
+                'Your comment was submitted and is now pending admin approval.'
+            )
 
     comment_form = CommentForm()
 
@@ -91,7 +109,9 @@ def edit_comment(request, review_id, comment_id):
             edited_comment.review = review
             edited_comment.save()
             messages.success(request, 'Comment updated.')
-            return HttpResponseRedirect(reverse('review_detail', args=[review_id]))
+            return HttpResponseRedirect(
+                reverse('review_detail', args=[review_id])
+            )
         else:
             messages.error(request, 'Error updating comment.')
     else:
@@ -122,13 +142,16 @@ def delete_comment(request, review_id, comment_id):
     review_id = comment.review.id
 
     if comment.author.user != request.user:
-        messages.error(request, 'You are not authorised to delete this comment.')
+        messages.error(
+            request,
+            'You are not authorised to delete this comment.'
+        )
         return redirect('review_detail', review_id=review_id)
 
     if request.method == "POST":
         comment.delete()
         messages.success(request, 'Comment removed.')
-        
+
     return redirect(reverse('review_detail', args=[review_id]))
 
 
@@ -152,7 +175,10 @@ def create_review(request):
             review = form.save(commit=False)
             review.author = profile
             form.save()
-            messages.success(request, 'Your review was submitted and is now pending admin approval.')
+            messages.success(
+                request,
+                'Your review was submitted and is now pending admin approval.'
+            )
             return redirect('profile_page')
 
     context = {'form': form}
@@ -165,7 +191,11 @@ def update_review(request, review_id):
     Update a review authored by the current user.
     """
     profile = UserProfile.objects.get(user=request.user)
-    existing_review = Review.objects.filter(author=profile, id=review_id).first()
+    existing_review = (
+        Review.objects
+        .filter(author=profile, id=review_id)
+        .first()
+    )
 
     if not existing_review:
         messages.info(request, 'You must create a review before editing.')
@@ -192,7 +222,11 @@ def delete_review(request, review_id):
     Delete a review authored by the current user.
     """
     profile = UserProfile.objects.get(user=request.user)
-    existing_review = Review.objects.filter(author=profile, id=review_id).first()
+    existing_review = (
+        Review.objects
+        .filter(author=profile, id=review_id)
+        .first()
+    )
 
     if not existing_review:
         messages.info(request, 'There is no review to delete.')
@@ -202,7 +236,7 @@ def delete_review(request, review_id):
         existing_review.delete()
         messages.success(request, 'Your review has been deleted.')
         return redirect('profile_page')
-    
+
     return redirect('profile_page')
 
 

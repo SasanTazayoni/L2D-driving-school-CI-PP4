@@ -16,7 +16,9 @@ class ReviewAdmin(SummernoteModelAdmin):
 
     def approve_reviews(self, request, queryset):
         updated_count = queryset.update(approved=True)
-        self.message_user(request, f'{updated_count} reviews have been approved.')
+        self.message_user(
+            request, f'{updated_count} reviews have been approved.'
+            )
 
 
 @admin.register(Comment)
@@ -32,4 +34,6 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         updated_count = queryset.update(approved=True)
-        self.message_user(request, f'{updated_count} comments have been approved.')
+        self.message_user(
+            request, f'{updated_count} comments have been approved.'
+            )
