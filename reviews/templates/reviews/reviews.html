@@ -69,10 +69,10 @@
                         <div class="card review-card mb-4">
                             <div class="d-flex align-items-center justify-content-between review-card-header--small">
                                 {% if review.author.profile_picture %}
-                                <img src="{{ review.author.profile_picture.url }}" alt="A picture of {{ review.author.username }}"
+                                <img src="{{ review.author.profile_picture.url }}" alt="User:{{ review.author.username }}"
                                     class="review-image">
                                 {% else %}
-                                <img src="{% static 'images/defaultpicture.png' %}" alt="A default user picture"
+                                <img src="{% static 'images/defaultpicture.png' %}" alt="Default user"
                                     class="review-image">
                                 {% endif %}
                                 <p class="text-center px-2 review-header-text-small">
