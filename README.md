@@ -719,7 +719,7 @@ In the local environment:
 * The CLOUDINARY_URL variable is retrieved from env.py file.
 * The DATABASE_URL variable is retrieved from env.py file.
 
-On Heroku
+On Heroku:
 * The SECRET_KEY variable is retrieved from the Config Vars in the settings.
 * The DEBUG variable is absent and therefore has its status set to "False".
 * The HOST variable is retrieved from the Config Vars in the settings.
