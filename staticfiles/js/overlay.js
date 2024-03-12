@@ -1,8 +1,10 @@
+/* jshint esversion: 11 */
+
 document.addEventListener("DOMContentLoaded", () => {
-    const overlay = document.querySelector('.overlay')
+    const overlay = document.querySelector('.overlay');
     if (overlay) {
         setTimeout(() => {
-            overlay.classList.add('active')
-        }, 3000)
+            overlay.classList.add('active');
+        }, 3000);
     }
-})
+});

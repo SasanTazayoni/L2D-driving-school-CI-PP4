@@ -1,34 +1,36 @@
-const authBtns = document.querySelectorAll('.auth-button')
-const blueBtns = document.querySelectorAll('.blue-button')
-const redBtns = document.querySelectorAll('.red-button')
+/* jshint esversion: 11 */
+
+const authBtns = document.querySelectorAll('.auth-button');
+const blueBtns = document.querySelectorAll('.blue-button');
+const redBtns = document.querySelectorAll('.red-button');
 
 authBtns.forEach(btn => {
     btn.onmousemove = function(e) {
-        let x = e.pageX - btn.offsetLeft
-        let y = e.pageY - btn.offsetTop
+        let x = e.pageX - btn.offsetLeft;
+        let y = e.pageY - btn.offsetTop;
 
-        btn.style.setProperty('--x', x + 'px')
-        btn.style.setProperty('--y', y + 'px')
-    }
-})
+        btn.style.setProperty('--x', x + 'px');
+        btn.style.setProperty('--y', y + 'px');
+    };
+});
 
 function createRipple(e) {
-    let x = e.clientX - e.target.getBoundingClientRect().left
-    let y = e.clientY - e.target.getBoundingClientRect().top
-    let ripples = document.createElement('span')
-    ripples.style.left = x + 'px'
-    ripples.style.top = y + 'px'
-    this.appendChild(ripples)
+    let x = e.clientX - e.target.getBoundingClientRect().left;
+    let y = e.clientY - e.target.getBoundingClientRect().top;
+    let ripples = document.createElement('span');
+    ripples.style.left = x + 'px';
+    ripples.style.top = y + 'px';
+    this.appendChild(ripples);
 
     setTimeout(() => {
-        ripples.remove()
-    }, 600)
+        ripples.remove();
+    }, 600);
 }
 
 blueBtns.forEach(btn => {
-    btn.addEventListener('mouseover', createRipple)
-})
+    btn.addEventListener('mouseover', createRipple);
+});
 
 redBtns.forEach(btn => {
-    btn.addEventListener('mouseover', createRipple)
-})
+    btn.addEventListener('mouseover', createRipple);
+});

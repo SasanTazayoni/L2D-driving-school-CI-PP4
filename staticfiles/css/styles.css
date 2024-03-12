@@ -107,7 +107,8 @@ a {
 
 @media screen and (max-width: 428px) {
     .block--background {
-        background-image: url('../images/roadsmall.webp');
+        background-image: none;
+        background-color: var(--block-grey);
     }
 }
 
