@@ -160,139 +160,153 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Defensive programming (defensive design) is extremely important!
-
-When building projects that accept user inputs or forms, you should always test the level of security for each.
-Examples of this could include (not limited to):
-
-Forms:
-- Users cannot submit an empty form
-- Users must enter valid email addresses
-
-PP3 (Python-only):
-- Users must enter a valid letter/word/string when prompted
-- Users must choose from a specific list only
-
-MS3 (Flask) | MS4/PP4/PP5 (Django):
-- Users cannot brute-force a URL to navigate to a restricted page
-- Users cannot perform CRUD functionality while logged-out
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers
-
-You'll want to test all functionality on your application, whether it's a standard form,
-or uses CRUD functionality for data manipulation on a database.
-Make sure to include the `required` attribute on any form-fields that should be mandatory.
-Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser).
-
-You should include any manual tests performed, and the expected results/outcome.
-
-Testing should be replicable.
-Ideally, tests cases should focus on each individual section of every page on the website.
-Each test case should be specific, objective, and step-wise replicable.
-
-Instead of adding a general overview saying that everything works fine,
-consider documenting tests on each element of the page
-(ie. button clicks, input box validation, navigation links, etc.) by testing them in their happy flow,
-and also the bad/exception flow, mentioning the expected and observed results,
-and drawing a parallel between them where applicable.
-
-Consider using the following format for manual test cases:
-
-Expected Outcome / Test Performed / Result Received / Fixes Implemented
-
-- **Expected**: "Feature is expected to do X when the user does Y."
-- **Testing**: "Tested the feature by doing Y."
-- (either) **Result**: "The feature behaved as expected, and it did Y."
-- (or) **Result**: "The feature did not respond to A, B, or C."
-- **Fix**: "I did Z to the code because something was missing."
-
-Use the table below as a basic start, and expand on it using the logic above.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 Defensive programming was manually tested with the below user acceptance testing:
-
-| Page | Expectation | Test | Result | Fix | Screenshot |
-| --- | --- | --- | --- | --- | --- |
-| Home | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/feature01.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/feature02.png) |
-| About | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/feature03.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/feature04.png) |
-| Gallery | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/feature05.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/feature06.png) |
-| Contact | | | | | |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature behaved as expected, and it did Y | Test concluded and passed | ![screenshot](documentation/feature07.png) |
-| | Feature is expected to do X when the user does Y | Tested the feature by doing Y | The feature did not respond to A, B, or C. | I did Z to the code because something was missing | ![screenshot](documentation/feature08.png) |
-| repeat for all remaining pages | x | x | x | x | x |
-
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Another way of performing defensive testing is a simple Pass/Fail for each test.
-The assessors prefer the above method, with the full test explained, but this is also acceptable in most cases.
-
-When in doubt, use the above method instead, and delete the table below.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
+| All pages | | | | |
+| | Click on logo | Redirection to Home page | Pass | |
+| | Click on logo text | Redirection to Home page | Pass | |
+| | If the user is authenticated | "Log out" button and the "Profile" link appears in the navigation bar | Pass | |
+| | If the user is not authenticated | "Log in/Sign up" button appears in the navigation bar and the "Profile" link and "Appointments" link are not available | Pass | |
+| | User profile is approved by admin | "Appointments" link appears in the navigation bar | Pass | |
 | Home | | | | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Home link in navbar | Redirection to Home page | Pass | |
-| Gallery | | | | |
-| | Click on Gallery link in navbar | Redirection to Gallery page | Pass | |
-| | Load gallery images | All images load as expected | Pass | |
-| Contact | | | | |
-| | Click on Contact link in navbar | Redirection to Contact page | Pass | |
-| | Enter first/last name | Field will accept freeform text | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter message in textarea | Field will accept freeform text | Pass | |
-| | Click the Submit button | Redirects user to form-dump | Pass | User must click 'Back' button to return |
-| Sign Up | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password (twice) | Field will only accept password format | Pass | |
-| | Click on Sign Up button | Asks user to confirm email page | Pass | Email sent to user |
-| | Confirm email | Redirects user to blank Sign In page | Pass | |
-| Log In | | | | |
-| | Click on the Login link | Redirection to Login page | Pass | |
-| | Enter valid email address | Field will only accept email address format | Pass | |
-| | Enter valid password | Field will only accept password format | Pass | |
-| | Click Login button | Redirects user to home page | Pass | |
-| Log Out | | | | |
-| | Click Logout button | Redirects user to logout page | Pass | Confirms logout first |
-| | Click Confirm Logout button | Redirects user to home page | Pass | |
+| | Non-authenticated users | The buttons "Sign up" and "Reviews" appear | Pass | |
+| | Click on "Home" link in the navigation bar | User will be redirected to the home page | Pass | |
+| | Click the "Sign up" button | Redirects user to sign up form | Pass | |
+| | Click the "Reviews" button | Redirects user to reviews page | Pass | |
+| | Authenticated users | The buttons "Reviews" and "Contact" appear | Pass | |
+| | Click the "Contact" button | Redirects user to contact page | Pass | |
+| | Authenticated users that are approved | The buttons "Schedule" and "Contact" appear | Pass | |
+| | Click the "Schedule" button | Redirects user to appointments page | Pass | |
+| Reviews | | | | |
+| | Click on "Reviews" link in the navigation bar | User will be redirected to the reviews page | Pass | |
+| | Click on a review card | Redirects user to review details page | Pass | |
+| | Click on the pagination number | Shows a set of review cards according to the page number | Pass | |
+| Review details | | | | |
+| | Click on a review card on the "Reviews" page | Redirects user to review details page | Pass | |
+| | If the user has made a review, click on the "View details" link | Redirects to the review details page | Pass | |
+| | Click on the author's name on the review details page | Redirects user to the author's profile | Pass | |
+| | Add like if user has not given a like already | Like count increases | Pass | The heart icon shows as red if the user has liked already and an outline if they have not |
+| | Remove like if user has given a like already | Like count decreases | Pass | The heart icon shows as red if the user has liked already and an outline if they have not |
+| | As an authenticated user click "Edit review" button (available if it is your review) | User redirected to review form | Pass | |
+| | As an authenticated user click "Delete review" button (available if it is your review) | Modal pops up | Pass | |
+| | After clicking "Delete review", click the "No" button on the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete review", click off the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete review", click the "Yes" button on the modal that pops up | The review and all comments on it will be deleted | Pass | |
+| | As an authenticated user click "Edit comment" button (available if it is your comment) | User redirected to edit comment form | Pass | |
+| | As an authenticated user click "Delete comment" button (available if it is your comment) | Modal pops up | Pass | |
+| | After clicking "Delete comment", click the "No" button on the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete comment", click off the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete comment", click the "Yes" button on the modal that pops up | The comment will be deleted | Pass | |
+| | As an authenticated user click the "Submit" button with an empty Comments form | User will be prompted to fill the form and it will not be submitted | Pass | |
+| | As an authenticated user click the "Submit" button with content in the Comments form | The form will be submitted for approval and a django message will appear | Pass | |
+| | Brute forcing the review details URL when not authenticated in order to add a comment | The review detail page will be shown as it should for an unauthenticated user and a django message will appear | Pass | |
+| Appoinments | | | | |
+| | As an authenticated user that has been approved by the admin click on "Apppointments" link in the navigation bar | User will be redirected to the appointments page | Pass | |
+| | As an authenticated user that has been approved by the admin, access Calendly | User can manage their appointments | Pass | |
+| | Brute forcing the appointments URL when not authenticated | User redirected to login page | Pass | |
+| | Brute forcing the appointments URL when authenticated but not approved | User redirected to contact page and a django message appears | Pass | |
 | Profile | | | | |
-| | Click on Profile button | User will be redirected to the Profile page | Pass | |
-| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
-| | Click on the My Orders link | User will be redirected to the My Orders page | Pass | |
+| | As an authenticated user click on "Profile" link in the navigation bar | User will be redirected to their profile page | Pass | |
+| | Click "Edit profile" button | User redirected to edit profile form | Pass | |
+| | Click "Delete profile" button | Modal pops up | Pass | |
+| | After clicking "Delete profile", click the "No" button on the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete profile", click off the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete profile", click the "Yes" button on the modal that pops up | The profile gets removed from the database including the review (if it was made) and any comments by the user | Pass | |
+| | Click "View details" link | User redirected to review details of their review | Pass | |
+| | Click "Edit review" button | User redirected to review form | Pass | |
+| | Click "Delete review" button | Modal pops up | Pass | |
+| | After clicking "Delete review", click the "No" button on the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete review", click off the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete review", click the "Yes" button on the modal that pops up | The review and all comments on it will be deleted | Pass | |
+| | Click "Review by (username)" link | User redirected to review by respective user | Pass | |
+| | Click "Edit comment" button | User redirected to edit comment form | Pass | |
+| | Click "Delete comment" button | Modal pops up | Pass | |
+| | After clicking "Delete comment", click the "No" button on the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete comment", click off the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Delete comment", click the "Yes" button on the modal that pops up | The comment will be deleted | Pass | |
+| | Brute forcing the profile URL when not authenticated | User redirected to login page | Pass | |
+| Edit profile | | | | |
+| | Click "Edit profile" button on the profile page | User redirected to edit profile form | Pass | |
+| | Attempt to edit profile and click the "Submit" button | All fields can be edited except the email and will be changed | Pass | |
+| | Add a different picture and click the "Submit" button | User picture will change | Pass | |
+| | Click "Remove picture" checkbox and click the "Submit" button | User picture is removed | Pass | |
+| | Click "Cancel" button | User redirected to profile | Pass | |
+| | Brute forcing the edit profile URL when not authenticated | User redirected to login page | Pass | |
+| Edit review | | | | |
+| | Click "Edit review" button on the profile page or on the review detail page (available if it is your review) | User redirected to review form | Pass | |
+| | Attempt to edit review and click the "Save" button with blank field | User prompted to fill out form and form is not submitted | Pass | |
+| | Attempt to edit review and click the "Save" with correct fields | The fields will be changed | Pass | |
+| | Brute forcing the edit review URL when not authenticated | User redirected to login page | Pass | |
+| User profiles | | | | |
+| | Click on the "User profiles" link | User will be redirected to the user profiles page | Pass | |
+| | Click on the "Search" button with no entry | User will be prompted to enter an input and the form will not be submitted | Pass | |
+| | Click on the "Search" button with an entry | The search will return a paginated list of users, if the search finds nothing then it will display a message | Pass | |
+| | Click on the "Show all" button | Shows all users in a paginated gallery | Pass | |
+| | Click on the user profile thumbnail | Redirects to the respective user's profile | Pass | |
+| | Click on the pagination number | Shows a set of user profiles according to the page number | Pass | |
+| User profile | | | | |
+| | Click on the user profile thumbnail on the user profiles page | Redirects to the respective user's profile | Pass | |
+| | Non-authenticated users | The button "All users" apeears | Pass | |
+| | Click the "All users" button | Redirects user to the all users page | Pass | |
+| | Authenticated users | The buttons "All users" and "My profile" appear | Pass | |
+| | Click the "My profile" button | Redirects user to their profile page | Pass | |
+| | If the user has made a review, click on the "View details" link | Redirects to the review details page | Pass | |
+| Contact | | | | |
+| | Click on "Contact" link in the navigation bar | User will be redirected to the contact page | Pass | |
+| | Click on the "Submit" button with form fields that do not meet the minimum validation requirements | User will be prompted to fill the form correctly and the form will nt submit | Pass | |
+| | Click on the "Submit" button with an invalid email but other fields filled correctly | User redirected to Formspree which states that the email needs to be valid and the form does not submit | Pass | |
+| | Click on the "Submit" button with fields filled correctly | Form is processed by Formspree and submitted | Pass | |
+| | Click on the "Clear" button | Clears all form fields | Pass | |
+| Login | | | | |
+| | When not authenticated, click on the "Log in/Sign up" button on the navigation bar | User will be redirected to the login page | Pass | |
+| | Click on the "Forgot your password?" link | User will be redirected to the password reset request form | Pass | |
+| | Click on the "Sign up here" link | User will be redirected to the sign up form | Pass | |
+| | Click on the "Reset" button | Clears the form fields | Pass | |
+| | Click on the "Log in" button with empty fields | Gives an error message and prevents the user from logging in | Pass | |
+| | Click on the "Log in" button with incorrect credentials | Gives an error message and prevents the user from logging in | Pass | |
+| | Click on the "Log in" button with correct credentials | Logs the user in and shows a django message | Pass | Redirects to the home page |
+| | Authenticated users cannot access the "Log in/Sign up" button | "Log out" button appears instead of the "Log in/Sign up" button | Pass | |
+| | When authenticated, brute forcing the URL to get to the login page | Redirects to home page | Pass | |
+| Logout | | | | |
+| | When authenticated, click the "Log out" button | A modal pops up | Pass | |
+| | After clicking "Log out", click the "No" button on the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Log out", click off the modal that pops up | Closes the modal | Pass | |
+| | After clicking "Log out", click the "Yes" button on the modal that pops up | Logs out the user and displays a django message | Pass | Redirects user to home page |
+| | Non-authenticated users cannot access the "Log out" button | "Log in/Sign up" button appears instead of the "Log out" button | Pass | |
+| | Brute forcing the logout URL when not authenticated | Redirects user back to home page | Pass | |
+| Sign up | | | | |
+| | When not authenticated, click on the "Log in/Sign up" button on the navigation bar and then the "Sign up here" link on the login form | User will be redirected to the sign up page | Pass | |
+| | Click on the "Log in here" link | User will be redirected to the login form | Pass | |
+| | Click on the "Reset" button | Clears the form fields | Pass | |
+| | Click on the "Sign up" button with empty fields | Gives error messages and prevents the user from signing up | Pass | |
+| | Click on the "Sign up" button without meeting the minimum requirements of the form | Gives error messages for each respective field and prevents the user from signing up | Pass | |
+| | Click on the "Sign up" button using the email and/or username of an existing account | Gives error messages and prevents the user from signing up | Pass | |
+| | Click on the "Sign up" button with correct inputs | Signs the user up, creates an account and shows a django message | Pass | Redirects to edit profle page |
+| | Authenticated users cannot access the "Log in/Sign up" button | "Log out" button appears instead of the "Log in/Sign up" button | Pass | |
+| | When authenticated, brute forcing the URL to get to the sign up page | Redirects to home page | Pass | |
+| Password reset request | | | | |
+| | Click on the "Forgot your password?" link | User will be redirected to the password reset request form | Pass | |
+| | Click on the "Cancel request" button | User will be redirected to the login page | Pass | If the user is authenticated they are redirected to the home page |
+| | Click on the "Reset password" button with an empty field | User is prompted to fill out the field and the form does not submit | Pass | |
+| | Click on the "Reset password" button with a valid email format | Email is sent to the input email | Pass | If the email exists in the database it receives a token to reset the password, if the email does not exist nothing happens but the user is intentionally not notified as a security measure |
 | | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
-| repeat for all remaining pages | x | x | x | x |
+| Password reset request confirmation | | | | |
+| | Entering a valid email format in the password request reset form | User will be redirected to the password reset request confirmation page | Pass | |
+| Password reset | | | | |
+| | Click on the token (link) provided in the email after requesting a password reset | User will be redirected to the password reset form | Pass | |
+| | Click on the "Clear" button | Clears all form fields | Pass | |
+| | Click on the "Submit" with empty fields | Gives an error and the form does not submit | Pass | |
+| | Click on the "Submit" with mismatched passwords or passwords that do not meet the minimum criteria | Gives an error and the form does not submit | Pass | |
+| | Click on the "Submit" with matched passwords that meet the criteria | Changes the users password associated with the email | Pass | |
+| | Brute forcing the URL to get to password reset form | The form does not have access to a token that links a user account therefore updating the password is redundant | Pass | |
+| Password reset confirmation | | | | |
+| | Resetting the password correctly using a token (via email) | Redirects to the password reset confirmation page | Pass | |
+| | Click on the "log in" link | Redirects user to the login page | Pass | |
 
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Repeat for all other tests, as applicable to your own site.
-The aforementioned tests are just an example of a few different project scenarios.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 ## User Story Testing
-
-🛑🛑🛑🛑🛑 START OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-Testing user stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **features** should already align with the **user stories**,
-so this should as simple as creating a table with the user story, matching with the re-used screenshot
-from the respective feature.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 | User Story | Screenshot |
 | --- | --- |
@@ -305,7 +319,7 @@ from the respective feature.
 | As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature07.png) |
 | As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature08.png) |
 | As a site administrator, I should be able to ____________, so that I can ____________. | ![screenshot](documentation/feature09.png) |
-| repeat for all remaining user stories | x |
+
 
 ## Automated Testing
 
