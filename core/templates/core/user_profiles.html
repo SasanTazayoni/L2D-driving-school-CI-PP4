@@ -19,7 +19,10 @@
                 <input type="text" id="search" placeholder="Search for a user" 
                     value="{{ search_query }}" name="search_query" class="search-field" required>
             </div>
-            <button type="submit" class="blue-button">Search</button>
+            <div class="btn-container d-flex justify-content-center">
+                <button type="submit" class="blue-button">Search</button>
+                <a href="{% url 'user_profiles' %}" class="blue-button">Show all</a>
+            </div>
         </form>
     </div>
     <!-- User profile gallery -->
