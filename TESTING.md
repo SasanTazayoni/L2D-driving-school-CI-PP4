@@ -150,12 +150,12 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | User profiles | ![screenshot](documentation/testing/lighthouse-user-profiles-mobile.png) | ![screenshot](documentation/testing/lighthouse-user-profiles-desktop.png) | Warnings about the use of Cloudinary cookies, slow response time due to large images |
 | User profile | ![screenshot](documentation/testing/lighthouse-user-profile-mobile.png) | ![screenshot](documentation/testing/lighthouse-user-profile-desktop.png) | Warnings about the use of Cloudinary cookies |
 | Contact | ![screenshot](documentation/testing/lighthouse-contact-mobile.png) | ![screenshot](documentation/testing/lighthouse-contact-desktop.png) | Warnings about the use of Google maps cookies, slower loading on mobile due to map resizing |
-| Sign up | ![screenshot](documentation/testing/lighthouse-sign-up-mobile.png) | ![screenshot](documentation/testing/lighthouse-sign-up-desktop.png) | Warning about visibility of link on mobile view |
-| Log in | ![screenshot](documentation/testing/lighthouse-log-in-mobile.png) | ![screenshot](documentation/testing/lighthouse-log-in-desktop.png) | Warning about visibility of links on mobile view |
-| Password reset request | ![screenshot](documentation/lighthouse-password-reset-request-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-request-desktop.png) | No significant warnings |
-| Password reset request confirmation | ![screenshot](documentation/lighthouse-password-reset-request-confirmation-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-request-confirmation-desktop.png) | No significant warnings |
-| Password reset | ![screenshot](documentation/lighthouse-password-reset-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-desktop.png) | No significant warnings |
-| Password reset confirmation | ![screenshot](documentation/lighthouse-password-reset-confirmation-mobile.png) | ![screenshot](documentation/lighthouse-password-reset-confirmation-desktop.png) | Warning about visibility of link on mobile view |
+| Sign up | ![screenshot](documentation/testing/lighthouse-signup-mobile.png) | ![screenshot](documentation/testing/lighthouse-signup-desktop.png) | Warning about visibility of link on mobile view |
+| Log in | ![screenshot](documentation/testing/lighthouse-login-mobile.png) | ![screenshot](documentation/testing/lighthouse-login-desktop.png) | Warning about visibility of links on mobile view |
+| Password reset request | ![screenshot](documentation/testing/lighthouse-password-reset-request-mobile.png) | ![screenshot](documentation/testing/lighthouse-password-reset-request-desktop.png) | No significant warnings |
+| Password reset request confirmation | ![screenshot](documentation/testing/lighthouse-password-reset-request-confirmation-mobile.png) | ![screenshot](documentation/testing/lighthouse-password-reset-request-confirmation-desktop.png) | No significant warnings |
+| Password reset | ![screenshot](documentation/testing/lighthouse-password-reset-mobile.png) | ![screenshot](documentation/testing/lighthouse-password-reset-desktop.png) | No significant warnings |
+| Password reset confirmation | ![screenshot](documentation/testing/lighthouse-password-reset-confirmation-mobile.png) | ![screenshot](documentation/testing/lighthouse-password-reset-confirmation-desktop.png) | Warning about visibility of link on mobile view |
 
 
 ## Defensive Programming
