@@ -1324,7 +1324,7 @@ footer i {
 }
 
 .pending-approval {
-    color: rgb(170, 170, 170);
+    color: rgba(0, 0, 0, 0.6);
 }
 
 #remove_picture + label {
