@@ -28,13 +28,13 @@
                     <p class="error-text">Invalid username or password. Please try again.</p>
                 {% endif %}
                 <!-- Forgot password link -->
-                <a href="{% url 'account_reset_password' %}" class="pw-reset">Forgot your password?</a>
+                <a href="{% url 'account_reset_password' %}" class="pw-reset link">Forgot your password?</a>
                 <div class="btn-container">
                     <button class="blue-button" type="submit">Log in</button>
                     <button class="red-button" type="reset">Reset</button>
                 </div>
                 <!-- Link to registration page -->
-                <p class="signup-link">Don't have an account? <a href="{% url 'account_signup' %}">Sign up here</a></p>
+                <p class="signup-link">Don't have an account? <a href="{% url 'account_signup' %}" class="link">Sign up here</a></p>
             </form>
         </div>
     </div>
