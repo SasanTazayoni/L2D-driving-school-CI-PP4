@@ -111,7 +111,7 @@
               {% for comment in profile.commenter.all %}
                 {% if comment.approved %}
                   <div class="profile-content mb-4">
-                    <p class="mb-3">{{ comment.replied_on }} - <a class="link" href="{% url 'review_detail' comment.review.id %}">Review by
+                    <p class="mb-3">{{ comment.replied_on }} - <a class="link" href="{% url 'review_detail' comment.review.id %}" class="link">Review by
                       {{ comment.review.author }}</a></p>
                     <p class="mb-3">{{ comment.content | safe }}</p>
                     <div class="btn-container d-flex justify-content-center m-0">
@@ -123,7 +123,7 @@
                   </div>
                 {% else %}
                   <div class="profile-content mb-4">
-                    <p class="mb-3">{{ comment.replied_on }} - <a href="{% url 'review_detail' comment.review.id %}">Review by
+                    <p class="mb-3">{{ comment.replied_on }} - <a href="{% url 'review_detail' comment.review.id %}" class="link">Review by
                       {{ comment.review.author }}</a></p>
                     <p class="pending-approval mb-3">{{ comment.content | safe }} (pending approval)</p>
                     <div class="btn-container d-flex justify-content-center m-0">
