@@ -278,7 +278,7 @@ These epics collectively represent the core functionalities and user experiences
 ![Sign up form error](documentation/signuperror.png)
 
 * Authentication page - Password reset request form
-	* The password reset request form provides users with the ability to reset their password, contingent upon having a registered account. When an incorrect email is entered, no email is dispatched. Conversely, upon entering the correct email, an email containing 	a secure token for password reset is promptly dispatched to the user. For security measures, the token is only accessible during the current session. Additionally, feedback regarding the validity of an email is intentionally withheld to prevent potential 		security breaches.
+	* The password reset request form provides users with the ability to reset their password, contingent upon having a registered account. When an incorrect email is entered, no email is dispatched. Conversely, upon entering the correct email, an email containing 	a secure token for password reset is promptly dispatched to the user. For security measures, the token is only accessible during the current session. Additionally, feedback regarding the validity of an email is intentionally withheld to prevent potential 		security breaches. The user also has the option to cancel this request which returns to the log in page.
 
 ![Password reset request form](documentation/passwordresetrequest.png)
 
