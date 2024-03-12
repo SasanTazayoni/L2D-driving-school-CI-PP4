@@ -230,7 +230,8 @@ These epics collectively represent the core functionalities and user experiences
 ![Pagination for the reviews with page 3 hovered](documentation/pagination.png)
 
 * All users page
-	* The "All Users" page features a search bar at the top, allowing users to easily search for specific users. Below the search bar, there is a paginated gallery displaying users, with 12 users shown per page for optimal browsing experience.
+	* The "All Users" page features a search bar at the top, allowing users to easily search for specific users which can be done by inputting characters in the search bar and clicking "Search". The "Show all" button displays all users.
+	* Below the search bar, there is a paginated gallery displaying users, with 12 users shown per page for optimal browsing experience.
  	* The user gallery thumbnails exhibit a hover effect that enhances their opacity and slightly enlarges the thumbnail, providing a visual indication of interactivity when users hover over them.
  
 ![User search bar](documentation/searchbar.png)
