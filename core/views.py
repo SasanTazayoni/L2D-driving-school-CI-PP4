@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Count
@@ -32,7 +32,7 @@ def appointments(request):
                 "Please contact your driving instructor."
             )
         )
-        return render(request, 'core/contact.html')
+        return redirect(reverse('contact'))
 
 
 def contact(request):
