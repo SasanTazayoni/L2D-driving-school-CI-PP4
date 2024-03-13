@@ -345,6 +345,10 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a new site user I can easily find and access the driving instructor's contact information so that I can get in touch for inquiries or assistance. | ![screenshot](documentation/contactpage.png) |
 | As a new site user I can comprehend the website's purpose at a glance so that I can determine if the platform aligns with my needs and interests. | ![screenshot](documentation/homepage.png) |
 
+The following are user stories I wasn't able to implement and have labeled as "Won't Have" in my MoSCoW prioritisation:
+
+| As a registered user I can receive notifications for likes, comments and mentions on my reviews so that I can stay informed and promptly engage with the community's responses to my content. | N/A |
+| As a site user I can customise the theme and appearance of the website so that it suits my preferences. | N/A |
 
 ## Automated Testing
 
