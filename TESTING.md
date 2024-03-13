@@ -347,6 +347,8 @@ Defensive programming was manually tested with the below user acceptance testing
 
 The following are user stories I wasn't able to implement and have labeled as "Won't Have" in my MoSCoW prioritisation:
 
+| User Story | Screenshot |
+| --- | --- |
 | As a registered user I can receive notifications for likes, comments and mentions on my reviews so that I can stay informed and promptly engage with the community's responses to my content. | N/A |
 | As a site user I can customise the theme and appearance of the website so that it suits my preferences. | N/A |
 
