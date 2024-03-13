@@ -7,8 +7,7 @@ from django.urls import reverse
 from django.db.models import Count, Q, Avg
 from django.utils import timezone
 from .models import Review, Comment
-from .forms import ReviewForm
-from .forms import CommentForm
+from .forms import ReviewForm, CommentForm
 from profiles.models import UserProfile
 from django.contrib.auth.decorators import login_required
 
