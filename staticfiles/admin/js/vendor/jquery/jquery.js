@@ -1405,7 +1405,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 		assert( function( el ) {
 			el.innerHTML = "<a href='' disabled='disabled'></a>" +
-				"<select disabled='disabled'><option></select>";
+				"<select disabled='disabled'><option/></select>";
 
 			// Support: Windows 8 Native Apps
 			// The type and name attributes are restricted during .innerHTML assignment
@@ -1486,7 +1486,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			// IE doesn't have `contains` on `document` so we need to check for
 			// `documentElement` presence.
 			// We need to fall back to `a` when `documentElement` is missing
-			// as `ownerDocument` of elements within `<template>` may have
+			// as `ownerDocument` of elements within `<template/>` may have
 			// a null one - a default behavior of all modern browsers.
 			var adown = a.nodeType === 9 && a.documentElement || a,
 				bup = b && b.parentNode;
@@ -2982,7 +2982,7 @@ if ( !assert( function( el ) {
 // Support: IE<9
 // Use defaultValue in place of getAttribute("value")
 if ( !support.attributes || !assert( function( el ) {
-	el.innerHTML = "<input>";
+	el.innerHTML = "<input/>";
 	el.firstChild.setAttribute( "value", "" );
 	return el.firstChild.getAttribute( "value" ) === "";
 } ) ) {

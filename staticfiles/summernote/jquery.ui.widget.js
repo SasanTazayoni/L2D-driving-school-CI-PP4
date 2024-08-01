@@ -33,11 +33,11 @@
    * http://jquery.org/license
    */
 
-  />>label: Widget
-  />>group: Core
-  />>description: Provides a factory for creating stateful widgets with a common API.
-  />>docs: http://api.jqueryui.com/jQuery.widget/
-  />>demos: http://jqueryui.com/widget/
+  //>>label: Widget
+  //>>group: Core
+  //>>description: Provides a factory for creating stateful widgets with a common API.
+  //>>docs: http://api.jqueryui.com/jQuery.widget/
+  //>>demos: http://jqueryui.com/widget/
 
 
 
