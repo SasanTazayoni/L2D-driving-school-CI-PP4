@@ -414,7 +414,7 @@ In future updates, expect to see additional features enhancing user interaction 
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [Django](https://www.djangoproject.com) used as the Python framework for the site.
 - [PostgreSQL](https://www.postgresql.org) used as the relational database management.
-- [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
+- [Supabase](https://supabase.com/) used as the Postgres database.
 - [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
 - [Cloudinary](https://cloudinary.com) used for online static file storage.
 - [Gmail](https://www.google.com/gmail/about/) used to create an email address to send password reset emails from.
@@ -544,18 +544,20 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 The live deployed application can be found deployed on [Heroku](https://l2d-driving-school-6f23811ec0fb.herokuapp.com).
 
-### ElephantSQL Database
+### Supabase Database
 
-This project uses [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
+This project uses [Supabase](https://supabase.com/) for the PostgreSQL Database.
 
 To obtain your own Postgres Database, sign-up with your GitHub account, then follow these steps:
 
-- Click **Create New Instance** to start a new database.
-- Provide a name (this is commonly the name of the project: L2D-driving-school-CI-PP4).
-- Select the **Tiny Turtle (Free)** plan.
-- You can leave the **Tags** blank.
-- Select the **Region** and **Data Center** closest to you.
-- Once created, click on the new database name, where you can view the database URL and Password.
+- Click **New Project**.
+- Decide an organisation name and fill the mandatory field (This can be anything).
+- Click **Create Organization**.
+- Decide a project name (this is commonly the name of the project: L2D-driving-school-CI-PP4), a database name, a database password and pick the region that is closest to you.
+- Click **Create New Project**.
+- It will take some time to set up this project.
+- When the project has been set up there should be a green button on the top right of the page which says "Connect".
+- Clicking this button will reveal the API key needed to connect to the database (database url) and you can use this to connect to the Supabase database.
 
 ### Cloudinary API
 
