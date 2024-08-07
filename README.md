@@ -1,5 +1,7 @@
 # L2D Driving School CI PP4
 
+![HTML](tech/html.png) ![CSS](tech/css.png) ![Javascript](tech/javascript.png) ![Bootstrap](tech/bootstrap.png) ![Python](tech/python.png) ![Django](tech/django.png) ![Heroku](tech/heroku.png) ![Postgresql](tech/postgressql.png) ![Cloudinary](tech/cloudinary.png) ![Supabase](tech/supabase.png)
+
 ## Introduction
 
 Introducing L2D Driving School — a groundbreaking prototype within the driving education landscape. The website is aptly named "L2D Driving School", with "L2D" representing the abbreviation for "learn-to-drive." This concise moniker encapsulates the platform's primary mission — to facilitate the journey of learners as they master the art of driving.
